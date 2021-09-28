@@ -1,0 +1,29 @@
+#section-one {
+  margin-top: 78px;
+  background: $blueone;
+}
+
+#sec-one-right {
+  max-width: 280px;
+  @include margin_lr();
+}
+
+.playbook-video {
+  position: relative;
+  .playbook-video-overlay {
+    @include abs(0, null, null, 0);
+    @include box(100%, 100%);
+    @include flex(center, center);
+    .playbook-play-button {
+      svg {
+      }
+    }
+    img.playbook-video-image {
+      @include image();
+    }
+  }
+}
+
+#sec-one-left {
+  background: $blueone;
+}

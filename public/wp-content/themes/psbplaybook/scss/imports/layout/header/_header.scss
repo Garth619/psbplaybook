@@ -1,0 +1,56 @@
+header {
+  background: $blueone;
+  width: 100%;
+  @include flex(space-between);
+  @include fixed(0, null, null, 0, 1);
+  @include mq(small_tablet) {
+    @include abs(0, null, null, 0);
+  }
+  @include mq(small_laptop) {
+    background: transparent;
+  }
+}
+
+#header-left {
+  padding: 10px 20px 0;
+  @include mq(small_tablet) {
+    padding: 25px 32px 0;
+  }
+  @include mq(small_laptop) {
+    padding: 35px 32px 0;
+  }
+  a#logo {
+    display: block;
+    @include box(115px, auto);
+    @include mq(small_tablet) {
+      @include box(152px, auto);
+    }
+    img {
+      @include image();
+    }
+  }
+}
+
+#header-right {
+  nav {
+    display: none;
+  }
+  #menu-wrapper {
+    background: $greylighttwo;
+    @include flex(center, center);
+    @include box(115px, 78px);
+    &::after {
+      @include type(
+        (
+          size: 15px,
+          height: 18px,
+          family: $primaryfont,
+          color: $bluefour,
+          weight: 800,
+          align: center,
+        )
+      );
+      @include contentdisplay(block, "Sign Up");
+    }
+  }
+}

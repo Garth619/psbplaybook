@@ -88,6 +88,26 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
   <header>
 
-    <?php wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
+    <div id='header-left'>
+
+      <a id='logo' href='<?php bloginfo('url');?>'>
+
+        <img idclass='name' src='<?php bloginfo('template_directory');?>/images/psbplaybook-logo.svg' alt='' />
+
+      </a><!-- logo -->
+
+    </div><!-- header-left -->
+
+    <div id='header-right'>
+
+      <nav>
+        <?php // wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
+      </nav>
+
+      <div id='menu-wrapper'>
+
+      </div><!-- menu-wrapper -->
+
+    </div><!-- header-right -->
 
   </header>
