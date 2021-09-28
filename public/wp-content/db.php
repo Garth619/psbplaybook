@@ -1,0 +1,1 @@
+/Users/garrettcullen/Local Sites/mdk/app/public/wp-content/plugins/query-monitor/wp-content/db.php
