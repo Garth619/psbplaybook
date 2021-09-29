@@ -1,10 +1,30 @@
 #section-two {
   background: $bluefour;
-  padding: 33px 30px;
+  padding: 33px 30px 50px;
+  @include mq(small_tablet) {
+    padding: 37px 30px 80px;
+  }
+  @include mq(small_laptop) {
+    padding: 37px 60px 55px 80px;
+  }
+  @include mq(large_laptop) {
+    padding: 37px 130px 55px;
+  }
 }
 
 #sec-two-inner {
   text-align: center;
+  @include mq(small_tablet) {
+    text-align: left;
+    @include flex(center);
+  }
+  @include mq(large_laptop) {
+    max-width: 1660px;
+    @include margin_lr();
+  }
+  @include mq(small_monitor) {
+    max-width: 1260px;
+  }
 }
 
 span.sec-two-title {
@@ -12,23 +32,84 @@ span.sec-two-title {
   @include type(
     (
       size: 45px,
-      height: 50px,
+      height: 40px,
       family: $secondaryfont,
       color: #fff,
       weight: 500,
       transform: uppercase,
     )
   );
+  @include mq(small_tablet) {
+    margin-top: 40px;
+  }
+  @include mq(small_laptop) {
+    margin-top: 50px;
+  }
+  br {
+    display: none;
+    @include mq(small_tablet) {
+      display: inline-block;
+    }
+  }
 }
 
 #sec-two-sp-wrapper {
   margin-top: 20px;
+  @include mq(small_tablet) {
+    width: 395px;
+    position: relative;
+    padding: 0 40px;
+    margin: 22px 35px 0;
+  }
+  @include mq(small_laptop) {
+    width: auto;
+    margin: 22px 0px 0 35px;
+    padding: 0 0px 0 60px;
+  }
+  @include mq(large_laptop) {
+    padding: 0 0px 0 47px;
+  }
+}
+
+span.divider {
+  display: none;
+  @include mq(small_tablet) {
+    display: block;
+    background: #fff;
+    opacity: 0.5;
+    @include box(1px, calc(100% - 10px));
+    @include abs(2px, null, null, 0);
+  }
+  @include mq(small_laptop) {
+    top: 15px;
+    @include box(1px, 107px);
+  }
+  &.divider-left {
+  }
+  &.divider-right {
+    left: auto;
+    right: 0;
+    @include mq(small_laptop) {
+      display: none;
+    }
+  }
 }
 
 #sec-two-sp-slideshow {
+  @include mq(small_laptop) {
+    @include flex(space-between);
+  }
 }
 
 .sec-two-sp-slide {
+  &:nth-last-of-type(2) {
+    @include mq(small_laptop) {
+      margin: 0 30px;
+    }
+    @include mq(large_laptop) {
+      margin: 0 60px;
+    }
+  }
   span {
     display: block;
     &.sec-two-sp-title {
@@ -44,6 +125,8 @@ span.sec-two-title {
     }
     &.sec-two-description {
       margin-top: 12px;
+      max-width: 420px;
+      @include margin_lr();
       @include type(
         (
           size: 15px,
@@ -53,6 +136,10 @@ span.sec-two-title {
           weight: 600,
         )
       );
+      @include mq(small_tablet) {
+        margin-top: 27px;
+        @include quick_type(16px, 25px, null);
+      }
     }
   }
 }
@@ -62,7 +149,13 @@ span.sec-two-title {
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
+  //align-items: center;
+  @include mq(small_tablet) {
+    margin-top: 69px;
+  }
+  @include mq(small_laptop) {
+    display: none;
+  }
   .sec-two-arrow {
     svg {
       @include image();
@@ -88,6 +181,7 @@ span.sec-two-title {
   }
   #sec-two-arrow-counter {
     padding: 0 30px;
+    width: 85px;
     @include type(
       (
         size: 17px,
@@ -97,13 +191,8 @@ span.sec-two-title {
         align: center,
       )
     );
-    span {
-      display: inline-block;
-
-      &#first-number {
-      }
-      &#second-number {
-      }
+    @include mq(small_tablet) {
+      padding: 0 22px;
     }
   }
 }

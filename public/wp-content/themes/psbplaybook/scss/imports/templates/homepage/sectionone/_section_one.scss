@@ -179,6 +179,8 @@ body.logged-in {
     &#sec-one-sign-up-description {
       padding: 0 35px;
       margin-top: 24px;
+      max-width: 385px;
+      @include margin_lr();
       @include type(
         (
           size: 15px,
@@ -190,7 +192,6 @@ body.logged-in {
       );
       @include mq(small_tablet) {
         max-width: 380px;
-        @include margin_lr();
       }
       @include mq(small_laptop) {
         margin-top: 36px;

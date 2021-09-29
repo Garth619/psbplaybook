@@ -124,6 +124,18 @@ jQuery(document).ready(function ($) {
   /* Slick Carousel ( http://kenwheeler.github.io/slick/ )
 --------------------------------------------------------------------------------------- */
 
+  var $status = $("#sec-two-arrow-counter");
+  var $slickElement = $("#sec-two-sp-slideshow");
+
+  $slickElement.on(
+    "init reInit afterChange",
+    function (event, slick, currentSlide, nextSlide) {
+      //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+      var i = (currentSlide ? currentSlide : 0) + 1;
+      $status.text("0" + i + "/" + "0" + slick.slideCount);
+    }
+  );
+
   $("#sec-two-sp-slideshow").slick({
     infinite: true,
     slidesToShow: 1,
@@ -135,19 +147,13 @@ jQuery(document).ready(function ($) {
     nextArrow: "#sec-two-arrow-right",
     adaptiveHeight: true,
     dots: false,
+    responsive: [
+      {
+        breakpoint: 1170,
+        settings: "unslick",
+      },
+    ],
   });
-
-  // total slides number
-
-  function slideCount(sectionid) {
-    var slidenumber = $(`${sectionid} .slick-slide:not(.slick-cloned)`).length;
-
-    var slidecount = ("0" + slidenumber).slice(-2);
-
-    $(`${sectionid} #second-number`).append(slidecount);
-  }
-
-  slideCount("#section-two");
 
   // $("#sec-one-slider").slick({
   //   infinite: true,

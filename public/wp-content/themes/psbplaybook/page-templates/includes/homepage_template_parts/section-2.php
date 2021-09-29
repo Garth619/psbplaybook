@@ -2,9 +2,11 @@
 
   <div id='sec-two-inner'>
 
-    <span class='sec-two-title'>WHY JOIn?</span><!-- sec-two-title -->
+    <span class='sec-two-title'>WHY<br> JOIn?</span><!-- sec-two-title -->
 
     <div id='sec-two-sp-wrapper'>
+
+      <span class='divider divider-left'></span><!-- divider -->
 
       <div id='sec-two-sp-slideshow'>
 
@@ -37,29 +39,29 @@
 
       </div><!-- sec-two-sp-slideshow -->
 
-      <div id="sec-two-arrows">
-
-        <div id="sec-two-arrow-left" class="sec-two-arrow">
-
-          <?php echo file_get_contents(get_template_directory() . '/images/arrow-two.svg'); ?>
-
-        </div><!-- sec-two-arrow-left -->
-
-        <span id="sec-two-arrow-counter">
-
-          <span id="first-number">01</span>/<span id="second-number"></span>
-
-        </span><!-- sec-two-arrow-counter -->
-
-        <div id="sec-two-arrow-right" class="sec-two-arrow">
-
-          <?php echo file_get_contents(get_template_directory() . '/images/arrow-two.svg'); ?>
-
-        </div><!-- sec-two-arrow-right -->
-
-      </div><!-- sec-two-arrows -->
+      <span class='divider divider-right'></span><!-- divider -->
 
     </div><!-- sec-two-sp-wrapper -->
+
+    <div id="sec-two-arrows">
+
+      <div id="sec-two-arrow-left" class="sec-two-arrow">
+
+        <?php echo file_get_contents(get_template_directory() . '/images/arrow-two.svg'); ?>
+
+      </div><!-- sec-two-arrow-left -->
+
+      <span id="sec-two-arrow-counter">
+
+      </span><!-- sec-two-arrow-counter -->
+
+      <div id="sec-two-arrow-right" class="sec-two-arrow">
+
+        <?php echo file_get_contents(get_template_directory() . '/images/arrow-two.svg'); ?>
+
+      </div><!-- sec-two-arrow-right -->
+
+    </div><!-- sec-two-arrows -->
 
   </div><!-- sec-two-inner -->
 
