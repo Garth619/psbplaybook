@@ -1,3 +1,109 @@
 #section-two {
-  height: 3999px;
+  background: $bluefour;
+  padding: 33px 30px;
+}
+
+#sec-two-inner {
+  text-align: center;
+}
+
+span.sec-two-title {
+  display: block;
+  @include type(
+    (
+      size: 45px,
+      height: 50px,
+      family: $secondaryfont,
+      color: #fff,
+      weight: 500,
+      transform: uppercase,
+    )
+  );
+}
+
+#sec-two-sp-wrapper {
+  margin-top: 20px;
+}
+
+#sec-two-sp-slideshow {
+}
+
+.sec-two-sp-slide {
+  span {
+    display: block;
+    &.sec-two-sp-title {
+      @include type(
+        (
+          size: 17px,
+          family: $primaryfont,
+          color: $goldlight,
+          weight: 800,
+          transform: uppercase,
+        )
+      );
+    }
+    &.sec-two-description {
+      margin-top: 12px;
+      @include type(
+        (
+          size: 15px,
+          height: 22px,
+          family: $primaryfont,
+          color: #fff,
+          weight: 600,
+        )
+      );
+    }
+  }
+}
+
+#sec-two-arrows {
+  margin-top: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .sec-two-arrow {
+    svg {
+      @include image();
+      path {
+        fill: #fff;
+        transition: all 200ms ease-in-out;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          fill: $goldlight;
+        }
+      }
+    }
+  }
+  #sec-two-arrow-left {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  #sec-two-arrow-right {
+  }
+  #sec-two-arrow-counter {
+    padding: 0 30px;
+    @include type(
+      (
+        size: 17px,
+        family: $secondaryfont,
+        color: #fff,
+        weight: 500,
+        align: center,
+      )
+    );
+    span {
+      display: inline-block;
+
+      &#first-number {
+      }
+      &#second-number {
+      }
+    }
+  }
 }

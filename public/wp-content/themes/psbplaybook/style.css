@@ -1408,7 +1408,91 @@ body.logged-in #sec-one-recent-episodes {
 }
 
 #section-two {
-  height: 3999px;
+  background: #0237a4;
+  padding: 33px 30px;
+}
+
+#sec-two-inner {
+  text-align: center;
+}
+
+span.sec-two-title {
+  display: block;
+  font-size: 45px;
+  line-height: 50px;
+  font-family: "Khand", sans-serif;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-style: normal;
+  text-decoration: none;
+}
+
+#sec-two-sp-wrapper {
+  margin-top: 20px;
+}
+
+.sec-two-sp-slide span {
+  display: block;
+}
+.sec-two-sp-slide span.sec-two-sp-title {
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
+  color: #f29b3b;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-style: normal;
+  text-decoration: none;
+}
+.sec-two-sp-slide span.sec-two-description {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 22px;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+}
+
+#sec-two-arrows {
+  margin-top: 60px;
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+#sec-two-arrows .sec-two-arrow svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+#sec-two-arrows .sec-two-arrow svg path {
+  fill: #fff;
+  transition: all 200ms ease-in-out;
+}
+#sec-two-arrows .sec-two-arrow:hover svg path {
+  fill: #f29b3b;
+}
+#sec-two-arrows #sec-two-arrow-left svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+#sec-two-arrows #sec-two-arrow-counter {
+  padding: 0 30px;
+  font-size: 17px;
+  font-family: "Khand", sans-serif;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  font-style: normal;
+  text-decoration: none;
+}
+#sec-two-arrows #sec-two-arrow-counter span {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
   $("body").addClass("ready");
 
   // log in for quicktesting
-  $("body").addClass("logged-in");
+  //$("body").addClass("logged-in");
 
   /* Sign Up Form - Step One Email
   --------------------------------------------------------------------------------------- */
@@ -91,24 +91,8 @@ jQuery(document).ready(function ($) {
     }
   }
 
-  createWaypoint("section-one", "body", "fade-header", -185, null, true);
-  createWaypoint("internal-main", "body", "fade-header", -185, null, true);
-
-  createWaypoint("section-one", "body", "sticky", -250, null, true);
-  createWaypoint("internal-main", "body", "sticky", -250, null, true);
-
-  createWaypoint("section-two", "#section-two", "visible", -200, null, true);
-
-  createWaypoint(
-    "sec-three-slider",
-    "#sec-three-slider",
-    "visible",
-    300,
-    null,
-    true
-  );
-
-  createWaypoint("section-five", "#section-five", "visible", 200, null, true);
+  // createWaypoint("section-one", "body", "fade-header", -185, null, true);
+  // createWaypoint("internal-main", "body", "fade-header", -185, null, true);
 
   /* Smooth Scroll down to section on click (<a href="#id_of_section_to_be_scrolled_to">)
   --------------------------------------------------------------------------------------- */
@@ -140,197 +124,53 @@ jQuery(document).ready(function ($) {
   /* Slick Carousel ( http://kenwheeler.github.io/slick/ )
 --------------------------------------------------------------------------------------- */
 
-  $("#sec-one-slider").slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    mobileFirst: true,
-    arrows: true,
-    prevArrow: ".sec-one-arrow-left",
-    nextArrow: ".sec-one-arrow-right",
-    adaptiveHeight: true,
-    dots: false,
-    responsive: [
-      {
-        breakpoint: 767,
-        settings: {
-          adaptiveHeight: false,
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 1170,
-        settings: "unslick",
-      },
-    ],
-  });
-
-  $("#sec-three-slider").slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    mobileFirst: true,
-    arrows: true,
-    prevArrow: "#sec-three-arrow-left",
-    nextArrow: "#sec-three-arrow-right",
-    dots: false,
-    responsive: [
-      {
-        breakpoint: 767,
-        settings: {
-          centerMode: true,
-          centerPadding: "130px",
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1169,
-        settings: {
-          centerMode: true,
-          centerPadding: "345px",
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1379,
-        settings: {
-          centerMode: true,
-          centerPadding: "445px",
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1695,
-        settings: {
-          centerMode: true,
-          centerPadding: "150px",
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-    ],
-  });
-
-  function caseResultsclick() {
-    $(".sec-three-single-slide").not(this).removeClass("show");
-    $(this).toggleClass("show");
-  }
-
-  if ($(window).width() < 1170) {
-    $(".sec-three-single-slide").off().on("click", caseResultsclick);
-  }
-
-  $(window).resize(
-    _.debounce(function () {
-      if ($(window).width() < 1170) {
-        $(".sec-three-single-slide").off().on("click", caseResultsclick);
-      }
-    }, 100)
-  );
-
-  $("#sec-five-slider").slick({
+  $("#sec-two-sp-slideshow").slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     mobileFirst: true,
     arrows: true,
     fade: true,
-    prevArrow: "#sec-five-arrow-left",
-    nextArrow: "#sec-five-arrow-right",
+    prevArrow: "#sec-two-arrow-left",
+    nextArrow: "#sec-two-arrow-right",
     adaptiveHeight: true,
     dots: false,
   });
 
-  $("#awards-slider").slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    mobileFirst: true,
-    dots: true,
-    responsive: [
-      {
-        breakpoint: 767,
-        settings: {
-          arrows: true,
-          prevArrow: "#awards-arrow-left",
-          nextArrow: "#awards-arrow-right",
-          dots: false,
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 1100,
-        settings: {
-          arrows: true,
-          prevArrow: "#awards-arrow-left",
-          nextArrow: "#awards-arrow-right",
-          dots: false,
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 1399,
-        settings: {
-          arrows: true,
-          prevArrow: "#awards-arrow-left",
-          nextArrow: "#awards-arrow-right",
-          dots: false,
-          slidesToShow: 4,
-          slidesToScroll: 4,
-        },
-      },
-      {
-        breakpoint: 1600,
-        settings: {
-          arrows: true,
-          prevArrow: "#awards-arrow-left",
-          nextArrow: "#awards-arrow-right",
-          dots: false,
-          slidesToShow: 5,
-          slidesToScroll: 5,
-        },
-      },
-    ],
-  });
+  // total slides number
 
-  // $("#sec-three-slider").slick({
+  function slideCount(sectionid) {
+    var slidenumber = $(`${sectionid} .slick-slide:not(.slick-cloned)`).length;
+
+    var slidecount = ("0" + slidenumber).slice(-2);
+
+    $(`${sectionid} #second-number`).append(slidecount);
+  }
+
+  slideCount("#section-two");
+
+  // $("#sec-one-slider").slick({
   //   infinite: true,
-  //   slidesToShow: 2,
-  //   slidesToScroll: 2,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
   //   mobileFirst: true,
-  //   arrows: false,
+  //   arrows: true,
+  //   prevArrow: ".sec-one-arrow-left",
+  //   nextArrow: ".sec-one-arrow-right",
   //   adaptiveHeight: true,
   //   dots: false,
   //   responsive: [
   //     {
-  //       breakpoint: 1170,
+  //       breakpoint: 767,
   //       settings: {
   //         adaptiveHeight: false,
   //         slidesToShow: 2,
   //         slidesToScroll: 2,
-  //         dots: false,
-  //         arrows: true,
-  //         prevArrow: "#sec-three-arrow-left",
-  //         nextArrow: "#sec-three-arrow-right",
   //       },
   //     },
   //     {
-  //       breakpoint: 1380,
-  //       settings: {
-  //         adaptiveHeight: false,
-  //         slidesToShow: 3,
-  //         slidesToScroll: 3,
-  //         dots: false,
-  //         arrows: true,
-  //         prevArrow: "#sec-three-arrow-left",
-  //         nextArrow: "#sec-three-arrow-right",
-  //       },
+  //       breakpoint: 1170,
+  //       settings: "unslick",
   //     },
   //   ],
   // });
