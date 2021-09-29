@@ -615,7 +615,7 @@ h4 {
 }
 
 header {
-  background: #0e1326;
+  background: #080b17;
   width: 100%;
   display: -webkit-flex;
   display: flex;
@@ -698,7 +698,7 @@ header {
 
 #section-one {
   margin-top: 78px;
-  background: #0e1326;
+  background: #080b17;
   padding: 40px 15px 50px;
 }
 
@@ -739,8 +739,13 @@ header {
 }
 
 #sec-one-bottom {
-  background: #0e1326;
+  background: #080b17;
   margin-top: 34px;
+}
+@media screen and (min-width: 768px) {
+  #sec-one-bottom {
+    margin-top: 23px;
+  }
 }
 
 #sec-one-sign-up span {
@@ -757,6 +762,12 @@ header {
   font-style: normal;
   text-decoration: none;
 }
+@media screen and (min-width: 768px) {
+  #sec-one-sign-up span#sec-one-sign-up-title {
+    font-size: 65px;
+    line-height: 75px;
+  }
+}
 #sec-one-sign-up span#sec-one-sign-up-subtitle {
   margin-top: 5px;
   max-width: 370px;
@@ -770,6 +781,13 @@ header {
   font-style: normal;
   text-decoration: none;
 }
+@media screen and (min-width: 768px) {
+  #sec-one-sign-up span#sec-one-sign-up-subtitle {
+    max-width: 400px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
 #sec-one-sign-up span#sec-one-sign-up-description {
   padding: 0 35px;
   margin-top: 24px;
@@ -780,6 +798,13 @@ header {
   font-weight: 600;
   font-style: normal;
   text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  #sec-one-sign-up span#sec-one-sign-up-description {
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 #sec-one-sign-up span#sec-one-sign-up-description strong {
   font-weight: 600;
@@ -858,6 +883,12 @@ header {
   position: relative;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  #sec-one-sign-up form#signup-form #signup-form-submit-wrapper {
+    margin-top: 25px;
+    max-width: 188px;
+  }
 }
 #sec-one-sign-up form#signup-form #signup-form-submit-wrapper:hover::after {
   opacity: 1;

@@ -32,6 +32,9 @@
 #sec-one-bottom {
   background: $blueone;
   margin-top: 34px;
+  @include mq(small_tablet) {
+    margin-top: 23px;
+  }
 }
 
 #sec-one-bottom-inner {
@@ -52,6 +55,9 @@
           transform: uppercase,
         )
       );
+      @include mq(small_tablet) {
+        @include quick_type(65px, 75px, null);
+      }
     }
     &#sec-one-sign-up-subtitle {
       margin-top: 5px;
@@ -66,6 +72,10 @@
           weight: 600,
         )
       );
+      @include mq(small_tablet) {
+        max-width: 400px;
+        @include quick_type(18px, 25px, null);
+      }
     }
     &#sec-one-sign-up-description {
       padding: 0 35px;
@@ -79,6 +89,10 @@
           weight: 600,
         )
       );
+      @include mq(small_tablet) {
+        max-width: 380px;
+        @include margin_lr();
+      }
       strong {
         font-weight: 600;
         color: $goldlight;
@@ -157,6 +171,10 @@
       border-radius: 60px;
       margin-top: 13px;
       position: relative;
+      @include mq(small_tablet) {
+        margin-top: 25px;
+        max-width: 188px;
+      }
       &:hover {
         &::after {
           opacity: 1;
