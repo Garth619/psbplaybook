@@ -17,10 +17,20 @@
 
       </div><!-- playbook-video-overlay -->
 
-      <img class='playbook-video-image' src='<?php bloginfo('template_directory');?>/images/hero-video-img-mobile.jpg'
-        alt='' />
+      <picture>
+
+        <source media='(min-width: 1170px)' srcset='<?php bloginfo('template_directory');?>/images/hero-1920.jpg'>
+
+        <img class='playbook-video-image' src='<?php bloginfo('template_directory');?>/images/hero-video-img-mobile.jpg'
+          alt='' />
+
+      </picture>
+      <!-- remove 'data-' and 'lazyload' if needs to load on page load -->
 
     </div><!-- playbook-video -->
+
+    <span id='learn-title'>Learn from the best as part of our<br> exclusive Plaintiff Lawyer network.</span>
+    <!-- learn-title -->
 
   </div><!-- sec-one-top -->
 

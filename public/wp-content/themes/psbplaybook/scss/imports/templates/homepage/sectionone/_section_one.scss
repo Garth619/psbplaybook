@@ -2,30 +2,111 @@
   margin-top: 78px;
   background: $blueone;
   padding: 40px 15px 50px;
+  @include mq(small_laptop) {
+    margin-top: 0px;
+    height: 732px;
+    background: transparent;
+    padding: 0px;
+    @include flex();
+  }
 }
 
 #sec-one-top {
   max-width: 280px;
+  position: relative;
   @include margin_lr();
+  @include mq(small_laptop) {
+    flex-shrink: 0;
+    flex-basis: 50%;
+    order: 2;
+    max-width: 100%;
+    @include margin_lr(0);
+  }
+  @include mq(small_monitor) {
+    flex-basis: auto;
+    flex-grow: 1;
+  }
+  .playbook-video {
+    width: 100%;
+    .playbook-wistia {
+      @include mq(small_laptop) {
+        @include box(100%, 732px);
+      }
+    }
+    .playbook-video-overlay {
+      @include mq(small_laptop) {
+        @include box(100%, 732px);
+      }
+      .playbook-play-button {
+        svg {
+          @include mq(small_laptop) {
+            @include box(146px, 146px);
+          }
+        }
+      }
+    }
+    img.playbook-video-image {
+      @include mq(small_laptop) {
+        object-fit: cover;
+        object-position: right;
+        @include box(100%, 732px);
+        @include abs(0, 0, null, null);
+      }
+      @include mq(large_laptop) {
+        object-position: -265px 0;
+      }
+      @include mq(small_monitor) {
+        object-position: 0px 0;
+      }
+    }
+  }
+  span#learn-title {
+    display: none;
+    @include mq(small_laptop) {
+      display: block;
+      padding-right: 110px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid $goldlight;
+      @include abs(null, 0, 50px, null);
+      @include type(
+        (
+          size: 17px,
+          height: 25px,
+          family: $primaryfont,
+          color: #fff,
+          weight: 600,
+        )
+      );
+    }
+    @include mq(large_laptop) {
+      padding-bottom: 10px;
+      padding-right: 50px;
+    }
+    br {
+      @include mq(large_laptop) {
+        display: none;
+      }
+    }
+  }
 }
 
 .playbook-video {
   position: relative;
   .playbook-wistia {
-    @include abs(0, null, null, 0, 1);
+    @include abs(0, null, null, 0, 2);
     @include box(100%, 100%);
   }
   .playbook-video-overlay {
-    @include abs(0, null, null, 0);
+    @include abs(0, null, null, 0, 1);
     @include box(100%, 100%);
     @include flex(center, center);
     .playbook-play-button {
       svg {
       }
     }
-    img.playbook-video-image {
-      @include image();
-    }
+  }
+  img.playbook-video-image {
+    @include image();
   }
 }
 
@@ -35,12 +116,24 @@
   @include mq(small_tablet) {
     margin-top: 23px;
   }
+  @include mq(small_laptop) {
+    flex-shrink: 0;
+    flex-basis: 50%;
+    order: 1;
+    margin-top: 0;
+  }
+  @include mq(small_monitor) {
+    flex-basis: 699px;
+  }
 }
 
 #sec-one-bottom-inner {
 }
 
 #sec-one-sign-up {
+  @include mq(small_laptop) {
+    margin-top: 199px;
+  }
   span {
     display: block;
     text-align: center;
@@ -93,6 +186,9 @@
         max-width: 380px;
         @include margin_lr();
       }
+      @include mq(small_laptop) {
+        margin-top: 36px;
+      }
       strong {
         font-weight: 600;
         color: $goldlight;
@@ -101,7 +197,7 @@
   }
   form#signup-form {
     margin-top: 25px;
-    max-width: 400px;
+    max-width: 491px;
     @include margin_lr();
     ::-webkit-input-placeholder {
       color: $grey;
@@ -160,6 +256,9 @@
           weight: 600,
         )
       );
+      @include mq(small_laptop) {
+        text-align: right;
+      }
       > span {
         display: inline-block;
         color: $goldlight;
@@ -174,6 +273,9 @@
       @include mq(small_tablet) {
         margin-top: 25px;
         max-width: 188px;
+      }
+      @include mq(small_laptop) {
+        margin-top: 16px;
       }
       &:hover {
         &::after {

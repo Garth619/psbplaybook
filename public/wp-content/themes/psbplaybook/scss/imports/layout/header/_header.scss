@@ -1,5 +1,5 @@
 header {
-  background: #080b17;
+  background: $blueone;
   width: 100%;
   @include flex(space-between);
   @include fixed(0, null, null, 0, 1);
@@ -50,7 +50,7 @@ header {
           align: center,
         )
       );
-      @include contentdisplay(block, "Sign Up");
+      @include contentdisplay(block, "Sign In");
     }
   }
 }

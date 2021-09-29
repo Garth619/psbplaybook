@@ -615,7 +615,7 @@ h4 {
 }
 
 header {
-  background: #080b17;
+  background: #0e1326;
   width: 100%;
   display: -webkit-flex;
   display: flex;
@@ -692,20 +692,130 @@ header {
   text-align: center;
   font-style: normal;
   text-decoration: none;
-  content: "Sign Up";
+  content: "Sign In";
   display: block;
 }
 
 #section-one {
   margin-top: 78px;
-  background: #080b17;
+  background: #0e1326;
   padding: 40px 15px 50px;
+}
+@media screen and (min-width: 1170px) {
+  #section-one {
+    margin-top: 0px;
+    height: 732px;
+    background: transparent;
+    padding: 0px;
+    display: -webkit-flex;
+    display: flex;
+  }
 }
 
 #sec-one-top {
   max-width: 280px;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (min-width: 1170px) {
+  #sec-one-top {
+    -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+    -webkit-flex-basis: 50%;
+            flex-basis: 50%;
+    -webkit-order: 2;
+            order: 2;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1695px) {
+  #sec-one-top {
+    -webkit-flex-basis: auto;
+            flex-basis: auto;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
+  }
+}
+#sec-one-top .playbook-video {
+  width: 100%;
+}
+@media screen and (min-width: 1170px) {
+  #sec-one-top .playbook-video .playbook-wistia {
+    width: 100%;
+    height: 732px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sec-one-top .playbook-video .playbook-video-overlay {
+    width: 100%;
+    height: 732px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sec-one-top .playbook-video .playbook-video-overlay .playbook-play-button svg {
+    width: 146px;
+    height: 146px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sec-one-top .playbook-video img.playbook-video-image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: right;
+       object-position: right;
+    width: 100%;
+    height: 732px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-one-top .playbook-video img.playbook-video-image {
+    -o-object-position: -265px 0;
+       object-position: -265px 0;
+  }
+}
+@media screen and (min-width: 1695px) {
+  #sec-one-top .playbook-video img.playbook-video-image {
+    -o-object-position: 0px 0;
+       object-position: 0px 0;
+  }
+}
+#sec-one-top span#learn-title {
+  display: none;
+}
+@media screen and (min-width: 1170px) {
+  #sec-one-top span#learn-title {
+    display: block;
+    padding-right: 110px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f29b3b;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    font-size: 17px;
+    line-height: 25px;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-one-top span#learn-title {
+    padding-bottom: 10px;
+    padding-right: 50px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-one-top span#learn-title br {
+    display: none;
+  }
 }
 
 .playbook-video {
@@ -715,7 +825,7 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   height: 100%;
 }
@@ -723,6 +833,7 @@ header {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: -webkit-flex;
@@ -732,14 +843,14 @@ header {
   -webkit-align-items: center;
           align-items: center;
 }
-.playbook-video .playbook-video-overlay img.playbook-video-image {
+.playbook-video img.playbook-video-image {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
 #sec-one-bottom {
-  background: #080b17;
+  background: #0e1326;
   margin-top: 34px;
 }
 @media screen and (min-width: 768px) {
@@ -747,7 +858,29 @@ header {
     margin-top: 23px;
   }
 }
+@media screen and (min-width: 1170px) {
+  #sec-one-bottom {
+    -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+    -webkit-flex-basis: 50%;
+            flex-basis: 50%;
+    -webkit-order: 1;
+            order: 1;
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1695px) {
+  #sec-one-bottom {
+    -webkit-flex-basis: 699px;
+            flex-basis: 699px;
+  }
+}
 
+@media screen and (min-width: 1170px) {
+  #sec-one-sign-up {
+    margin-top: 199px;
+  }
+}
 #sec-one-sign-up span {
   display: block;
   text-align: center;
@@ -806,13 +939,18 @@ header {
     margin-right: auto;
   }
 }
+@media screen and (min-width: 1170px) {
+  #sec-one-sign-up span#sec-one-sign-up-description {
+    margin-top: 36px;
+  }
+}
 #sec-one-sign-up span#sec-one-sign-up-description strong {
   font-weight: 600;
   color: #f29b3b;
 }
 #sec-one-sign-up form#signup-form {
   margin-top: 25px;
-  max-width: 400px;
+  max-width: 491px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -871,12 +1009,17 @@ header {
   font-style: normal;
   text-decoration: none;
 }
+@media screen and (min-width: 1170px) {
+  #sec-one-sign-up form#signup-form span#sec-one-sign-up-required {
+    text-align: right;
+  }
+}
 #sec-one-sign-up form#signup-form span#sec-one-sign-up-required > span {
   display: inline-block;
   color: #f29b3b;
 }
 #sec-one-sign-up form#signup-form #signup-form-submit-wrapper {
-  background: linear-gradient(to bottom, #bf7b30 0%, #f49c3b 100%);
+  background: linear-gradient(to bottom, #f49c3b 0%, #bf7b30 100%);
   max-width: 228px;
   border-radius: 60px;
   margin-top: 13px;
@@ -888,6 +1031,11 @@ header {
   #sec-one-sign-up form#signup-form #signup-form-submit-wrapper {
     margin-top: 25px;
     max-width: 188px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sec-one-sign-up form#signup-form #signup-form-submit-wrapper {
+    margin-top: 16px;
   }
 }
 #sec-one-sign-up form#signup-form #signup-form-submit-wrapper:hover::after {
