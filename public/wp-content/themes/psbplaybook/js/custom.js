@@ -6,6 +6,21 @@
 jQuery(document).ready(function ($) {
   $("body").addClass("ready");
 
+  /* Sign Up Form - Step One Email
+  --------------------------------------------------------------------------------------- */
+
+  const emailField = document.getElementById("signup-form-email");
+  const okButton = document.getElementById("signup-form-submit");
+
+  emailField.addEventListener("keyup", function (event) {
+    isValidEmail = emailField.checkValidity();
+
+    if (isValidEmail) {
+      $("#signup-form-submit").attr("disabled", true);
+    } else {
+      $("#signup-form-submit").attr("disabled", false);
+    }
+  });
   /* Wistia - Call function when script needs to be loaded either by hover or waypoints
      --------------------------------------------------------------------------------------- */
 

@@ -1,15 +1,20 @@
 #section-one {
   margin-top: 78px;
   background: $blueone;
+  padding: 40px 15px 50px;
 }
 
-#sec-one-right {
+#sec-one-top {
   max-width: 280px;
   @include margin_lr();
 }
 
 .playbook-video {
   position: relative;
+  .playbook-wistia {
+    @include abs(0, null, null, 0, 1);
+    @include box(100%, 100%);
+  }
   .playbook-video-overlay {
     @include abs(0, null, null, 0);
     @include box(100%, 100%);
@@ -24,6 +29,167 @@
   }
 }
 
-#sec-one-left {
+#sec-one-bottom {
   background: $blueone;
+  margin-top: 34px;
+}
+
+#sec-one-bottom-inner {
+}
+
+#sec-one-sign-up {
+  span {
+    display: block;
+    text-align: center;
+    &#sec-one-sign-up-title {
+      @include type(
+        (
+          size: 42px,
+          height: 48px,
+          family: $secondaryfont,
+          color: $goldlight,
+          weight: 500,
+          transform: uppercase,
+        )
+      );
+    }
+    &#sec-one-sign-up-subtitle {
+      margin-top: 5px;
+      max-width: 370px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 15px,
+          height: 23px,
+          family: $primaryfont,
+          color: $greylight,
+          weight: 600,
+        )
+      );
+    }
+    &#sec-one-sign-up-description {
+      padding: 0 35px;
+      margin-top: 24px;
+      @include type(
+        (
+          size: 15px,
+          height: 22px,
+          family: $primaryfont,
+          color: $greylighttwo,
+          weight: 600,
+        )
+      );
+      strong {
+        font-weight: 600;
+        color: $goldlight;
+      }
+    }
+  }
+  form#signup-form {
+    margin-top: 25px;
+    max-width: 400px;
+    @include margin_lr();
+    ::-webkit-input-placeholder {
+      color: $grey;
+    }
+    ::-moz-placeholder {
+      color: $grey;
+    }
+    :-moz-placeholder {
+      color: $grey;
+    }
+    :-ms-input-placeholder {
+      color: $grey;
+    }
+    ::-moz-placeholder {
+      opacity: 1;
+    }
+    div.signup-form-input-wrapper {
+      position: relative;
+      &::after {
+        @include type(
+          (
+            size: 16px,
+            family: $primaryfont,
+            color: $goldlight,
+            weight: 600,
+          )
+        );
+        @include abs(24px, 24px, null, null);
+        @include contentdisplay(block, "*");
+      }
+      input {
+        border: none;
+        display: block;
+        width: 100%;
+        border-radius: 6px;
+        background: #fff;
+        padding: 19px 40px 19px 15px;
+        @include type(
+          (
+            size: 16px,
+            family: $primaryfont,
+            color: $grey,
+            weight: 600,
+          )
+        );
+      }
+    }
+    span#sec-one-sign-up-required {
+      display: block;
+      margin-top: 15px;
+      @include type(
+        (
+          size: 14px,
+          family: $primaryfont,
+          color: #fff,
+          weight: 600,
+        )
+      );
+      > span {
+        display: inline-block;
+        color: $goldlight;
+      }
+    }
+    #signup-form-submit-wrapper {
+      background: $goldgradient;
+      max-width: 228px;
+      border-radius: 60px;
+      margin-top: 13px;
+      position: relative;
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+      }
+      &::after {
+        border-radius: 60px;
+        background: $golddark;
+        opacity: 0;
+        transition: all 200ms ease-in-out;
+        @include box(100%, 100%);
+        @include abs(0, null, null, 0);
+        @include contentdisplay();
+      }
+      @include margin_lr();
+      button {
+        padding: 13px 25px;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        border: none;
+        background: transparent;
+        @include type(
+          (
+            size: 22px,
+            height: 25px,
+            family: $secondaryfont,
+            color: #fff,
+            weight: 500,
+            align: center,
+          )
+        );
+      }
+    }
+  }
 }
