@@ -124,6 +124,18 @@
 
           </div><!-- sec-one-single-episode -->
 
+          <div class='sec-one-single-episode'>
+
+            <a href='<?php bloginfo('bloginfo');?>/href'>
+
+              <span>View All</span>
+
+              <img src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+
+            </a>
+
+          </div><!-- sec-one-single-episode -->
+
         </div><!-- sec-one-recent-episodes-wrapper -->
 
       </div><!-- sec-one-recent-episodes -->

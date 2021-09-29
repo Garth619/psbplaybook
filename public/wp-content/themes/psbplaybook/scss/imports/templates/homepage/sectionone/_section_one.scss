@@ -114,7 +114,7 @@
   background: $blueone;
   margin-top: 34px;
   @include mq(small_tablet) {
-    margin-top: 23px;
+    margin-top: 27px;
   }
   @include mq(small_laptop) {
     flex-shrink: 0;
@@ -329,6 +329,15 @@ body.logged-in {
 #sec-one-recent-episodes {
   display: none;
   padding-top: 24px;
+  max-width: 420px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    max-width: 510px;
+  }
+  @include mq(small_laptop) {
+    padding-top: 175px;
+    max-width: 415px;
+  }
   span {
     display: block;
     &#sec-one-recent-episodes-title {
@@ -343,6 +352,10 @@ body.logged-in {
           transform: uppercase,
         )
       );
+      @include mq(small_tablet) {
+        text-align: left;
+        @include quick_type(50px, 60px, null);
+      }
     }
   }
 }
@@ -357,7 +370,19 @@ body.logged-in {
     border-bottom: 1px solid #313958;
     padding: 15px 10px;
     @include flex(space-between, center);
+    @include mq(small_tablet) {
+      padding: 28px 10px 28px 0px;
+    }
+    @include mq(small_laptop) {
+      padding: 16px 10px 16px 0px;
+    }
+    &:hover {
+      span {
+        color: $goldlight;
+      }
+    }
     span {
+      transition: all 200ms ease-in-out;
       @include type(
         (
           size: 16px,
@@ -372,6 +397,10 @@ body.logged-in {
       margin-left: 40px;
       margin-right: 30px;
       @include image();
+      @include mq(small_tablet) {
+        margin-left: 6px;
+        margin-right: 0px;
+      }
     }
   }
   &:last-of-type {

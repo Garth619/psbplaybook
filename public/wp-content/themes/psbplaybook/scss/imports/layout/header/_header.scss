@@ -2,7 +2,7 @@ header {
   background: $blueone;
   width: 100%;
   @include flex(space-between);
-  @include fixed(0, null, null, 0, 1);
+  @include fixed(0, null, null, 0, 5);
   @include mq(small_tablet) {
     @include abs(0, null, null, 0);
   }
@@ -32,8 +32,9 @@ header {
 }
 
 #header-right {
-  nav {
-    display: none;
+  @include mq(small_laptop) {
+    flex-grow: 1;
+    @include flex(flex-end);
   }
   #menu-wrapper {
     background: $greylighttwo;
