@@ -70,6 +70,64 @@
 
       </div><!-- sec-one-sign-up -->
 
+      <div id='sec-one-recent-episodes'>
+
+        <span id='sec-one-recent-episodes-title'>RECENT EPISODEs</span><!-- sec-one-recent-episodes-title -->
+
+        <div id='sec-one-recent-episodes-wrapper'>
+
+          <div class='sec-one-single-episode'>
+
+            <a href='<?php bloginfo('bloginfo');?>/href'>
+
+              <span>Episode 9 - Pierce v. Murrieta Valley Unified School District</span>
+
+              <img src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+
+            </a>
+
+          </div><!-- sec-one-single-episode -->
+
+          <div class='sec-one-single-episode'>
+
+            <a href='<?php bloginfo('bloginfo');?>/href'>
+
+              <span>Episode 9 - Pierce v. Murrieta Valley Unified School District</span>
+
+              <img src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+
+            </a>
+
+          </div><!-- sec-one-single-episode -->
+
+          <div class='sec-one-single-episode'>
+
+            <a href='<?php bloginfo('bloginfo');?>/href'>
+
+              <span>Episode 9 - Pierce v. Murrieta Valley Unified School District</span>
+
+              <img src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+
+            </a>
+
+          </div><!-- sec-one-single-episode -->
+
+          <div class='sec-one-single-episode'>
+
+            <a href='<?php bloginfo('bloginfo');?>/href'>
+
+              <span>Episode 9 - Pierce v. Murrieta Valley Unified School District</span>
+
+              <img src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+
+            </a>
+
+          </div><!-- sec-one-single-episode -->
+
+        </div><!-- sec-one-recent-episodes-wrapper -->
+
+      </div><!-- sec-one-recent-episodes -->
+
     </div><!-- sec-one-bottom-inner -->
 
   </div><!-- sec-one-bottom -->

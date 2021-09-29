@@ -101,7 +101,7 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
     <div id='header-right'>
 
       <nav>
-        <?php // wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
+        <?php wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
       </nav>
 
       <div id='menu-wrapper'>

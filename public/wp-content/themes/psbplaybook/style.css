@@ -696,6 +696,20 @@ header {
   display: block;
 }
 
+@media screen and (min-width: 1170px) {
+  body.logged-in #header-right #menu-wrapper {
+    display: none;
+  }
+}
+body.logged-in #header-right #menu-wrapper::after {
+  content: "Menu";
+  display: block;
+}
+
+nav {
+  display: none;
+}
+
 #section-one {
   margin-top: 78px;
   background: #0e1326;
@@ -874,6 +888,10 @@ header {
     -webkit-flex-basis: 699px;
             flex-basis: 699px;
   }
+}
+
+body.logged-in #sec-one-sign-up {
+  display: none;
 }
 
 @media screen and (min-width: 1170px) {
@@ -1069,6 +1087,61 @@ header {
   text-align: center;
   font-style: normal;
   text-decoration: none;
+}
+
+body.logged-in #sec-one-recent-episodes {
+  display: block;
+}
+
+#sec-one-recent-episodes {
+  display: none;
+  padding-top: 24px;
+}
+#sec-one-recent-episodes span {
+  display: block;
+}
+#sec-one-recent-episodes span#sec-one-recent-episodes-title {
+  font-size: 45px;
+  line-height: 55px;
+  font-family: "Khand", sans-serif;
+  color: #f29b3b;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.sec-one-single-episode a {
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid #313958;
+  padding: 15px 10px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.sec-one-single-episode a span {
+  font-size: 16px;
+  line-height: 25px;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+}
+.sec-one-single-episode a img {
+  margin-left: 40px;
+  margin-right: 30px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.sec-one-single-episode:last-of-type a {
+  border: none;
 }
 
 #section-two {

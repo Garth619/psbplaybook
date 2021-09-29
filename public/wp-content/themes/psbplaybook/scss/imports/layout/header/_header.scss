@@ -54,3 +54,16 @@ header {
     }
   }
 }
+
+body.logged-in {
+  #header-right {
+    #menu-wrapper {
+      @include mq(small_laptop) {
+        display: none;
+      }
+      &::after {
+        @include contentdisplay(block, "Menu");
+      }
+    }
+  }
+}
