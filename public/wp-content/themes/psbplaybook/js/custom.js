@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
   $("body").addClass("ready");
 
   // log in for quicktesting
-  //$("body").addClass("logged-in");
+  $("body").addClass("logged-in");
 
   /* Sign Up Form - Step One Email
   --------------------------------------------------------------------------------------- */

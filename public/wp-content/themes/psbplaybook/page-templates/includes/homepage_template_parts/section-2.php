@@ -2,7 +2,9 @@
 
   <div id='sec-two-inner'>
 
-    <span class='sec-two-title'>WHY<br> JOIn?</span><!-- sec-two-title -->
+    <span class='sec-two-title sign-in'>WHY<br> JOIn?</span><!-- sec-two-title -->
+
+    <span class='sec-two-title logged-in'>The<br> Play<br> book</span><!-- sec-two-title -->
 
     <div id='sec-two-sp-wrapper'>
 
