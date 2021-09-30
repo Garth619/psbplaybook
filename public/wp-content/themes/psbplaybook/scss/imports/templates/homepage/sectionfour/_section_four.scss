@@ -1,0 +1,115 @@
+#section-four {
+  padding: 0 30px 50px;
+  @include mq(small_tablet) {
+    padding: 0 77px 120px;
+  }
+  @include mq(small_laptop) {
+    padding: 0 85px 80px;
+  }
+  @include mq(large_laptop) {
+    padding: 0 85px 145px;
+  }
+  @include mq(small_monitor) {
+    padding: 0 85px 165px;
+  }
+}
+
+#sec-four-inner {
+  @include mq(small_tablet) {
+    max-width: 765px;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    max-width: 100%;
+  }
+  @include mq(large_laptop) {
+    max-width: 1195px;
+  }
+  @include mq(small_monitor) {
+    max-width: 1215px;
+  }
+}
+
+span {
+  display: block;
+  &#sec-four-subtitle {
+    @include type(
+      (
+        size: 18px,
+        height: 23px,
+        spacing: 1.8px,
+        family: $primaryfont,
+        color: $golddark,
+        weight: 800,
+        align: center,
+        transform: uppercase,
+      )
+    );
+  }
+  &#sec-four-title {
+    margin-top: 23px;
+    margin-bottom: 20px;
+    @include type(
+      (
+        size: 50px,
+        height: 50px,
+        family: $secondaryfont,
+        weight: 500,
+        transform: uppercase,
+        align: center,
+      )
+    );
+    @include mq(small_tablet) {
+      margin-top: 33px;
+      margin-bottom: 26px;
+      max-width: 590px;
+      @include margin_lr();
+      @include quick_type(70px, 70px, null);
+    }
+    @include mq(small_laptop) {
+      margin-bottom: 96px;
+      max-width: 660px;
+      @include margin_lr();
+      @include quick_type(80px, 75px, null);
+    }
+    @include mq(small_monitor) {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+#sec-four-content-wrapper {
+  @include mq(small_laptop) {
+    @include flex(space-between);
+  }
+}
+
+#sec-four-content {
+}
+
+#sec-four-image {
+  display: none;
+  @include mq(small_tablet) {
+    display: block;
+    padding-top: 15px;
+  }
+  @include mq(small_laptop) {
+    flex-shrink: 0;
+    margin-left: 60px;
+    padding-top: 20px;
+  }
+  @include mq(large_laptop) {
+    margin-left: 100px;
+  }
+  @include mq(small_monitor) {
+    padding-top: 10px;
+  }
+  img {
+    width: 478px;
+    @include image();
+    @include margin_lr();
+    @include mq(small_laptop) {
+      width: 535px;
+    }
+  }
+}

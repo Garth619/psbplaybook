@@ -27,7 +27,9 @@
     flex-grow: 1;
   }
   .playbook-video {
-    width: 100%;
+    @include mq(small_laptop) {
+      @include box(100%, 732px);
+    }
     .playbook-wistia {
       @include mq(small_laptop) {
         @include box(100%, 732px);
@@ -67,7 +69,7 @@
       padding-right: 110px;
       padding-bottom: 20px;
       border-bottom: 2px solid $goldlight;
-      @include abs(null, 0, 50px, null);
+      @include abs(null, 0, 50px, null, 1);
       @include type(
         (
           size: 17px,
@@ -87,26 +89,6 @@
         display: none;
       }
     }
-  }
-}
-
-.playbook-video {
-  position: relative;
-  .playbook-wistia {
-    @include abs(0, null, null, 0, 2);
-    @include box(100%, 100%);
-  }
-  .playbook-video-overlay {
-    @include abs(0, null, null, 0, 1);
-    @include box(100%, 100%);
-    @include flex(center, center);
-    .playbook-play-button {
-      svg {
-      }
-    }
-  }
-  img.playbook-video-image {
-    @include image();
   }
 }
 

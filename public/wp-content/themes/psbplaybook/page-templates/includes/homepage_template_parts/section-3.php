@@ -32,7 +32,7 @@
 
     <div id='sec-three-bottom'>
 
-      <span id='sec-three-prev-episodes-title' class='sec-three-subtitle'>PREVIOUS EPISODEs OF PSB PLAYBOOK</span>
+      <span id='sec-three-prev-episodes-title' class='sec-three-subtitle'>PREVIOUS EPISODEs OF PSB&nbsp;PLAYBOOK</span>
       <!-- sec-three-prev-episodes -->
 
       <div id='sec-three-prev'>

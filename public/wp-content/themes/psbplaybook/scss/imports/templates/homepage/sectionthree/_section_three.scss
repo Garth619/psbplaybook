@@ -1,13 +1,16 @@
 #section-three {
-  padding: 50px 15px;
+  padding: 50px 15px 32px;
   @include mq(small_tablet) {
     padding: 70px 15px;
   }
   @include mq(small_laptop) {
-    padding: 113px 51px 113px 85px;
+    padding: 113px 51px 65px 85px;
   }
   @include mq(large_laptop) {
     padding: 152px 75px 65px;
+  }
+  @include mq(small_monitor) {
+    padding: 152px 75px 100px;
   }
 }
 
@@ -82,10 +85,13 @@ span#sec-three-title {
     text-decoration: none;
     #sec-three-large-image {
       padding: 0 15px;
+      overflow: hidden;
       @include mq(small_tablet) {
         padding: 0;
       }
       img {
+        transform: scale(1);
+        transition: all 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
         @include image();
       }
     }
@@ -107,6 +113,15 @@ span#sec-three-title {
             color: $blueone,
           )
         );
+      }
+    }
+  }
+  &:hover {
+    a {
+      #sec-three-large-image {
+        img {
+          transform: scale(1.1);
+        }
       }
     }
   }
@@ -164,9 +179,13 @@ span {
   &#sec-three-prev-episodes-title {
     padding-left: 75px;
     padding-right: 75px;
+    @include mq(small_tablet) {
+      text-align: center;
+    }
     @include mq(small_laptop) {
       padding-left: 0px;
       padding-right: 0px;
+      text-align: left;
     }
     @include mq(large_laptop) {
       padding: 0px 0px 20px;
@@ -230,6 +249,8 @@ span {
         padding: 0 20px;
         transition: all 200ms ease-in-out;
         text-decoration: none;
+        max-width: 340px;
+        @include margin_lr();
         @include type(
           (
             size: 18px,
@@ -241,6 +262,7 @@ span {
         );
         @include mq(small_tablet) {
           padding: 0;
+          max-width: 100%;
         }
         br {
           @include mq(small_monitor) {
@@ -256,7 +278,7 @@ span {
             height: 15px,
             family: $primaryfont,
             weight: 500,
-            color: $blueone,
+            color: $grey,
           )
         );
       }
@@ -277,7 +299,6 @@ span {
     margin-left: 60px;
   }
   .playbook-video {
-    background: pink;
     @include margin_lr();
     @include box(241px, 128px);
     .playbook-video-overlay {
