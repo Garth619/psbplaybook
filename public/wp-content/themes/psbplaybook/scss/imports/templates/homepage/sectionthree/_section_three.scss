@@ -104,6 +104,7 @@ span#sec-three-title {
       }
       &#sec-three-description {
         margin-top: 15px;
+        padding: 0 15px;
         @include type(
           (
             size: 17px,
@@ -113,6 +114,9 @@ span#sec-three-title {
             color: $blueone,
           )
         );
+        @include mq(small_tablet) {
+          padding: 0px;
+        }
       }
     }
   }

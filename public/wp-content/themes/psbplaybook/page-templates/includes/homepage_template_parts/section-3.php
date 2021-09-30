@@ -9,7 +9,7 @@
 
       <div id='sec-three-featured-post'>
 
-        <a href='<?php bloginfo('bloginfo');?>/href'>
+        <a href=''>
 
           <div id='sec-three-large-image'>
 

@@ -1,4 +1,141 @@
 #section-five {
-  height: 1000px;
-  background: $blueone;
+  background: url(images/bg-pattern.jpg) top left repeat;
+  padding: 58px 60px;
+}
+
+#sec-five-inner {
+  text-align: center;
+}
+
+span#sec-five-title {
+  display: block;
+  @include type(
+    (
+      size: 50px,
+      height: 50px,
+      family: $secondaryfont,
+      color: $goldlight,
+      weight: 500,
+      transform: uppercase,
+    )
+  );
+}
+
+#sec-five-fs-wrapper {
+  @include flex(center);
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.sec-five-arrow {
+  margin-top: 30px;
+  border: 2px $goldlight solid;
+  border-radius: 50%;
+  background: transparent;
+
+  @include margin_lr(19px);
+  transition: all 200ms ease-in-out;
+  @include flex(center, center);
+  @include box(67px, 67px);
+  &:hover {
+    background: $goldlight;
+  }
+  svg {
+    @include image();
+  }
+}
+
+#sec-five-arrow-left {
+  order: 2;
+  svg {
+    margin-left: -3px;
+  }
+}
+
+#sec-five-arrow-right {
+  order: 3;
+  svg {
+    margin-left: 3px;
+    transform: rotate(180deg);
+  }
+}
+
+#sec-five-fs-slideshow {
+  order: 1;
+}
+
+.sec-five-fs-slide {
+  position: relative;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 20px;
+  a {
+    display: block;
+    text-decoration: none;
+    .sec-five-fs-img {
+      position: relative;
+      &::after {
+        opacity: 0;
+        background: rgba(14, 19, 38, 0.85);
+        justify-content: center;
+        align-items: center;
+        transition: all 200ms ease-in-out;
+        @include box(100%, 100%);
+        @include contentdisplay(flex, "View Bio");
+        @include abs(0, null, null, 0, 1);
+        @include type(
+          (
+            size: 15px,
+            family: $primaryfont,
+            color: #fff,
+            weight: 800,
+          )
+        );
+      }
+      img {
+        @include image();
+      }
+    }
+    span {
+      display: block;
+      color: #fff;
+      &.sec-five-fs-name {
+        margin-top: 15px;
+        transition: all 200ms ease-in-out;
+        @include type(
+          (
+            size: 18px,
+            height: 23px,
+            family: $primaryfont,
+            weight: 800,
+            transform: capitalize,
+          )
+        );
+      }
+      &.sec-five-fs-position {
+        margin-top: 5px;
+        @include type(
+          (
+            size: 15px,
+            height: 19px,
+            family: $secondaryfont,
+            color: $greylight,
+            weight: 600,
+            transform: uppercase,
+          )
+        );
+      }
+    }
+  }
+  &:hover {
+    a {
+      span.sec-five-fs-name {
+        color: $goldlight;
+      }
+      .sec-five-fs-img {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
