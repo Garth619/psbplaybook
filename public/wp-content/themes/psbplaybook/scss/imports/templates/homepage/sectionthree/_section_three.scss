@@ -6,11 +6,22 @@
   @include mq(small_laptop) {
     padding: 113px 51px 113px 85px;
   }
+  @include mq(large_laptop) {
+    padding: 152px 75px 65px;
+  }
 }
 
 #sec-three-inner {
   @include mq(small_laptop) {
-    @include flex();
+    max-width: 1115px;
+    @include margin_lr();
+    @include flex(space-between);
+  }
+  @include mq(large_laptop) {
+    max-width: 1305px;
+  }
+  @include mq(small_laptop) {
+    max-width: 1445px;
   }
 }
 
@@ -18,6 +29,9 @@
   @include mq(small_laptop) {
     flex-shrink: 0;
     flex-basis: 475px;
+  }
+  @include mq(large_laptop) {
+    flex-basis: 575px;
   }
 }
 
@@ -40,6 +54,7 @@ span#sec-three-title {
   @include mq(small_laptop) {
     text-align: left;
   }
+
   br {
     @include mq(small_tablet) {
       display: none;
@@ -57,6 +72,10 @@ span#sec-three-title {
   @include mq(small_laptop) {
     margin-top: 28px;
     max-width: 100%;
+    @include margin_lr(0);
+  }
+  @include mq(large_laptop) {
+    margin-top: 41px;
   }
   a {
     display: block;
@@ -112,6 +131,9 @@ span.sec-three-subtitle {
     padding: 40px 0px 20px;
     text-align: left;
   }
+  @include mq(large_laptop) {
+    padding: 31px 0px 20px;
+  }
 }
 
 #sec-three-bottom {
@@ -123,6 +145,11 @@ span.sec-three-subtitle {
   @include mq(small_laptop) {
     padding-top: 0;
     margin-left: 75px;
+    margin-right: 0;
+    max-width: 100%;
+  }
+  @include mq(small_monitor) {
+    margin-left: 195px;
   }
 }
 
@@ -140,6 +167,9 @@ span {
     @include mq(small_laptop) {
       padding-left: 0px;
       padding-right: 0px;
+    }
+    @include mq(large_laptop) {
+      padding: 0px 0px 20px;
     }
   }
 }
@@ -212,6 +242,11 @@ span {
         @include mq(small_tablet) {
           padding: 0;
         }
+        br {
+          @include mq(small_monitor) {
+            display: none;
+          }
+        }
       }
       &.sec-three-prev-date {
         margin-top: 12px;
@@ -237,6 +272,9 @@ span {
   }
   @include mq(small_laptop) {
     margin-left: 40px;
+  }
+  @include mq(small_laptop) {
+    margin-left: 60px;
   }
   .playbook-video {
     background: pink;

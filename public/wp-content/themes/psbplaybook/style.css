@@ -1674,11 +1674,31 @@ span.divider.divider-right {
     padding: 113px 51px 113px 85px;
   }
 }
+@media screen and (min-width: 1380px) {
+  #section-three {
+    padding: 152px 75px 65px;
+  }
+}
 
 @media screen and (min-width: 1170px) {
   #sec-three-inner {
+    max-width: 1115px;
+    margin-left: auto;
+    margin-right: auto;
     display: -webkit-flex;
     display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-three-inner {
+    max-width: 1305px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sec-three-inner {
+    max-width: 1445px;
   }
 }
 
@@ -1688,6 +1708,12 @@ span.divider.divider-right {
             flex-shrink: 0;
     -webkit-flex-basis: 475px;
             flex-basis: 475px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-three-top {
+    -webkit-flex-basis: 575px;
+            flex-basis: 575px;
   }
 }
 
@@ -1735,6 +1761,13 @@ span#sec-three-title {
   #sec-three-featured-post {
     margin-top: 28px;
     max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-three-featured-post {
+    margin-top: 41px;
   }
 }
 #sec-three-featured-post a {
@@ -1793,6 +1826,11 @@ span.sec-three-subtitle {
     text-align: left;
   }
 }
+@media screen and (min-width: 1380px) {
+  span.sec-three-subtitle {
+    padding: 31px 0px 20px;
+  }
+}
 
 #sec-three-bottom {
   max-width: 615px;
@@ -1808,6 +1846,13 @@ span.sec-three-subtitle {
   #sec-three-bottom {
     padding-top: 0;
     margin-left: 75px;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1695px) {
+  #sec-three-bottom {
+    margin-left: 195px;
   }
 }
 
@@ -1828,6 +1873,11 @@ span#sec-three-prev-episodes-title {
   span#sec-three-prev-episodes-title {
     padding-left: 0px;
     padding-right: 0px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  span#sec-three-prev-episodes-title {
+    padding: 0px 0px 20px;
   }
 }
 
@@ -1904,6 +1954,11 @@ span#sec-three-prev-episodes-title {
     padding: 0;
   }
 }
+@media screen and (min-width: 1695px) {
+  .sec-three-prev-single-content a span.sec-three-prev-title br {
+    display: none;
+  }
+}
 .sec-three-prev-single-content a span.sec-three-prev-date {
   margin-top: 12px;
   font-size: 13px;
@@ -1926,6 +1981,11 @@ span#sec-three-prev-episodes-title {
 @media screen and (min-width: 1170px) {
   .sec-three-prev-single-video {
     margin-left: 40px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .sec-three-prev-single-video {
+    margin-left: 60px;
   }
 }
 .sec-three-prev-single-video .playbook-video {
