@@ -1,6 +1,12 @@
 #section-five {
   background: url(images/bg-pattern.jpg) top left repeat;
   padding: 58px 60px;
+  @include mq(small_tablet) {
+    padding: 108px 35px;
+  }
+  @include mq(small_laptop) {
+    padding: 115px 35px;
+  }
 }
 
 #sec-five-inner {
@@ -19,24 +25,48 @@ span#sec-five-title {
       transform: uppercase,
     )
   );
+  @include mq(small_tablet) {
+    @include quick_type(75px, 75px, null);
+  }
 }
 
 #sec-five-fs-wrapper {
   @include flex(center);
   flex-wrap: wrap;
   margin-top: 25px;
+  max-width: 340px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    margin-top: 75px;
+    max-width: 800px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  @include mq(small_laptop) {
+    max-width: 1030px;
+  }
+  @include mq(large_laptop) {
+    max-width: 1220px;
+  }
+  @include mq(small_monitor) {
+    max-width: 1700px;
+  }
 }
 
 .sec-five-arrow {
   margin-top: 30px;
   border: 2px $goldlight solid;
   border-radius: 50%;
+  flex-shrink: 0;
   background: transparent;
-
   @include margin_lr(19px);
   transition: all 200ms ease-in-out;
   @include flex(center, center);
   @include box(67px, 67px);
+  @include mq(small_tablet) {
+    margin-top: 130px;
+    @include margin_lr(0);
+  }
   &:hover {
     background: $goldlight;
   }
@@ -47,6 +77,9 @@ span#sec-five-title {
 
 #sec-five-arrow-left {
   order: 2;
+  @include mq(small_tablet) {
+    order: 1;
+  }
   svg {
     margin-left: -3px;
   }
@@ -62,12 +95,38 @@ span#sec-five-title {
 
 #sec-five-fs-slideshow {
   order: 1;
+  width: 100%;
+  @include mq(small_tablet) {
+    order: 2;
+    width: calc(100% - 190px);
+  }
+  @include mq(small_laptop) {
+    width: calc(100% - 285px);
+  }
+  @include mq(large_laptop) {
+    width: calc(100% - 225px);
+  }
+  .slick-slide {
+    margin: 0 17px;
+    @include mq(small_laptop) {
+      margin: 0 10px;
+    }
+  }
+  .slick-list {
+    margin: 0 -17px;
+    @include mq(small_laptop) {
+      margin: 0 -10px;
+    }
+  }
 }
 
 .sec-five-fs-slide {
   position: relative;
   border-bottom: 1px solid #fff;
   padding-bottom: 20px;
+  @include mq(small_tablet) {
+    border-bottom: 0;
+  }
   a {
     display: block;
     text-decoration: none;
@@ -92,12 +151,16 @@ span#sec-five-title {
         );
       }
       img {
+        width: 100%;
         @include image();
       }
     }
     span {
       display: block;
       color: #fff;
+      @include mq(small_tablet) {
+        text-align: left;
+      }
       &.sec-five-fs-name {
         margin-top: 15px;
         transition: all 200ms ease-in-out;
@@ -110,6 +173,9 @@ span#sec-five-title {
             transform: capitalize,
           )
         );
+        @include mq(small_tablet) {
+          margin-top: 18px;
+        }
       }
       &.sec-five-fs-position {
         margin-top: 5px;

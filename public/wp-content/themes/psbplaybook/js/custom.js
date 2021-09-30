@@ -155,31 +155,56 @@ jQuery(document).ready(function ($) {
     ],
   });
 
-  // $("#sec-one-slider").slick({
-  //   infinite: true,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   mobileFirst: true,
-  //   arrows: true,
-  //   prevArrow: ".sec-one-arrow-left",
-  //   nextArrow: ".sec-one-arrow-right",
-  //   adaptiveHeight: true,
-  //   dots: false,
-  //   responsive: [
-  //     {
-  //       breakpoint: 767,
-  //       settings: {
-  //         adaptiveHeight: false,
-  //         slidesToShow: 2,
-  //         slidesToScroll: 2,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 1170,
-  //       settings: "unslick",
-  //     },
-  //   ],
-  // });
+  $("#sec-five-fs-slideshow").slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    fade: true,
+    arrows: true,
+    prevArrow: "#sec-five-arrow-left",
+    nextArrow: "#sec-five-arrow-right",
+    adaptiveHeight: true,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          adaptiveHeight: false,
+          fade: false,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1170,
+        settings: {
+          adaptiveHeight: false,
+          fade: false,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 1380,
+        settings: {
+          adaptiveHeight: false,
+          fade: false,
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 1695,
+        settings: {
+          adaptiveHeight: false,
+          fade: false,
+          slidesToShow: 6,
+          slidesToScroll: 6,
+        },
+      },
+    ],
+  });
 
   /* Remove "#" from menu anchor items to avoid jump to the top of the page
 --------------------------------------------------------------------------------------- */

@@ -2230,6 +2230,16 @@ span#sec-four-title {
   background: url(images/bg-pattern.jpg) top left repeat;
   padding: 58px 60px;
 }
+@media screen and (min-width: 768px) {
+  #section-five {
+    padding: 108px 35px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #section-five {
+    padding: 115px 35px;
+  }
+}
 
 #sec-five-inner {
   text-align: center;
@@ -2246,6 +2256,12 @@ span#sec-five-title {
   font-style: normal;
   text-decoration: none;
 }
+@media screen and (min-width: 768px) {
+  span#sec-five-title {
+    font-size: 75px;
+    line-height: 75px;
+  }
+}
 
 #sec-five-fs-wrapper {
   display: -webkit-flex;
@@ -2255,12 +2271,42 @@ span#sec-five-title {
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
   margin-top: 25px;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  #sec-five-fs-wrapper {
+    margin-top: 75px;
+    max-width: 800px;
+    -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sec-five-fs-wrapper {
+    max-width: 1030px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-five-fs-wrapper {
+    max-width: 1220px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  #sec-five-fs-wrapper {
+    max-width: 1700px;
+  }
 }
 
 .sec-five-arrow {
   margin-top: 30px;
   border: 2px #f29b3b solid;
   border-radius: 50%;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
   background: transparent;
   margin-left: 19px;
   margin-right: 19px;
@@ -2274,6 +2320,13 @@ span#sec-five-title {
   width: 67px;
   height: 67px;
 }
+@media screen and (min-width: 768px) {
+  .sec-five-arrow {
+    margin-top: 130px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .sec-five-arrow:hover {
   background: #f29b3b;
 }
@@ -2286,6 +2339,12 @@ span#sec-five-title {
 #sec-five-arrow-left {
   -webkit-order: 2;
           order: 2;
+}
+@media screen and (min-width: 768px) {
+  #sec-five-arrow-left {
+    -webkit-order: 1;
+            order: 1;
+  }
 }
 #sec-five-arrow-left svg {
   margin-left: -3px;
@@ -2304,12 +2363,51 @@ span#sec-five-title {
 #sec-five-fs-slideshow {
   -webkit-order: 1;
           order: 1;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  #sec-five-fs-slideshow {
+    -webkit-order: 2;
+            order: 2;
+    width: calc(100% - 190px);
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sec-five-fs-slideshow {
+    width: calc(100% - 285px);
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-five-fs-slideshow {
+    width: calc(100% - 225px);
+  }
+}
+#sec-five-fs-slideshow .slick-slide {
+  margin: 0 17px;
+}
+@media screen and (min-width: 1170px) {
+  #sec-five-fs-slideshow .slick-slide {
+    margin: 0 10px;
+  }
+}
+#sec-five-fs-slideshow .slick-list {
+  margin: 0 -17px;
+}
+@media screen and (min-width: 1170px) {
+  #sec-five-fs-slideshow .slick-list {
+    margin: 0 -10px;
+  }
 }
 
 .sec-five-fs-slide {
   position: relative;
   border-bottom: 1px solid #fff;
   padding-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .sec-five-fs-slide {
+    border-bottom: 0;
+  }
 }
 .sec-five-fs-slide a {
   display: block;
@@ -2343,6 +2441,7 @@ span#sec-five-title {
   text-decoration: none;
 }
 .sec-five-fs-slide a .sec-five-fs-img img {
+  width: 100%;
   max-width: 100%;
   height: auto;
   display: block;
@@ -2350,6 +2449,11 @@ span#sec-five-title {
 .sec-five-fs-slide a span {
   display: block;
   color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .sec-five-fs-slide a span {
+    text-align: left;
+  }
 }
 .sec-five-fs-slide a span.sec-five-fs-name {
   margin-top: 15px;
@@ -2361,6 +2465,11 @@ span#sec-five-title {
   text-transform: capitalize;
   font-style: normal;
   text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .sec-five-fs-slide a span.sec-five-fs-name {
+    margin-top: 18px;
+  }
 }
 .sec-five-fs-slide a span.sec-five-fs-position {
   margin-top: 5px;
