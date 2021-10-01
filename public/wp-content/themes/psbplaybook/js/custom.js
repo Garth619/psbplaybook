@@ -7,24 +7,26 @@ jQuery(document).ready(function ($) {
   $("body").addClass("ready");
 
   // log in for quicktesting
-  //$("body").addClass("logged-in");
+  $("body").addClass("logged-in");
 
   /* Sign Up Form - Step One Email
   --------------------------------------------------------------------------------------- */
 
-  const emailField = document.getElementById("signup-form-email");
-  const okButton = document.getElementById("signup-form-submit");
+  if ($("body").hasClass("page-template-template-home")) {
+    const emailField = document.getElementById("signup-form-email");
+    const okButton = document.getElementById("signup-form-submit");
 
-  emailField.addEventListener("keyup", function (event) {
-    isValidEmail = emailField.checkValidity();
+    emailField.addEventListener("keyup", function (event) {
+      isValidEmail = emailField.checkValidity();
 
-    if (isValidEmail) {
-      console.log("send it");
-      $("#signup-form-submit").attr("disabled", true);
-    } else {
-      $("#signup-form-submit").attr("disabled", false);
-    }
-  });
+      if (isValidEmail) {
+        console.log("send it");
+        $("#signup-form-submit").attr("disabled", true);
+      } else {
+        $("#signup-form-submit").attr("disabled", false);
+      }
+    });
+  }
   /* Wistia - Call function when script needs to be loaded either by hover or waypoints
      --------------------------------------------------------------------------------------- */
 
@@ -94,8 +96,8 @@ jQuery(document).ready(function ($) {
     }
   }
 
-  // createWaypoint("section-one", "body", "fade-header", -185, null, true);
-  // createWaypoint("internal-main", "body", "fade-header", -185, null, true);
+  createWaypoint("section-one", "body", "fade-header", -185, null, true);
+  createWaypoint("internal-main", "body", "fade-header", -185, null, true);
 
   /* Smooth Scroll down to section on click (<a href="#id_of_section_to_be_scrolled_to">)
   --------------------------------------------------------------------------------------- */

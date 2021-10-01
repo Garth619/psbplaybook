@@ -184,7 +184,9 @@ nav {
         @include abs(40px, null, null, -20px, 1);
       }
       li {
-        margin-bottom: 10px;
+        @include mq(small_laptop) {
+          margin-bottom: 10px;
+        }
         a {
           color: $bluefour;
           &:hover {

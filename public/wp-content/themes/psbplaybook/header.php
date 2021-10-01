@@ -105,6 +105,12 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
         <?php wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
       </nav>
 
+      <div id='playbook-search-wrapper'>
+
+        <?php get_search_form();?>
+
+      </div><!-- playbook-search-wrapper -->
+
       <div id='menu-wrapper'>
 
       </div><!-- menu-wrapper -->

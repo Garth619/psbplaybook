@@ -2,6 +2,11 @@ body {
   color: $blueone;
 }
 
+#internal-main {
+  min-height: 500px;
+  margin-top: 78px;
+}
+
 .gform_body .gform_fields .gfield ::-webkit-input-placeholder {
   color: #000;
 }

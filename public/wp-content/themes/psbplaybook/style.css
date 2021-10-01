@@ -616,6 +616,11 @@ body {
   color: #0e1326;
 }
 
+#internal-main {
+  min-height: 500px;
+  margin-top: 78px;
+}
+
 .gform_body .gform_fields .gfield ::-webkit-input-placeholder {
   color: #000;
 }
@@ -687,6 +692,39 @@ body {
 .playbook-video:hover img.playbook-video-image {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+  body.fade-header header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+}
+@media screen and (min-width: 1170px) {
+  body.fade-header header {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  body.fade-header header #header-left {
+    padding: 15px 32px 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  body.fade-header header #header-left a#logo {
+    width: 122px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  body.fade-header header #header-right #menu-wrapper {
+    width: 115px;
+    height: 100px;
+  }
 }
 
 header {
@@ -786,6 +824,62 @@ header {
 body.logged-in #header-right #menu-wrapper::after {
   content: "Menu";
   display: block;
+}
+
+#playbook-search-wrapper {
+  width: 100%;
+  position: relative;
+  position: absolute;
+  top: 95px;
+  left: 0;
+}
+#playbook-search-wrapper form {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+}
+#playbook-search-wrapper label {
+  display: none;
+}
+#playbook-search-wrapper input[type=search] {
+  border: 1px solid #d2d4d8;
+  padding: 0 20px 0 37px;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  color: #62676d;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  width: calc(100% - 39px);
+  height: 44px;
+}
+#playbook-search-wrapper img.search-icon {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+#playbook-search-wrapper .submit-wrapper {
+  position: relative;
+  width: 39px;
+  height: 44px;
+}
+#playbook-search-wrapper input[type=submit] {
+  border: none;
+  background: #0237a4;
+  transition: all 200ms ease-in-out;
+  width: 39px;
+  height: 44px;
+}
+#playbook-search-wrapper input[type=submit]:hover {
+  background: #bf7b30;
+}
+#playbook-search-wrapper img.submit-img {
+  pointer-events: none;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  position: absolute;
+  top: 8px;
+  left: 15px;
 }
 
 body.logged-in nav {
@@ -997,8 +1091,10 @@ nav ul.sub-menu {
     z-index: 1;
   }
 }
-nav ul.sub-menu li {
-  margin-bottom: 10px;
+@media screen and (min-width: 1170px) {
+  nav ul.sub-menu li {
+    margin-bottom: 10px;
+  }
 }
 nav ul.sub-menu li a {
   color: #0237a4;
