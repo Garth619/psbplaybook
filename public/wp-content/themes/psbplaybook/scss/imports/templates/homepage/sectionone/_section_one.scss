@@ -259,6 +259,7 @@ body.logged-in {
       border-radius: 60px;
       margin-top: 13px;
       position: relative;
+      cursor: pointer;
       @include mq(small_tablet) {
         margin-top: 25px;
         max-width: 188px;
@@ -287,6 +288,7 @@ body.logged-in {
         position: relative;
         z-index: 1;
         border: none;
+        cursor: pointer;
         background: transparent;
         @include type(
           (

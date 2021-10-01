@@ -4,7 +4,8 @@
 
     <div class='playbook-video'>
 
-      <div class='playbook-wistia wistia_embed wistia_async_dsqtgjeu3h popover=true popoverContent=html'></div>
+      <div class='playbook-wistia wistia_embed wistia_async_dsqtgjeu3h popover=true popoverContent=html'
+        data-wistia='<?php the_field('section_one_wistia_video_id');?>'></div>
       <!-- playbook-wistia -->
 
       <div class='playbook-video-overlay'>

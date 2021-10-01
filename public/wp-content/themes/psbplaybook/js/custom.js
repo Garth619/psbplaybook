@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
   $("body").addClass("ready");
 
   // log in for quicktesting
-  $("body").addClass("logged-in");
+  //$("body").addClass("logged-in");
 
   /* Sign Up Form - Step One Email
   --------------------------------------------------------------------------------------- */
@@ -19,6 +19,7 @@ jQuery(document).ready(function ($) {
     isValidEmail = emailField.checkValidity();
 
     if (isValidEmail) {
+      console.log("send it");
       $("#signup-form-submit").attr("disabled", true);
     } else {
       $("#signup-form-submit").attr("disabled", false);
@@ -31,6 +32,8 @@ jQuery(document).ready(function ($) {
   $(".wistia_embed").click(function () {
     //make sure to only load if Wistia is not already loaded
     let self = this;
+    const wistiaID = $(this).attr("data-wistia");
+    //console.log(wistiaID);
     if (typeof Wistia === "undefined") {
       jQuery.getScript(
         "https://fast.wistia.com/assets/external/E-v1.js",
@@ -40,7 +43,7 @@ jQuery(document).ready(function ($) {
           var interval = setInterval(function () {
             if ($(self).attr("id") && window._wq) {
               _wq.push({
-                id: "_all",
+                id: wistiaID,
                 onReady: function (video) {
                   video.play();
                 },
@@ -51,7 +54,7 @@ jQuery(document).ready(function ($) {
         }
       );
     } else {
-      console.log("wistia is already defined");
+      //console.log("wistia is already defined");
     }
   });
 

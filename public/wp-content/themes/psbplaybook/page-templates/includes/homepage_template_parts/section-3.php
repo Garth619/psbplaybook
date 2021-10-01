@@ -43,7 +43,8 @@
 
             <div class='playbook-video'>
 
-              <div class='playbook-wistia wistia_embed wistia_async_dsqtgjeu3h popover=true popoverContent=html'>
+              <div data-wistia='fvynu51wm6'
+                class='playbook-wistia wistia_embed wistia_async_fvynu51wm6 popover=true popoverContent=html'>
               </div>
               <!-- playbook-wistia -->
 
@@ -88,7 +89,8 @@
 
             <div class='playbook-video'>
 
-              <div class='playbook-wistia wistia_embed wistia_async_dsqtgjeu3h popover=true popoverContent=html'>
+              <div data-wistia='fvynu51wm6'
+                class='playbook-wistia wistia_embed wistia_async_fvynu51wm6 popover=true popoverContent=html'>
               </div>
               <!-- playbook-wistia -->
 
@@ -133,7 +135,8 @@
 
             <div class='playbook-video'>
 
-              <div class='playbook-wistia wistia_embed wistia_async_dsqtgjeu3h popover=true popoverContent=html'>
+              <div data-wistia='fvynu51wm6'
+                class='playbook-wistia wistia_embed wistia_async_fvynu51wm6 popover=true popoverContent=html'>
               </div>
               <!-- playbook-wistia -->
 

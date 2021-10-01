@@ -1,1 +1,0 @@
-export default{desktopInitialized:!1,isDesktop:!1,isMobile:!1,mobileInitialized:!1,vHeight:0,vWidth:0};

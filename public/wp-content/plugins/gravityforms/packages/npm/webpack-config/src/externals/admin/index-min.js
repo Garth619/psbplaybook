@@ -1,1 +1,0 @@
-const merge=require("webpack-merge"),wordpress=require("./wordpress"),vendor=require("./vendor"),config=require("../../config");module.exports=merge({...wordpress,...vendor},config.overrides.externals.admin);
