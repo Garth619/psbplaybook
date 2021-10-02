@@ -226,24 +226,15 @@ jQuery(document).ready(function ($) {
     goBack();
   });
 
-  /* Sidebar Widget H3 Hack
---------------------------------------------------------------------------------------- */
-
-  $(".case-results-single-slide").on("click", function (e) {
-    $(".case-results-single-slide").not(this).removeClass("show");
-    $(this).toggleClass("show");
-  });
-
-  /* Sidebar Widget H3 Hack
---------------------------------------------------------------------------------------- */
-
-  $(".widget_categories").prepend("<h3>Categories</h3>");
-
   /* Sidebar slideToggle
 --------------------------------------------------------------------------------------- */
 
   $(".widget ul.menu > li.menu-item-has-children a").on("click", function (e) {
     $(this).toggleClass("active");
+    $(this).next("ul").slideToggle();
+  });
+
+  $(".widget h3").on("click", function (e) {
     $(this).next("ul").slideToggle();
   });
 

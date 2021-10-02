@@ -1,0 +1,131 @@
+#sidebar-wrapper {
+  padding-top: 30px;
+  .gform_wrapper {
+    padding-bottom: 22px;
+    form {
+      @include flex();
+    }
+    .gform_body {
+      @include box(calc(100% - 39px), 44px);
+      .gform_fields {
+        label {
+          display: none;
+        }
+        input {
+          border: 1px solid #e0e0e0;
+          border-right: none;
+          background: #f3f5f6;
+          padding: 12px 15px;
+          @include box(100%, auto);
+          @include type(
+            (
+              size: 15px,
+              height: 18px,
+              family: $primaryfont,
+              color: #62676d,
+              weight: 400,
+            )
+          );
+        }
+      }
+    }
+    .gform_footer {
+      position: relative;
+      @include box(39px, 44px);
+      &:hover {
+        input[type="submit"] {
+          background: $golddark;
+        }
+      }
+      &::after {
+        transform: rotate(180deg);
+        background-size: 12px, 6px;
+        pointer-events: none;
+        justify-content: center;
+        align-items: center;
+        @include abs(0, null, null, 0);
+        @include box(100%, 100%);
+        @include contentdisplay(flex, url("images/arrow-three.svg"));
+      }
+      input[type="submit"] {
+        border: none;
+        cursor: pointer;
+        text-indent: -9999px;
+        background: $bluefour;
+        transition: all 200ms ease-in-out;
+        @include box(39px, 44px);
+      }
+    }
+    .gfield_description.validation_message.gfield_validation_message {
+      display: block;
+      @include type(
+        (
+          size: 15px,
+          height: 20px,
+          family: $primaryfont,
+          color: $golddark,
+          weight: 600,
+        )
+      );
+    }
+  }
+}
+
+#sidebar-boxes {
+  .widget {
+    background: $greylighttwo;
+    margin-bottom: 25px;
+    padding: 33px 15px;
+    h3 {
+      padding-bottom: 15px;
+      position: relative;
+      border-bottom: 2px solid $bluefour;
+      @include type(
+        (
+          size: 30px,
+          height: 35px,
+          family: $secondaryfont,
+          weight: 500,
+        )
+      );
+      &::after {
+        transform: rotate(0deg);
+        background-size: 12px, 6px;
+        @include abs(-2px, 7px, null, null);
+        @include box(20px, 11px);
+        @include contentdisplay(inline-block, url("images/arrow-four.svg"));
+      }
+    }
+    ul {
+      list-style: none;
+      padding-top: 5px;
+      li {
+        @include type(
+          (
+            size: 16px,
+            height: 25px,
+            family: $primaryfont,
+            weight: 600,
+          )
+        );
+        &:last-of-type {
+          a {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+        }
+        a {
+          color: $blueone;
+          display: block;
+          padding: 15px 0;
+          text-decoration: none;
+          transition: all 200ms ease-in-out;
+          border-bottom: 1px solid $greylight;
+          &:hover {
+            color: $golddark;
+          }
+        }
+      }
+    }
+  }
+}
