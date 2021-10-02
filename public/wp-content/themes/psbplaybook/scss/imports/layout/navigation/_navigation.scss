@@ -23,6 +23,63 @@ body.logged-in {
   }
 }
 
+body:not(.page-template-template-home) {
+  nav {
+    @include mq(small_laptop) {
+      //flex-grow: 1;
+      // width: calc(100% - 325px);
+      margin-top: 44px;
+      min-width: 560px;
+    }
+    @include mq(large_laptop) {
+      min-width: 699px;
+    }
+    @include mq(small_monitor) {
+      min-width: 885px;
+    }
+    ul.menu {
+      //justify-content: flex-end;
+      > li {
+        @include mq(small_laptop) {
+          padding-bottom: 19px;
+        }
+        &:first-of-type {
+          @include mq(small_laptop) {
+            margin: 0;
+          }
+        }
+        &:nth-last-of-type(-n + 2) {
+          @include mq(small_laptop) {
+            margin-right: 16px;
+          }
+          @include mq(large_laptop) {
+            margin-right: 35px;
+          }
+          @include mq(small_monitor) {
+            margin-right: 240px;
+          }
+        }
+      }
+      &::after {
+        top: 32px;
+      }
+    }
+    ul.sub-menu {
+      @include mq(small_laptop) {
+        top: 32px;
+      }
+    }
+  }
+}
+
+body.current-page-not-in-menu {
+  nav ul.menu > li#magic-line {
+    @include mq(small_laptop) {
+      display: none;
+    }
+  }
+}
+
 nav {
   opacity: 0;
   visibility: hidden;
@@ -47,12 +104,7 @@ nav {
 
     //@include abs(0,null,null,0);
   }
-  &::after {
-    background: rgba(255, 255, 255, 0.3);
-    @include abs(null, null, 46px, 0);
-    @include box(100%, 1px);
-    @include contentdisplay();
-  }
+
   span#nav-close {
     display: block;
     margin-top: 29px;
@@ -87,6 +139,11 @@ nav {
           weight: 800,
         )
       );
+      &.current-menu-ancestor {
+        > a {
+          color: $goldlight;
+        }
+      }
       &.current-menu-item {
         > a {
           color: $golddark;
@@ -122,10 +179,17 @@ nav {
         padding-bottom: 0px;
         @include flex(space-between);
       }
+      &::after {
+        background: rgba(255, 255, 255, 0.3);
+        @include abs(40px, null, null, 0, -2);
+        @include box(100%, 1px);
+        @include contentdisplay();
+      }
       > li {
         position: relative;
         @include mq(small_laptop) {
           padding-bottom: 27px;
+          flex-shrink: 0;
         }
         &.menu-item-has-children {
           &:hover {
@@ -179,16 +243,32 @@ nav {
         visibility: hidden;
         display: block;
         background: $greylighttwo;
-        padding: 20px 20px 10px;
+        padding: 0px 20px 15px;
         width: 200px;
         @include abs(40px, null, null, -20px, 1);
       }
       li {
         @include mq(small_laptop) {
-          margin-bottom: 10px;
+          //margin-bottom: 10px;
+        }
+        &.current-menu-item {
+          > a {
+            color: $golddark;
+          }
+        }
+        &:last-of-type {
+          a {
+            @include mq(small_laptop) {
+              //margin-bottom: 10px;
+              padding-bottom: 0;
+              border: none;
+            }
+          }
         }
         a {
           color: $bluefour;
+          padding: 15px 0;
+          border-bottom: 1px solid $greylight;
           &:hover {
             color: $goldlight;
           }

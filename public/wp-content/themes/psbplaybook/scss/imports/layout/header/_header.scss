@@ -26,6 +26,123 @@ body.fade-header {
   }
 }
 
+body:not(.page-template-template-home) {
+  header {
+    background: $blueone;
+    @include mq(small_tablet) {
+      @include fixed(0, null, null, 0);
+    }
+  }
+  #header-left {
+    @include mq(small_tablet) {
+      padding: 15px 32px 0;
+    }
+    @include mq(small_laptop) {
+      padding: 15px 32px 18px;
+    }
+    a#logo {
+      @include mq(small_tablet) {
+        @include box(122px, auto);
+      }
+      @include mq(small_laptop) {
+        @include box(152px, auto);
+      }
+    }
+  }
+  #header-right {
+    @include mq(small_tablet) {
+      @include flex();
+    }
+    #menu-wrapper {
+      @include mq(small_tablet) {
+        flex-shrink: 0;
+        @include box(115px, 100px);
+      }
+      @include mq(small_laptop) {
+        height: 115.3px;
+      }
+    }
+  }
+  #playbook-search-wrapper {
+    width: 100%;
+    background: #fff;
+    padding: 17px 14px;
+    @include abs(78px, null, null, 0);
+    @include mq(small_tablet) {
+      position: static;
+      padding: 25px 14px 0;
+      background: transparent;
+    }
+    @include mq(small_laptop) {
+      padding: 33px 28px 0 9px;
+      flex-shrink: 0;
+      flex-basis: 325px;
+    }
+    #playbook-search-inner {
+      form {
+        width: 100%;
+        @include flex();
+      }
+      .search-wrapper {
+        position: relative;
+        @include box(calc(100% - 39px), auto);
+        label {
+          display: none;
+        }
+        input[type="search"] {
+          border-top: 1px solid #d2d4d8;
+          border-left: 1px solid #d2d4d8;
+          border-bottom: 1px solid #d2d4d8;
+          border-right: none;
+          padding: 0 20px 0 37px;
+          @include box(100%, 44px);
+          @include type(
+            (
+              size: 15px,
+              family: $primaryfont,
+              color: $grey,
+              weight: 500,
+            )
+          );
+        }
+        img.search-icon {
+          @include abs(14px, null, null, 10px);
+        }
+      }
+      .submit-wrapper {
+        position: relative;
+      }
+      input[type="submit"] {
+        border: none;
+        background: $bluefour;
+        transition: all 200ms ease-in-out;
+        @include box(39px, 44px);
+        &:hover {
+          background: $golddark;
+        }
+      }
+      img.submit-img {
+        pointer-events: none;
+        transform: rotate(180deg);
+        @include abs(8px, null, null, 15px);
+      }
+    }
+  }
+}
+
+body.logged-in:not(.page-template-template-home) {
+  #playbook-search-wrapper {
+    display: block;
+  }
+  #header-right {
+    #menu-wrapper {
+      @include mq(small_laptop) {
+        height: 100px;
+      }
+    }
+  }
+}
+
 header {
   background: $blueone;
   width: 100%;
@@ -66,6 +183,7 @@ header {
   }
   #menu-wrapper {
     background: $greylighttwo;
+    cursor: pointer;
     @include flex(center, center);
     @include box(115px, 78px);
     &::after {
@@ -98,48 +216,5 @@ body.logged-in {
 }
 
 #playbook-search-wrapper {
-  width: 100%;
-  position: relative;
-  @include abs(95px, null, null, 0);
-  form {
-    width: 100%;
-    @include flex();
-  }
-  label {
-    display: none;
-  }
-  input[type="search"] {
-    border: 1px solid #d2d4d8;
-    padding: 0 20px 0 37px;
-    @include type(
-      (
-        size: 15px,
-        family: $primaryfont,
-        color: $grey,
-        weight: 500,
-      )
-    );
-    @include box(calc(100% - 39px), 44px);
-  }
-  img.search-icon {
-    @include abs(12px, null, null, 10px);
-  }
-  .submit-wrapper {
-    position: relative;
-    @include box(39px, 44px);
-  }
-  input[type="submit"] {
-    border: none;
-    background: $bluefour;
-    transition: all 200ms ease-in-out;
-    @include box(39px, 44px);
-    &:hover {
-      background: $golddark;
-    }
-  }
-  img.submit-img {
-    pointer-events: none;
-    transform: rotate(180deg);
-    @include abs(8px, null, null, 15px);
-  }
+  display: none;
 }

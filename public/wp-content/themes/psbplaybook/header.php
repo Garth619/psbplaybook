@@ -82,9 +82,13 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
   <?php the_field('analytics_code', 'option');?>
 
+  <?php if (!cms_is_in_menu('main-menu')) {
+    $header = ' current-page-not-in-menu';
+}?>
+
 </head>
 
-<body <?php body_class();?>>
+<body <?php body_class($header);?>>
 
   <header>
 
@@ -107,7 +111,11 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
       <div id='playbook-search-wrapper'>
 
-        <?php get_search_form();?>
+        <div id='playbook-search-inner'>
+
+          <?php get_search_form();?>
+
+        </div><!-- playbook-search-inner -->
 
       </div><!-- playbook-search-wrapper -->
 

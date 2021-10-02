@@ -1,3 +1,17 @@
+#page-title {
+  border-bottom: 1px solid $goldlight;
+  padding-bottom: 18px;
+  @include type(
+    (
+      size: 40px,
+      height: 45px,
+      family: $secondaryfont,
+      weight: 500,
+      align: center,
+    )
+  );
+}
+
 .content {
   @include type(
     (
@@ -11,10 +25,81 @@
     font-weight: 800;
     color: $bluefour;
   }
+  h2 {
+    padding-bottom: 20px;
+    @include type(
+      (
+        size: 20px,
+        height: 30px,
+        family: $primaryfont,
+        weight: 800,
+      )
+    );
+  }
+  h3 {
+    border-bottom: 2px solid $grey;
+    padding-bottom: 13px;
+    margin-bottom: 20px;
+    @include type(
+      (
+        size: 22px,
+        height: 25px,
+        family: $secondaryfont,
+        color: $bluefour,
+        weight: 600,
+        transform: uppercase,
+      )
+    );
+  }
+  h4 {
+    padding-bottom: 13px;
+    @include type(
+      (
+        size: 17px,
+        height: 30px,
+        family: $primaryfont,
+        color: $bluefour,
+        weight: 800,
+      )
+    );
+  }
+  a {
+    color: $golddark;
+    text-decoration: underline;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      color: $bluefour;
+    }
+  }
   p,
   ul,
   ol {
     margin-bottom: 27px;
+  }
+  ul {
+    margin-left: 20px;
+    li {
+      margin-bottom: 23px;
+      &::marker {
+        color: $golddark;
+      }
+    }
+  }
+  ol {
+    list-style: none;
+    counter-reset: item;
+    > li {
+      counter-increment: item;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 23px;
+    }
+    > li:before {
+      content: counter(item) ".";
+      font-weight: 800;
+      color: $golddark;
+      @include abs(0, null, null, 0);
+    }
   }
 }
 
