@@ -37,7 +37,7 @@
 
         </div><!-- playbook-video-overlay -->
 
-        <img class='playbook-video-image' src='<?php bloginfo('template_directory');?>/images/episode-video-1.jpg'
+        <img class='playbook-video-image' src='<?php bloginfo('template_directory');?>/images/episode-video-large.jpg'
           alt='' />
 
         <img class='playbook-video-image-spacer' src='<?php bloginfo('template_directory');?>/images/spacer.png'
