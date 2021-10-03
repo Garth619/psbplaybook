@@ -236,6 +236,7 @@ jQuery(document).ready(function ($) {
 
   $(".widget h3").on("click", function (e) {
     $(this).next("ul").slideToggle();
+    $(this).toggleClass("close");
   });
 
   /* Sidebar Current Class for Blog Sidebars

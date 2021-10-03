@@ -562,6 +562,30 @@ h4 {
   font-style: normal;
   text-decoration: none;
 }
+@media screen and (min-width: 768px) {
+  #page-title {
+    padding-bottom: 30px;
+    font-size: 45px;
+    line-height: 50px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #page-title {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #page-title {
+    font-size: 55px;
+    line-height: 60px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  #page-title {
+    font-size: 65px;
+    line-height: 70px;
+  }
+}
 
 .content {
   font-size: 17px;
@@ -706,7 +730,7 @@ body.logged-in #internal-main {
 }
 @media screen and (min-width: 1170px) {
   body.logged-in #internal-main {
-    margin-top: 115px;
+    margin-top: 0;
   }
 }
 
@@ -721,16 +745,67 @@ body.logged-in #internal-main {
 }
 @media screen and (min-width: 1170px) {
   #internal-main {
-    margin-top: 115px;
+    margin-top: 0;
   }
 }
 
 #page-container {
   padding: 7px 30px 47px;
 }
+@media screen and (min-width: 768px) {
+  #page-container {
+    padding: 38px 60px 86px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #page-container {
+    padding: 96px 60px 125px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #page-container {
+    padding: 96px 140px 125px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  #page-container {
+    padding: 113px 140px 125px;
+    max-width: 1810px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #page-container.two-col {
+    display: -webkit-flex;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  #page-content {
+    -webkit-order: 2;
+            order: 2;
+  }
+}
 
 #page-content-inner {
   padding-top: 30px;
+}
+@media screen and (min-width: 768px) {
+  #page-content-inner {
+    padding-top: 33px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #page-content-inner {
+    padding-top: 47px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  #page-content-inner {
+    padding-top: 60px;
+  }
 }
 
 .gform_body .gform_fields .gfield ::-webkit-input-placeholder {
@@ -849,6 +924,11 @@ body:not(.page-template-template-home) header {
     left: 0;
   }
 }
+@media screen and (min-width: 1170px) {
+  body:not(.page-template-template-home) header {
+    position: static;
+  }
+}
 @media screen and (min-width: 768px) {
   body:not(.page-template-template-home) #header-left {
     padding: 15px 32px 0;
@@ -952,6 +1032,7 @@ body:not(.page-template-template-home) #playbook-search-wrapper #playbook-search
 }
 body:not(.page-template-template-home) #playbook-search-wrapper #playbook-search-inner input[type=submit] {
   border: none;
+  cursor: pointer;
   background: #0237a4;
   transition: all 200ms ease-in-out;
   width: 39px;
@@ -1374,8 +1455,36 @@ nav ul.sub-menu li a:hover {
 #sidebar-wrapper {
   padding-top: 30px;
 }
+@media screen and (min-width: 1170px) {
+  #sidebar-wrapper {
+    -webkit-order: 1;
+            order: 1;
+    -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+    -webkit-flex-basis: 366px;
+            flex-basis: 366px;
+    padding-top: 4px;
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sidebar-wrapper {
+    margin-right: 65px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  #sidebar-wrapper {
+    margin-right: 95px;
+  }
+}
 #sidebar-wrapper .gform_wrapper {
   padding-bottom: 22px;
+}
+@media screen and (min-width: 768px) {
+  #sidebar-wrapper .gform_wrapper {
+    max-width: 366px;
+    padding-bottom: 39px;
+  }
 }
 #sidebar-wrapper .gform_wrapper form {
   display: -webkit-flex;
@@ -1394,7 +1503,7 @@ nav ul.sub-menu li a:hover {
   background: #f3f5f6;
   padding: 12px 15px;
   width: 100%;
-  height: auto;
+  height: 44px;
   font-size: 15px;
   line-height: 18px;
   font-family: "Open Sans", sans-serif;
@@ -1454,6 +1563,16 @@ nav ul.sub-menu li a:hover {
   margin-bottom: 25px;
   padding: 33px 15px;
 }
+@media screen and (min-width: 768px) {
+  #sidebar-boxes .widget {
+    padding: 35px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sidebar-boxes .widget {
+    margin-bottom: 38px;
+  }
+}
 #sidebar-boxes .widget h3 {
   padding-bottom: 15px;
   position: relative;
@@ -1465,21 +1584,34 @@ nav ul.sub-menu li a:hover {
   font-style: normal;
   text-decoration: none;
 }
+#sidebar-boxes .widget h3.close::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  position: absolute;
+  top: 27px;
+  right: 7px;
+}
 #sidebar-boxes .widget h3::after {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
-  background-size: 12px, 6px;
+  background-size: 20px, 11px;
+  background-position: 0 0;
   position: absolute;
   top: -2px;
   right: 7px;
   width: 20px;
   height: 11px;
   content: url("images/arrow-four.svg");
-  display: inline-block;
+  display: block;
 }
 #sidebar-boxes .widget ul {
   list-style: none;
   padding-top: 5px;
+}
+@media screen and (min-width: 1170px) {
+  #sidebar-boxes .widget ul {
+    padding-top: 12px;
+  }
 }
 #sidebar-boxes .widget ul li {
   font-size: 16px;

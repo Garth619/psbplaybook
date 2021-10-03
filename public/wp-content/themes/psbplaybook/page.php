@@ -2,7 +2,7 @@
 
 <div id="internal-main">
 
-  <div id='page-container'>
+  <div id='page-container' class='two-col'>
 
     <div id='page-content'>
 

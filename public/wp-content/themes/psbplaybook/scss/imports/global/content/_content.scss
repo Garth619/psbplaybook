@@ -10,6 +10,19 @@
       align: center,
     )
   );
+  @include mq(small_tablet) {
+    padding-bottom: 30px;
+    @include quick_type(45px, 50px, null);
+  }
+  @include mq(small_laptop) {
+    text-align: left;
+  }
+  @include mq(large_laptop) {
+    @include quick_type(55px, 60px, null);
+  }
+  @include mq(small_monitor) {
+    @include quick_type(65px, 70px, null);
+  }
 }
 
 .content {

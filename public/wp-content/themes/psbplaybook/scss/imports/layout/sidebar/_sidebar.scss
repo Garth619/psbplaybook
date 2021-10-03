@@ -1,7 +1,24 @@
 #sidebar-wrapper {
   padding-top: 30px;
+  @include mq(small_laptop) {
+    order: 1;
+    flex-shrink: 0;
+    flex-basis: 366px;
+    padding-top: 4px;
+    margin-right: 40px;
+  }
+  @include mq(large_laptop) {
+    margin-right: 65px;
+  }
+  @include mq(small_monitor) {
+    margin-right: 95px;
+  }
   .gform_wrapper {
     padding-bottom: 22px;
+    @include mq(small_tablet) {
+      max-width: 366px;
+      padding-bottom: 39px;
+    }
     form {
       @include flex();
     }
@@ -16,7 +33,7 @@
           border-right: none;
           background: #f3f5f6;
           padding: 12px 15px;
-          @include box(100%, auto);
+          @include box(100%, 44px);
           @include type(
             (
               size: 15px,
@@ -76,6 +93,12 @@
     background: $greylighttwo;
     margin-bottom: 25px;
     padding: 33px 15px;
+    @include mq(small_tablet) {
+      padding: 35px;
+    }
+    @include mq(small_laptop) {
+      margin-bottom: 38px;
+    }
     h3 {
       padding-bottom: 15px;
       position: relative;
@@ -88,17 +111,27 @@
           weight: 500,
         )
       );
+      &.close {
+        &::after {
+          transform: rotate(180deg);
+          @include abs(27px, 7px, null, null);
+        }
+      }
       &::after {
         transform: rotate(0deg);
-        background-size: 12px, 6px;
+        background-size: 20px, 11px;
+        background-position: 0 0;
         @include abs(-2px, 7px, null, null);
         @include box(20px, 11px);
-        @include contentdisplay(inline-block, url("images/arrow-four.svg"));
+        @include contentdisplay(block, url("images/arrow-four.svg"));
       }
     }
     ul {
       list-style: none;
       padding-top: 5px;
+      @include mq(small_laptop) {
+        padding-top: 12px;
+      }
       li {
         @include type(
           (

@@ -10,7 +10,7 @@ body.logged-in {
       margin-top: 100px;
     }
     @include mq(small_laptop) {
-      margin-top: 115px;
+      margin-top: 0;
     }
   }
 }
@@ -22,16 +22,50 @@ body.logged-in {
     margin-top: 100px;
   }
   @include mq(small_laptop) {
-    margin-top: 115px;
+    margin-top: 0;
   }
 }
 
 #page-container {
   padding: 7px 30px 47px;
+  @include mq(small_tablet) {
+    padding: 38px 60px 86px;
+  }
+  @include mq(small_laptop) {
+    padding: 96px 60px 125px;
+  }
+  @include mq(large_laptop) {
+    padding: 96px 140px 125px;
+  }
+  @include mq(small_monitor) {
+    padding: 113px 140px 125px;
+    max-width: 1810px;
+    @include margin_lr();
+  }
+  &.two-col {
+    @include mq(small_laptop) {
+      @include flex();
+    }
+  }
+}
+
+#page-content {
+  @include mq(small_laptop) {
+    order: 2;
+  }
 }
 
 #page-content-inner {
   padding-top: 30px;
+  @include mq(small_tablet) {
+    padding-top: 33px;
+  }
+  @include mq(small_laptop) {
+    padding-top: 47px;
+  }
+  @include mq(small_monitor) {
+    padding-top: 60px;
+  }
 }
 
 .gform_body .gform_fields .gfield ::-webkit-input-placeholder {

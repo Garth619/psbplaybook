@@ -32,6 +32,9 @@ body:not(.page-template-template-home) {
     @include mq(small_tablet) {
       @include fixed(0, null, null, 0);
     }
+    @include mq(small_laptop) {
+      position: static;
+    }
   }
   #header-left {
     @include mq(small_tablet) {
@@ -114,6 +117,7 @@ body:not(.page-template-template-home) {
       }
       input[type="submit"] {
         border: none;
+        cursor: pointer;
         background: $bluefour;
         transition: all 200ms ease-in-out;
         @include box(39px, 44px);
