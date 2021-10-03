@@ -1,0 +1,194 @@
+.blog-title {
+  max-width: 270px;
+  @include margin_lr();
+  @media screen and (min-width: 450px) {
+    max-width: 100%;
+  }
+}
+
+#blog-feed {
+  padding-top: 10px;
+}
+
+.blog-post {
+  border-bottom: 1px solid #c6ced8;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  // max-width: 294px;
+  // @include margin_lr();
+  &:last-of-type {
+    margin-bottom: 20px;
+    border-bottom: 3px solid $bluethree;
+  }
+}
+
+.single-post-video {
+  .playbook-video {
+    // max-width: 294px;
+    // height: 164px;
+  }
+}
+
+.post-meta-wrapper {
+  margin-top: 22px;
+  .post-meta {
+    @include type(
+      (
+        size: 16px,
+        height: 20px,
+        spacing: 0.4px,
+        family: $secondaryfont,
+        color: $bluefour,
+        weight: 600,
+      )
+    );
+    span {
+      display: inline;
+      &::after {
+        margin: 0 9px 0 11px;
+        @include contentdisplay(inline-block, "|");
+      }
+    }
+    ul {
+      list-style: none;
+      display: inline;
+      li {
+        display: inline;
+        a {
+          color: $bluefour;
+          display: inline-block;
+          text-decoration: underline;
+          transition: all 200ms ease-in-out;
+          &:hover {
+            color: $golddark;
+          }
+          &::after {
+            @include contentdisplay(inline-block, ",");
+          }
+        }
+        &:last-of-type {
+          a {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+h2.post-header {
+  margin-top: 8px;
+  a {
+    color: $blueone;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      color: $golddark;
+    }
+  }
+}
+
+.post-content {
+  margin-top: -4px;
+  .learn-more {
+    display: inline-block;
+    margin-top: 25px;
+    border-bottom: 2px solid $golddark;
+    transition: all 200ms ease-in-out;
+    @include type(
+      (
+        size: 18px,
+        height: 21px,
+        spacing: 0.45px,
+        family: $secondaryfont,
+        color: $golddark,
+        weight: 600,
+        transform: lowercase,
+      )
+    );
+    &:hover {
+      color: $bluefour;
+      border-bottom: 2px solid $bluefour;
+    }
+  }
+}
+
+#paged_wrapper {
+  padding-bottom: 27px;
+  ul {
+    list-style: none;
+    position: relative;
+    padding: 0 90px;
+    @include flex(center);
+    flex-wrap: wrap;
+    li {
+      margin: 0 6px;
+      @include type(
+        (
+          size: 16px,
+          height: 20px,
+          family: $secondaryfont,
+          weight: 600,
+        )
+      );
+      &.myprev,
+      &.mynext {
+        position: absolute;
+        top: 0;
+        a {
+          @include flex(null, center);
+          &::before,
+          &::after {
+            margin-top: -2px;
+            transition: all 200ms ease-in-out;
+            @include contentdisplay();
+          }
+        }
+      }
+      &.myprev {
+        left: -3px;
+        a {
+          &::before {
+            margin-right: 5px;
+            @include tri(left, 5px, 6px, $bluethree);
+          }
+          &:hover {
+            &::before {
+              @include tri(left, 5px, 6px, $golddark);
+            }
+          }
+        }
+      }
+      &.mynext {
+        right: -3px;
+        a {
+          &::after {
+            margin-left: 5px;
+            @include tri(right, 5px, 6px, $bluethree);
+          }
+          &:hover {
+            &::after {
+              @include tri(right, 5px, 6px, $golddark);
+            }
+          }
+        }
+      }
+      &.active {
+        a {
+          color: $golddark;
+        }
+      }
+      a {
+        color: $bluethree;
+        display: inline-block;
+        text-decoration: none;
+        transition: all 200ms ease-in-out;
+        &:hover {
+          color: $golddark;
+        }
+      }
+    }
+  }
+}

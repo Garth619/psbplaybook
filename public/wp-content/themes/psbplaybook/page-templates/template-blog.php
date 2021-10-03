@@ -1,3 +1,3 @@
 <?php
-	
-	/* Template Name: News and Media */ ?>
+
+/* Template Name: Previous Episodes */?>

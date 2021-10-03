@@ -2,6 +2,7 @@
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  width: 100%;
   .playbook-wistia {
     @include abs(0, null, null, 0, 2);
     @include box(100%, 100%);
@@ -25,7 +26,14 @@
   img.playbook-video-image {
     transform: scale(1);
     transition: all 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    object-fit: cover;
+    @include abs(0, null, null, 0);
     @include image();
+    @include box(100%, 100%);
+  }
+  img.playbook-video-image-spacer {
+    @include image();
+    @include box(100%, 100%);
   }
   &:hover {
     .playbook-video-overlay {

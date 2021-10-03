@@ -240,11 +240,11 @@ function my_numeric_posts_nav()
         $links[] = $paged + 1;
     }
 
-    echo '<div class="paged_wrapper"><ul>' . "\n";
+    echo '<div id="paged_wrapper"><ul>' . "\n";
 
     /** Previous Post Link */
     if (get_previous_posts_link()) {
-        printf('<li class="blog-arrow myprev">%s</li>' . "\n", get_previous_posts_link(''));
+        printf('<li class="myprev">%s</li>' . "\n", get_previous_posts_link('Prev Page'));
     }
 // put "prev" string in get_previous_posts_link
 
@@ -279,7 +279,7 @@ function my_numeric_posts_nav()
 
     /** Next Post Link */
     if (get_next_posts_link()) {
-        printf('<li class="blog-arrow mynext">%s</li>' . "\n", get_next_posts_link(''));
+        printf('<li class="mynext">%s</li>' . "\n", get_next_posts_link('Next Page'));
     }
     // put "next" string in get_previous_posts_link
 

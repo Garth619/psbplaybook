@@ -18,21 +18,68 @@
 
   <div class='blog-post'>
 
-    <?php if (get_the_post_thumbnail()) {?>
+    <div class='single-post-video'>
 
-    <?php the_post_thumbnail();?>
+      <div class='playbook-video'>
 
-    <?php }?>
+        <div data-wistia='fvynu51wm6'
+          class='playbook-wistia wistia_embed wistia_async_fvynu51wm6 popover=true popoverContent=html'>
+        </div>
+        <!-- playbook-wistia -->
 
-    <h2 class="blog-header"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+        <div class='playbook-video-overlay'>
 
-    <div>
+          <div class='playbook-play-button'>
 
-      <?php echo wp_trim_words(get_the_content(), 54, '...'); ?>
+            <?php echo file_get_contents(get_template_directory() . '/images/playbutton.svg'); ?>
 
-    </div>
+          </div><!-- playbook-play-button -->
 
-    <a class="read-more" href="<?php the_permalink();?>">Read More</a>
+        </div><!-- playbook-video-overlay -->
+
+        <img class='playbook-video-image' src='<?php bloginfo('template_directory');?>/images/episode-video-1.jpg'
+          alt='' />
+
+        <img class='playbook-video-image-spacer' src='<?php bloginfo('template_directory');?>/images/spacer.png'
+          alt='Image Spacer' />
+
+      </div><!-- playbook-video -->
+
+    </div><!-- single-post-video -->
+
+    <div class='post-meta-wrapper'>
+
+      <div class='post-meta'>
+
+        <span class='post-author'>Post by <?php the_author();?></span><!-- post-author -->
+
+        <span class='post-date'><?php $pfx_date = get_the_date();
+        echo $pfx_date;?></span>
+        <!-- post-date -->
+
+        <?php echo get_the_category_list(); ?>
+
+      </div><!-- post-meta -->
+
+      <div class='content'>
+
+        <h2 class="post-header"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+
+      </div><!-- content -->
+
+    </div><!-- post-meta-wrapper -->
+
+    <div class='post-content content'>
+
+      <div>
+
+        <?php echo wp_trim_words(get_the_content(), 54, '...'); ?>
+
+      </div>
+
+      <a class="learn-more" href="<?php the_permalink();?>">Learn More</a>
+
+    </div><!-- post-content -->
 
     <?php edit_post_link(__('Edit'), '', '');?>
 

@@ -204,6 +204,7 @@ span {
   margin-bottom: 25px;
   padding-bottom: 25px;
   border-bottom: 1px solid #c6ced8;
+
   @include mq(small_tablet) {
     @include flex();
   }
@@ -221,6 +222,11 @@ span {
   }
   &:last-of-type {
     border: none;
+  }
+  .playbook-video {
+    @include mq(small_tablet) {
+      @include box(241px, 129px);
+    }
   }
 }
 
@@ -303,15 +309,16 @@ span {
     margin-left: 60px;
   }
   .playbook-video {
+    max-width: 241px;
+    height: 128px;
     @include margin_lr();
-    @include box(241px, 128px);
     .playbook-video-overlay {
       .playbook-play-button {
       }
     }
     img.playbook-video-image {
-      object-fit: cover;
-      @include abs(0, null, null, 0);
+      // object-fit: cover;
+      // @include abs(0, null, null, 0);
     }
   }
 }
