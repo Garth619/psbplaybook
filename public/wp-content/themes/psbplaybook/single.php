@@ -2,13 +2,28 @@
 
 <div id="internal-main">
 
-  <?php get_template_part('loop', 'single');?>
+  <div id='page-container' class='two-col'>
 
-  <?php if (!get_field('disable_sidebar')) {
+    <div id='page-content'>
 
-    get_sidebar();
+      <h1 id='page-title' class='blog-title'><?php the_title();?></h1>
+      <!-- page-header -->
+
+      <div id='page-content-inner'>
+
+        <?php get_template_part('loop', 'single');?>
+
+      </div><!-- page-content-inner -->
+
+    </div><!-- page-content -->
+
+    <?php if (!get_field('disable_sidebar')) {
+
+    get_sidebar('blog');
 
 }?>
+
+  </div><!-- page-container -->
 
 </div><!-- internal-main -->
 

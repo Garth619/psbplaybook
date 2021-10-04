@@ -16,36 +16,26 @@
 
   <?php if (have_posts()): while (have_posts()): the_post();?>
 
-  <div class='blog-post'>
+  <?php
 
-    <div class='single-post-video'>
+        $wistiaID = get_field('wistia_id');
+        $novideo = '';
 
-      <div class='playbook-video'>
+        if (!$wistiaID) {
+            $novideo = ' no-video';
+        }?>
 
-        <div data-wistia='fvynu51wm6'
-          class='playbook-wistia wistia_embed wistia_async_fvynu51wm6 popover=true popoverContent=html'>
-        </div>
-        <!-- playbook-wistia -->
+  <div class='blog-post<?php echo $novideo; ?>'>
 
-        <div class='playbook-video-overlay'>
+    <?php
 
-          <div class='playbook-play-button'>
+        if ($wistiaID) {
+            echo "<div class='blog-post-video'>";
+            get_template_part('page-templates/includes/video/template', 'video');
+            echo "</div><!-- blog-post-video -->";
+        }
 
-            <?php echo file_get_contents(get_template_directory() . '/images/playbutton.svg'); ?>
-
-          </div><!-- playbook-play-button -->
-
-        </div><!-- playbook-video-overlay -->
-
-        <img class='playbook-video-image' src='<?php bloginfo('template_directory');?>/images/episode-video-large.jpg'
-          alt='' />
-
-        <img class='playbook-video-image-spacer' src='<?php bloginfo('template_directory');?>/images/spacer.png'
-          alt='Image Spacer' />
-
-      </div><!-- playbook-video -->
-
-    </div><!-- single-post-video -->
+        ?>
 
     <div class='post-meta-wrapper'>
 

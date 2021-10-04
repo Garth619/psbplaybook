@@ -312,7 +312,11 @@ span {
     max-width: 241px;
     height: 128px;
     @include margin_lr();
+    .playbook-wistia {
+      z-index: 2;
+    }
     .playbook-video-overlay {
+      z-index: 1;
       .playbook-play-button {
       }
     }

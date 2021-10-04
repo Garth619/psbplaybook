@@ -27,38 +27,47 @@ jQuery(document).ready(function ($) {
       }
     });
   }
-  /* Wistia - Call function when script needs to be loaded either by hover or waypoints
-     --------------------------------------------------------------------------------------- */
+  /* Wistia - loads wistia on click to improve initial page speed fallsback if thumbnails need to be loaded on page load
+     --------------------------------------------------------------------------------------------------------------------- */
 
-  // loads wistia on click to improve initial page speed
-  $(".wistia_embed").click(function () {
-    //make sure to only load if Wistia is not already loaded
-    let self = this;
+  function checkWistia() {
+    const self = this;
     const wistiaID = $(this).attr("data-wistia");
-    //console.log(wistiaID);
+    console.log(wistiaID);
     if (typeof Wistia === "undefined") {
-      jQuery.getScript(
-        "https://fast.wistia.com/assets/external/E-v1.js",
-        function (data, textStatus, jqxhr) {
-          // We got the text but, it's possible parsing could take some time on slower devices. Unfortunately, js parsing does not have
-          // a hook we can listen for. So we need to set an interval to check when it's ready
-          var interval = setInterval(function () {
-            if ($(self).attr("id") && window._wq) {
-              _wq.push({
-                id: wistiaID,
-                onReady: function (video) {
-                  video.play();
-                },
-              });
-              clearInterval(interval);
-            }
-          }, 100);
-        }
-      );
+      loadWistia(self, wistiaID);
     } else {
       //console.log("wistia is already defined");
     }
-  });
+  }
+
+  function loadWistia(self, wistiaID) {
+    jQuery.getScript(
+      "https://fast.wistia.com/assets/external/E-v1.js",
+      function (data, textStatus, jqxhr) {
+        // We got the text but, it's possible parsing could take some time on slower devices. Unfortunately, js parsing does not have
+        // a hook we can listen for. So we need to set an interval to check when it's ready
+        var interval = setInterval(function () {
+          if ($(self).attr("id") && window._wq) {
+            _wq.push({
+              id: wistiaID,
+              onReady: function (video) {
+                video.play();
+              },
+            });
+            clearInterval(interval);
+          }
+        }, 100);
+      }
+    );
+  }
+
+  if ($("div").hasClass("playbook-thumbnail")) {
+    console.log("it does");
+    loadWistia(this, "_all");
+  }
+
+  $(".wistia_embed").on("click", checkWistia);
 
   /* Waypoints
      --------------------------------------------------------------------------------------- */

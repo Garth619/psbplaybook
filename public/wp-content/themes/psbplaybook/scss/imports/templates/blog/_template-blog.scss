@@ -14,23 +14,64 @@
   border-bottom: 1px solid #c6ced8;
   padding-bottom: 40px;
   margin-bottom: 40px;
-  // max-width: 294px;
-  // @include margin_lr();
+  @include mq(small_tablet) {
+    display: grid;
+    grid-template-columns: 337px auto;
+    grid-template-rows: auto;
+    gap: 0px 0px;
+    grid-template-areas:
+      "blog-post-video post-meta-wrapper"
+      "post-content post-content";
+    margin-bottom: 50px;
+  }
+  @include mq(small_monitor) {
+    grid-template-areas:
+      "blog-post-video post-meta-wrapper"
+      "blog-post-video post-content";
+    padding-bottom: 70px;
+    margin-bottom: 70px;
+  }
+  &.no-video {
+    display: block;
+    .post-meta-wrapper {
+      @include mq(small_tablet) {
+        margin-left: 0px;
+      }
+      @include mq(small_monitor) {
+        margin-left: 0px;
+      }
+    }
+  }
   &:last-of-type {
     margin-bottom: 20px;
     border-bottom: 3px solid $bluethree;
+    @include mq(small_monitor) {
+      padding-bottom: 110px;
+    }
   }
 }
 
-.single-post-video {
+.blog-post-video {
+  @include mq(small_tablet) {
+    grid-area: blog-post-video;
+  }
+  @include mq(small_monitor) {
+    margin-top: 35px;
+  }
   .playbook-video {
-    // max-width: 294px;
-    // height: 164px;
   }
 }
 
 .post-meta-wrapper {
   margin-top: 22px;
+  @include mq(small_tablet) {
+    margin-left: 30px;
+    margin-top: 0px;
+    grid-area: post-meta-wrapper;
+  }
+  @include mq(small_monitor) {
+    margin-left: 45px;
+  }
   .post-meta {
     @include type(
       (
@@ -56,7 +97,7 @@
         display: inline;
         a {
           color: $bluefour;
-          display: inline-block;
+          //display: inline-block;
           text-decoration: underline;
           transition: all 200ms ease-in-out;
           &:hover {
@@ -92,6 +133,14 @@ h2.post-header {
 
 .post-content {
   margin-top: -4px;
+  @include mq(small_tablet) {
+    grid-area: post-content;
+    margin-top: 25px;
+  }
+  @include mq(small_monitor) {
+    margin-left: 45px;
+    margin-top: 0px;
+  }
   .learn-more {
     display: inline-block;
     margin-top: 25px;
@@ -117,6 +166,12 @@ h2.post-header {
 
 #paged_wrapper {
   padding-bottom: 27px;
+  @include mq(small_tablet) {
+    padding-bottom: 100px;
+  }
+  @include mq(small_laptop) {
+    padding-bottom: 20px;
+  }
   ul {
     list-style: none;
     position: relative;

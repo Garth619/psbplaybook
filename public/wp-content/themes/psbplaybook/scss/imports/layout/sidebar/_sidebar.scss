@@ -142,6 +142,11 @@
             weight: 600,
           )
         );
+        &.blog-active {
+          a {
+            color: $golddark;
+          }
+        }
         &:last-of-type {
           a {
             border-bottom: none;

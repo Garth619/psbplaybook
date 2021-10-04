@@ -1,29 +1,49 @@
 <?php get_header();?>
 
-<?php if (have_posts()): ?>
+<div id="internal-main">
 
-<h1 class="page-title">
-  <?php printf(__('Search Results for: %s', 'twentyten'), '<span>' . get_search_query() . '</span>');?></h1>
+  <div id='page-container' class='two-col'>
 
-<?php get_template_part('loop', 'search');?>
+    <div id='page-content'>
 
-<?php else: ?>
+      <?php if (have_posts()): ?>
 
-<div id="post-0" class="post no-results not-found">
+      <h1 id='page-title' class='blog-title'>
+        <?php printf(__('Search Results for: %s', 'twentyten'), '<span>' . get_search_query() . '</span>');?></h1>
+      <!-- page-header -->
 
-  <h2 class="entry-title">Nothing Found</h2>
+      <div id='page-content-inner'>
 
-  <div class="entry-content">
+        <?php get_template_part('loop', 'index');?>
 
-    <p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p>
+      </div><!-- page-content-inner -->
 
-    <?php get_search_form();?>
+      <?php else: ?>
 
-  </div><!-- .entry-content -->
+      <h1 id='page-title' class='blog-title'>
+        <?php printf(__('Search Results for: %s', 'twentyten'), '<span>' . get_search_query() . '</span>');?></h1>
+      <!-- page-header -->
 
-</div><!-- #post-0 -->
+      <div id='page-content-inner' class='content'>
 
-<?php endif;?>
+        <h2>Nothing Found</h2>
 
-<?php get_sidebar();?>
+        <p>Sorry, but nothing matched your search criteria.</p>
+
+      </div><!-- page-content-inner -->
+
+      <?php endif;?>
+
+    </div><!-- page-content -->
+
+    <?php if (!get_field('disable_sidebar')) {
+
+    get_sidebar('blog');
+
+}?>
+
+  </div><!-- page-container -->
+
+</div><!-- internal-main -->
+
 <?php get_footer();?>

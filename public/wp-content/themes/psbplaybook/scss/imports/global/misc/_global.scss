@@ -32,7 +32,7 @@ body.logged-in {
     padding: 38px 60px 86px;
   }
   @include mq(small_laptop) {
-    padding: 96px 60px 125px;
+    padding: 96px 75px 125px;
   }
   @include mq(large_laptop) {
     padding: 96px 140px 125px;
@@ -52,6 +52,7 @@ body.logged-in {
 #page-content {
   @include mq(small_laptop) {
     order: 2;
+    flex-grow: 1;
   }
 }
 

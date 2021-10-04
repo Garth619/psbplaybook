@@ -31,11 +31,13 @@
       @include box(100%, 732px);
     }
     .playbook-wistia {
+      z-index: 2;
       @include mq(small_laptop) {
         @include box(100%, 732px);
       }
     }
     .playbook-video-overlay {
+      z-index: 1;
       @include mq(small_laptop) {
         @include box(100%, 732px);
       }

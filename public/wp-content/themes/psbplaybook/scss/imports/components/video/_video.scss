@@ -3,15 +3,32 @@
   cursor: pointer;
   overflow: hidden;
   width: 100%;
+  &.playbook-html {
+    .playbook-video-overlay {
+      z-index: 1;
+    }
+    .playbook-wistia {
+      z-index: 2;
+    }
+  }
+  &.playbook-thumbnail {
+    .playbook-video-overlay {
+      z-index: 2;
+    }
+    .playbook-wistia {
+      z-index: 1;
+    }
+  }
   .playbook-wistia {
-    @include abs(0, null, null, 0, 2);
+    @include abs(0, null, null, 0);
     @include box(100%, 100%);
   }
   .playbook-video-overlay {
     background: rgba(14, 19, 38, 0);
     cursor: pointer;
+    pointer-events: none;
     transition: background 300ms ease-in-out;
-    @include abs(0, null, null, 0, 1);
+    @include abs(0, null, null, 0);
     @include box(100%, 100%);
     @include flex(center, center);
     .playbook-play-button {

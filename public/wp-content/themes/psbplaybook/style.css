@@ -759,7 +759,7 @@ body.logged-in #internal-main {
 }
 @media screen and (min-width: 1170px) {
   #page-container {
-    padding: 96px 60px 125px;
+    padding: 96px 75px 125px;
   }
 }
 @media screen and (min-width: 1380px) {
@@ -786,6 +786,8 @@ body.logged-in #internal-main {
   #page-content {
     -webkit-order: 2;
             order: 2;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
   }
 }
 
@@ -834,22 +836,33 @@ body.logged-in #internal-main {
   overflow: hidden;
   width: 100%;
 }
+.playbook-video.playbook-html .playbook-video-overlay {
+  z-index: 1;
+}
+.playbook-video.playbook-html .playbook-wistia {
+  z-index: 2;
+}
+.playbook-video.playbook-thumbnail .playbook-video-overlay {
+  z-index: 2;
+}
+.playbook-video.playbook-thumbnail .playbook-wistia {
+  z-index: 1;
+}
 .playbook-video .playbook-wistia {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
   width: 100%;
   height: 100%;
 }
 .playbook-video .playbook-video-overlay {
   background: rgba(14, 19, 38, 0);
   cursor: pointer;
+  pointer-events: none;
   transition: background 300ms ease-in-out;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
   width: 100%;
   height: 100%;
   display: -webkit-flex;
@@ -1637,6 +1650,9 @@ nav ul.sub-menu li a:hover {
   font-style: normal;
   text-decoration: none;
 }
+#sidebar-boxes .widget ul li.blog-active a {
+  color: #bf7b30;
+}
 #sidebar-boxes .widget ul li:last-of-type a {
   border-bottom: none;
   padding-bottom: 0;
@@ -1971,11 +1987,17 @@ footer {
     height: 732px;
   }
 }
+#sec-one-top .playbook-video .playbook-wistia {
+  z-index: 2;
+}
 @media screen and (min-width: 1170px) {
   #sec-one-top .playbook-video .playbook-wistia {
     width: 100%;
     height: 732px;
   }
+}
+#sec-one-top .playbook-video .playbook-video-overlay {
+  z-index: 1;
 }
 @media screen and (min-width: 1170px) {
   #sec-one-top .playbook-video .playbook-video-overlay {
@@ -2990,6 +3012,12 @@ span#sec-three-prev-episodes-title {
   margin-left: auto;
   margin-right: auto;
 }
+.sec-three-prev-single-video .playbook-video .playbook-wistia {
+  z-index: 2;
+}
+.sec-three-prev-single-video .playbook-video .playbook-video-overlay {
+  z-index: 1;
+}
 #section-four {
   padding: 0 30px 50px;
 }
@@ -3437,13 +3465,70 @@ span#sec-five-title {
   padding-bottom: 40px;
   margin-bottom: 40px;
 }
+@media screen and (min-width: 768px) {
+  .blog-post {
+    display: grid;
+    grid-template-columns: 337px auto;
+    grid-template-rows: auto;
+    gap: 0px 0px;
+    grid-template-areas: "blog-post-video post-meta-wrapper" "post-content post-content";
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  .blog-post {
+    grid-template-areas: "blog-post-video post-meta-wrapper" "blog-post-video post-content";
+    padding-bottom: 70px;
+    margin-bottom: 70px;
+  }
+}
+.blog-post.no-video {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .blog-post.no-video .post-meta-wrapper {
+    margin-left: 0px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  .blog-post.no-video .post-meta-wrapper {
+    margin-left: 0px;
+  }
+}
 .blog-post:last-of-type {
   margin-bottom: 20px;
   border-bottom: 3px solid #132666;
 }
+@media screen and (min-width: 1695px) {
+  .blog-post:last-of-type {
+    padding-bottom: 110px;
+  }
+}
 
+@media screen and (min-width: 768px) {
+  .blog-post-video {
+    grid-area: blog-post-video;
+  }
+}
+@media screen and (min-width: 1695px) {
+  .blog-post-video {
+    margin-top: 35px;
+  }
+}
 .post-meta-wrapper {
   margin-top: 22px;
+}
+@media screen and (min-width: 768px) {
+  .post-meta-wrapper {
+    margin-left: 30px;
+    margin-top: 0px;
+    grid-area: post-meta-wrapper;
+  }
+}
+@media screen and (min-width: 1695px) {
+  .post-meta-wrapper {
+    margin-left: 45px;
+  }
 }
 .post-meta-wrapper .post-meta {
   font-size: 16px;
@@ -3472,7 +3557,6 @@ span#sec-five-title {
 }
 .post-meta-wrapper .post-meta ul li a {
   color: #0237a4;
-  display: inline-block;
   text-decoration: underline;
   transition: all 200ms ease-in-out;
 }
@@ -3502,6 +3586,18 @@ h2.post-header a:hover {
 .post-content {
   margin-top: -4px;
 }
+@media screen and (min-width: 768px) {
+  .post-content {
+    grid-area: post-content;
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  .post-content {
+    margin-left: 45px;
+    margin-top: 0px;
+  }
+}
 .post-content .learn-more {
   display: inline-block;
   margin-top: 25px;
@@ -3524,6 +3620,16 @@ h2.post-header a:hover {
 
 #paged_wrapper {
   padding-bottom: 27px;
+}
+@media screen and (min-width: 768px) {
+  #paged_wrapper {
+    padding-bottom: 100px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #paged_wrapper {
+    padding-bottom: 20px;
+  }
 }
 #paged_wrapper ul {
   list-style: none;
