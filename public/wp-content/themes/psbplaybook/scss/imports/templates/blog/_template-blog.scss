@@ -72,46 +72,47 @@
   @include mq(small_monitor) {
     margin-left: 45px;
   }
-  .post-meta {
-    @include type(
-      (
-        size: 16px,
-        height: 20px,
-        spacing: 0.4px,
-        family: $secondaryfont,
-        color: $bluefour,
-        weight: 600,
-      )
-    );
-    span {
-      display: inline;
-      &::after {
-        margin: 0 9px 0 11px;
-        @include contentdisplay(inline-block, "|");
-      }
+}
+
+.post-meta {
+  @include type(
+    (
+      size: 16px,
+      height: 20px,
+      spacing: 0.4px,
+      family: $secondaryfont,
+      color: $bluefour,
+      weight: 600,
+    )
+  );
+  span {
+    display: inline;
+    &::after {
+      margin: 0 9px 0 11px;
+      @include contentdisplay(inline-block, "|");
     }
-    ul {
-      list-style: none;
+  }
+  ul {
+    list-style: none;
+    display: inline;
+    li {
       display: inline;
-      li {
-        display: inline;
-        a {
+      a {
+        color: $golddark;
+        //display: inline-block;
+        text-decoration: underline;
+        transition: all 200ms ease-in-out;
+        &:hover {
           color: $bluefour;
-          //display: inline-block;
-          text-decoration: underline;
-          transition: all 200ms ease-in-out;
-          &:hover {
-            color: $golddark;
-          }
-          &::after {
-            @include contentdisplay(inline-block, ",");
-          }
         }
-        &:last-of-type {
-          a {
-            &::after {
-              display: none;
-            }
+        &::after {
+          @include contentdisplay(inline-block, ",");
+        }
+      }
+      &:last-of-type {
+        a {
+          &::after {
+            display: none;
           }
         }
       }
@@ -119,8 +120,19 @@
   }
 }
 
+body.single {
+  .post-meta {
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+}
+
+#single-post {
+  margin-top: -30px;
+}
+
 h2.post-header {
-  margin-top: 8px;
+  margin-top: 12px;
   a {
     color: $blueone;
     text-decoration: none;
@@ -129,6 +141,36 @@ h2.post-header {
       color: $golddark;
     }
   }
+}
+
+#single-post-content {
+  padding-top: 45px;
+}
+
+#single-post-material-list {
+  margin-top: -13px;
+}
+
+a.single-post-material {
+  color: $blueone;
+  cursor: pointer;
+  padding: 20px 0;
+  border-bottom: 1px solid $greylight;
+  @include flex();
+  &:hover {
+    color: $golddark;
+  }
+  img {
+    display: block;
+    margin-right: 15px;
+  }
+  span.single-post-material-title {
+    @include quick_type(16px, 25px, null);
+  }
+}
+
+#single-post-summary {
+  margin-top: 45px;
 }
 
 .post-content {
@@ -161,6 +203,137 @@ h2.post-header {
       color: $bluefour;
       border-bottom: 2px solid $bluefour;
     }
+  }
+}
+
+#single-post-featured-speakers-wrapper {
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+
+#single-post-featured-speakers-inner {
+  position: relative;
+}
+
+#single-post-featured-speakers {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 60px);
+  @include margin_lr();
+}
+
+.single-post-featured-speakers-slide {
+  position: relative;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 20px;
+  text-align: center;
+  @include mq(small_tablet) {
+    border-bottom: 0;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    .single-post-featured-speakers-img {
+      position: relative;
+      overflow: hidden;
+      &::after {
+        opacity: 0;
+        background: rgba(14, 19, 38, 0.85);
+        justify-content: center;
+        align-items: center;
+        transition: all 200ms ease-in-out;
+        @include box(100%, 100%);
+        @include contentdisplay(flex, "View Bio");
+        @include abs(0, null, null, 0, 1);
+        @include type(
+          (
+            size: 15px,
+            family: $primaryfont,
+            color: #fff,
+            weight: 800,
+          )
+        );
+      }
+      img {
+        width: 100%;
+        transform: scale(1);
+        transition: transform 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+        @include image();
+      }
+    }
+    span {
+      display: block;
+      @include mq(small_tablet) {
+        text-align: left;
+      }
+      &.single-post-featured-speakers-name {
+        margin-top: 15px;
+        transition: all 200ms ease-in-out;
+        @include type(
+          (
+            size: 18px,
+            height: 23px,
+            color: $bluefour,
+            family: $primaryfont,
+            weight: 800,
+            transform: capitalize,
+          )
+        );
+        @include mq(small_tablet) {
+          margin-top: 18px;
+        }
+      }
+      &.single-post-featured-speakers-position {
+        margin-top: 5px;
+        @include type(
+          (
+            size: 16px,
+            height: 19px,
+            family: $secondaryfont,
+            color: $grey,
+            weight: 600,
+            transform: uppercase,
+          )
+        );
+      }
+    }
+  }
+  &:hover {
+    a {
+      span.single-post-featured-speakers-name {
+        color: $goldlight;
+      }
+      .single-post-featured-speakers-img {
+        img {
+          transform: scale(1.1);
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+#single-post-featured-speakers-arrow-wrapper {
+  width: 100%;
+  @include abs(135px, null, null, 0);
+  @include flex(space-between);
+  .single-post-featured-speakers-arrows {
+    transition: all 200ms ease-in-out;
+    @include box(6px, 10px);
+    @include tri(left, 6px, 7px, $blueone);
+    &:hover {
+      @include tri(left, 6px, 7px, $golddark);
+    }
+  }
+  #single-post-featured-speakers-arrow-left {
+  }
+  #single-post-featured-speakers-arrow-right {
+    transform: rotate(180deg);
+  }
+  span#single-post-featured-speakers-arrow-title {
+    display: none;
   }
 }
 

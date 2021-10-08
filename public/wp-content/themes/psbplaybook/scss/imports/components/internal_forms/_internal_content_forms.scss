@@ -1,1 +1,77 @@
+#general-form {
+  span {
+    display: block;
+    &#general-form-title {
+      margin-bottom: 10px;
+      @include type(
+        (
+          size: 25px,
+          height: 25px,
+          family: $secondaryfont,
+          color: $golddark,
+          weight: 600,
+          transform: uppercase,
+        )
+      );
+    }
+    &#general-form-description {
+      @include type(
+        (
+          size: 17px,
+          height: 27px,
+          family: $primaryfont,
+          weight: 600,
+        )
+      );
+    }
+  }
+}
 
+#general-form {
+  .gform_wrapper {
+    margin-top: 29px;
+    form {
+      .gform_body {
+        .gform_fields {
+          .gfield {
+            margin-bottom: 15px;
+            label {
+              display: none;
+            }
+            input,
+            textarea {
+              border: none;
+              width: 100%;
+              border-radius: 6px;
+              padding: 21px 20px;
+              background: $greylighttwo;
+              box-shadow: inset 0px 2px 5px #0000001a;
+              @include type(
+                (
+                  size: 16px,
+                  height: 19px,
+                  family: $primaryfont,
+                  weight: 600,
+                )
+              );
+            }
+            textarea {
+              height: 211px;
+            }
+          }
+        }
+      }
+      .gform_footer {
+        &:hover {
+          input[type="submit"] {
+          }
+        }
+
+        input[type="submit"] {
+        }
+      }
+      .gfield_description.validation_message.gfield_validation_message {
+      }
+    }
+  }
+}

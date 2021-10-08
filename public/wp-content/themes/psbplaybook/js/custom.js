@@ -63,7 +63,7 @@ jQuery(document).ready(function ($) {
   }
 
   if ($("div").hasClass("playbook-thumbnail")) {
-    console.log("it does");
+    //console.log("it does");
     loadWistia(this, "_all");
   }
 
@@ -178,6 +178,57 @@ jQuery(document).ready(function ($) {
     arrows: true,
     prevArrow: "#sec-five-arrow-left",
     nextArrow: "#sec-five-arrow-right",
+    adaptiveHeight: true,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          adaptiveHeight: false,
+          fade: false,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1170,
+        settings: {
+          adaptiveHeight: false,
+          fade: false,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 1380,
+        settings: {
+          adaptiveHeight: false,
+          fade: false,
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 1695,
+        settings: {
+          adaptiveHeight: false,
+          fade: false,
+          slidesToShow: 6,
+          slidesToScroll: 6,
+        },
+      },
+    ],
+  });
+
+  $("#single-post-featured-speakers").slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    fade: true,
+    arrows: true,
+    prevArrow: "#single-post-featured-speakers-arrow-left",
+    nextArrow: "#single-post-featured-speakers-arrow-right",
     adaptiveHeight: true,
     dots: false,
     responsive: [

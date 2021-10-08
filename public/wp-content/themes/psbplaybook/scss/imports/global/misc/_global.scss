@@ -69,18 +69,41 @@ body.logged-in {
   }
 }
 
-.gform_body .gform_fields .gfield ::-webkit-input-placeholder {
-  color: #62676d;
-}
-.gform_body .gform_fields .gfield ::-moz-placeholder {
-  color: #62676d;
-}
-.gform_body .gform_fields .gfield :-moz-placeholder {
-  color: #62676d;
-}
-.gform_body .gform_fields .gfield :-ms-input-placeholder {
-  color: #62676d;
-}
-.gform_body .gform_fields .gfield ::-moz-placeholder {
-  opacity: 1;
+// .gform_body .gform_fields .gfield ::-webkit-input-placeholder {
+//   color: #62676d;
+// }
+// .gform_body .gform_fields .gfield ::-moz-placeholder {
+//   color: #62676d;
+// }
+// .gform_body .gform_fields .gfield :-moz-placeholder {
+//   color: #62676d;
+// }
+// .gform_body .gform_fields .gfield :-ms-input-placeholder {
+//   color: #62676d;
+// }
+// .gform_body .gform_fields .gfield ::-moz-placeholder {
+//   opacity: 1;
+// }
+
+.gform_body {
+  .gform_fields {
+    .gfield {
+      .ginput_container {
+        input,
+        textarea,
+        select {
+          ::-webkit-input-placeholder {
+            color: #62676d;
+          }
+          ::-moz-placeholder {
+            color: #62676d;
+            opacity: 1;
+          }
+          :-moz-placeholder {
+            color: #62676d;
+          }
+        }
+      }
+    }
+  }
 }

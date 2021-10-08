@@ -88,6 +88,15 @@
   }
 }
 
+body.single,
+body.page-template-default {
+  #sidebar-wrapper {
+    #gform_wrapper_1 {
+      display: none;
+    }
+  }
+}
+
 #sidebar-boxes {
   .widget {
     background: $greylighttwo;
