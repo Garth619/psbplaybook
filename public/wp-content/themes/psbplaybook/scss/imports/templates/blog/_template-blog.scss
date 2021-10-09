@@ -58,8 +58,6 @@
   @include mq(small_monitor) {
     margin-top: 35px;
   }
-  .playbook-video {
-  }
 }
 
 .post-meta-wrapper {
@@ -99,7 +97,6 @@
       display: inline;
       a {
         color: $golddark;
-        //display: inline-block;
         text-decoration: underline;
         transition: all 200ms ease-in-out;
         &:hover {
@@ -120,19 +117,75 @@
   }
 }
 
+h2.post-header {
+  margin-top: 12px;
+  a {
+    color: $blueone;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      color: $golddark;
+    }
+  }
+}
+
+.post-content {
+  margin-top: -4px;
+  @include mq(small_tablet) {
+    grid-area: post-content;
+    margin-top: 25px;
+  }
+  @include mq(small_monitor) {
+    margin-left: 45px;
+    margin-top: 0px;
+  }
+  .learn-more {
+    display: inline-block;
+    margin-top: 25px;
+    border-bottom: 2px solid $golddark;
+    transition: all 200ms ease-in-out;
+    @include type(
+      (
+        size: 18px,
+        height: 21px,
+        spacing: 0.45px,
+        family: $secondaryfont,
+        color: $golddark,
+        weight: 600,
+        transform: lowercase,
+      )
+    );
+    &:hover {
+      color: $bluefour;
+      border-bottom: 2px solid $bluefour;
+    }
+  }
+}
+
+// single blog post
+
 body.single {
   #page-container {
-    padding-bottom: 46px;
     &.two-col {
       @include mq(small_laptop) {
         width: 100%;
+        padding-bottom: 46px;
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto 1fr;
         grid-template-rows: auto auto;
         gap: 0px 0px;
         grid-template-areas:
           "sidebar-wrapper page-content"
           "single-post-bottom single-post-bottom";
+      }
+      @include mq(large_laptop) {
+        padding-bottom: 70px;
+      }
+      @include mq(small_monitor) {
+        padding-bottom: 100px;
+        grid-template-areas:
+          "sidebar-wrapper page-content"
+          ". single-post-bottom";
       }
     }
   }
@@ -190,20 +243,25 @@ body.single {
   }
 }
 
-h2.post-header {
-  margin-top: 12px;
-  a {
-    color: $blueone;
-    text-decoration: none;
-    transition: all 200ms ease-in-out;
-    &:hover {
-      color: $golddark;
-    }
+#single-post-content {
+  padding-top: 45px;
+  @include mq(small_monitor) {
+  }
+  @media screen and (min-width: 1600px) {
+    padding-top: 83px;
+    max-width: 1810px;
+    margin-left: auto;
+    margin-right: auto;
+    @include flex();
   }
 }
 
-#single-post-content {
-  padding-top: 45px;
+#single-post-material {
+  @media screen and (min-width: 1600px) {
+    flex-basis: 295px;
+    flex-shrink: 0;
+    margin-right: 60px;
+  }
 }
 
 #single-post-material-list {
@@ -233,59 +291,42 @@ a.single-post-material {
 
 #single-post-summary {
   margin-top: 45px;
-}
-
-.post-content {
-  margin-top: -4px;
-  @include mq(small_tablet) {
-    grid-area: post-content;
-    margin-top: 25px;
-  }
-  @include mq(small_monitor) {
-    margin-left: 45px;
+  @media screen and (min-width: 1600px) {
     margin-top: 0px;
-  }
-  .learn-more {
-    display: inline-block;
-    margin-top: 25px;
-    border-bottom: 2px solid $golddark;
-    transition: all 200ms ease-in-out;
-    @include type(
-      (
-        size: 18px,
-        height: 21px,
-        spacing: 0.45px,
-        family: $secondaryfont,
-        color: $golddark,
-        weight: 600,
-        transform: lowercase,
-      )
-    );
-    &:hover {
-      color: $bluefour;
-      border-bottom: 2px solid $bluefour;
-    }
+    flex-grow: 1;
   }
 }
 
 #single-post-bottom {
+  padding-top: 20px;
+  @include mq(small_tablet) {
+    padding-top: 35px;
+  }
   @include mq(small_laptop) {
+    padding-top: 43px;
     width: 100%;
     grid-area: single-post-bottom;
     overflow: hidden;
-    //display: none;
+  }
+  @include mq(large_laptop) {
+    max-width: 1005px;
+    @include margin_lr();
   }
 }
 
 #single-post-featured-speakers-wrapper {
-  padding-top: 20px;
   margin-bottom: 50px;
   @include mq(small_tablet) {
-    padding-top: 35px;
     margin-bottom: 100px;
   }
   @include mq(small_laptop) {
     margin-bottom: 85px;
+  }
+  @include mq(large_laptop) {
+    margin-bottom: 50px;
+  }
+  @include mq(small_monitor) {
+    margin-bottom: 95px;
   }
 }
 
@@ -319,6 +360,11 @@ a.single-post-material {
     margin: 0 10px;
     @include mq(small_laptop) {
       margin: 0 15px;
+    }
+  }
+  .slick-track {
+    @include mq(small_tablet) {
+      @include margin_lr(0);
     }
   }
   .slick-list {
@@ -445,8 +491,6 @@ a.single-post-material {
     &:hover {
       @include tri(left, 6px, 7px, $golddark);
     }
-  }
-  #single-post-featured-speakers-arrow-left {
   }
   #single-post-featured-speakers-arrow-right {
     transform: rotate(180deg);

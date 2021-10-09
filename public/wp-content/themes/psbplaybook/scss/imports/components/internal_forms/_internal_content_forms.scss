@@ -53,6 +53,9 @@
             }
             &:nth-of-type(-n + 2) {
               flex-basis: calc(50% - 7px);
+              @include mq(small_laptop) {
+                flex-basis: calc(50% - 12px);
+              }
             }
             &::after {
               @include abs(22px, 20px, null, null);

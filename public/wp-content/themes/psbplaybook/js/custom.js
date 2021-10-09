@@ -268,15 +268,6 @@ jQuery(document).ready(function ($) {
           slidesToScroll: 4,
         },
       },
-      {
-        breakpoint: 1695,
-        settings: {
-          adaptiveHeight: false,
-          fade: false,
-          slidesToShow: 6,
-          slidesToScroll: 6,
-        },
-      },
     ],
   });
 
