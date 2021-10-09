@@ -1,4 +1,5 @@
 #general-form {
+  padding-bottom: 20px;
   span {
     display: block;
     &#general-form-title {
@@ -31,10 +32,41 @@
   .gform_wrapper {
     margin-top: 29px;
     form {
+      @include mq(small_tablet) {
+        @include flex(null, flex-end);
+        flex-direction: column;
+      }
       .gform_body {
+        @include mq(small_tablet) {
+          width: 100%;
+        }
         .gform_fields {
+          @include mq(small_tablet) {
+            @include flex(space-between);
+            flex-wrap: wrap;
+          }
           .gfield {
+            position: relative;
             margin-bottom: 15px;
+            @include mq(small_tablet) {
+              flex-basis: 100%;
+            }
+            &:nth-of-type(-n + 2) {
+              flex-basis: calc(50% - 7px);
+            }
+            &::after {
+              @include abs(22px, 20px, null, null);
+              @include contentdisplay(block, "*");
+              @include type(
+                (
+                  size: 16px,
+                  height: 19px,
+                  family: $primaryfont,
+                  color: $goldlight,
+                  weight: 600,
+                )
+              );
+            }
             label {
               display: none;
             }
@@ -42,8 +74,9 @@
             textarea {
               border: none;
               width: 100%;
+              color: $grey;
               border-radius: 6px;
-              padding: 21px 20px;
+              padding: 21px 40px 21px 20px;
               background: $greylighttwo;
               box-shadow: inset 0px 2px 5px #0000001a;
               @include type(
@@ -62,15 +95,64 @@
         }
       }
       .gform_footer {
+        background: $goldgradient;
+        border-radius: 60px;
+        margin-top: 13px;
+        position: relative;
+        cursor: pointer;
+        @include box(155px, 55px);
+        @include margin_lr();
+        @include mq(small_tablet) {
+          margin-top: 0px;
+          @include margin_lr(0);
+        }
+        &::after {
+          border-radius: 60px;
+          background: $golddark;
+          opacity: 0;
+          transition: all 200ms ease-in-out;
+          @include box(100%, 100%);
+          @include abs(0, null, null, 0);
+          @include contentdisplay();
+        }
         &:hover {
+          &::after {
+            opacity: 1;
+          }
           input[type="submit"] {
           }
         }
 
         input[type="submit"] {
+          padding: 17px 25px 0;
+          width: 100%;
+          position: relative;
+          z-index: 1;
+          border: none;
+          cursor: pointer;
+          background: transparent;
+          @include type(
+            (
+              size: 22px,
+              height: 25px,
+              family: $secondaryfont,
+              color: #fff,
+              weight: 500,
+              align: center,
+            )
+          );
+          font-size: 22px;
+          line-height: 25px;
+          font-family: "Khand", sans-serif;
+          color: #fff;
+          font-weight: 500;
+          text-align: center;
+          font-style: normal;
+          text-decoration: none;
         }
       }
       .gfield_description.validation_message.gfield_validation_message {
+        color: $golddark;
       }
     }
   }

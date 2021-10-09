@@ -15,6 +15,26 @@ body.logged-in {
   }
 }
 
+body:not(.logged-in) {
+  #page-container {
+    padding: 15px 30px 47px;
+    @include mq(small_tablet) {
+      padding: 38px 60px 86px;
+    }
+    @include mq(small_laptop) {
+      padding: 96px 75px 125px;
+    }
+    @include mq(large_laptop) {
+      padding: 96px 140px 125px;
+    }
+    @include mq(small_monitor) {
+      padding: 113px 140px 125px;
+      max-width: 1810px;
+      @include margin_lr();
+    }
+  }
+}
+
 #internal-main {
   min-height: 500px;
   margin-top: 78px;

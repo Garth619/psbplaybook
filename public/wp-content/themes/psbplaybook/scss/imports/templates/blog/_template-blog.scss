@@ -121,14 +121,73 @@
 }
 
 body.single {
+  #page-container {
+    padding-bottom: 46px;
+    &.two-col {
+      @include mq(small_laptop) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        gap: 0px 0px;
+        grid-template-areas:
+          "sidebar-wrapper page-content"
+          "single-post-bottom single-post-bottom";
+      }
+    }
+  }
+  #sidebar-wrapper {
+    @include mq(small_laptop) {
+      grid-area: sidebar-wrapper;
+      width: 366px;
+    }
+  }
+  #page-content {
+    @include mq(small_laptop) {
+      grid-area: page-content;
+    }
+  }
+  .post-meta-wrapper {
+    margin-left: 0;
+  }
   .post-meta {
     margin-top: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    @include mq(small_laptop) {
+      text-align: left;
+    }
+  }
+  #page-title {
+    @include mq(small_monitor) {
+      @include quick_type(55px, 65px, null);
+    }
+  }
+  h2.post-header {
+    margin-top: 26px;
+    text-align: center;
+  }
+  .playbook-video {
+    max-width: 750px;
+    @include margin_lr();
+    .playbook-video-overlay {
+      .playbook-play-button {
+        svg {
+          @include box(93px, 93px);
+          @include mq(small_tablet) {
+            @include box(105px, 105px);
+          }
+        }
+      }
+    }
   }
 }
 
 #single-post {
   margin-top: -30px;
+  @include mq(small_tablet) {
+    margin-top: 7px;
+  }
 }
 
 h2.post-header {
@@ -157,6 +216,9 @@ a.single-post-material {
   padding: 20px 0;
   border-bottom: 1px solid $greylight;
   @include flex();
+  @include mq(small_tablet) {
+    padding: 28px 0;
+  }
   &:hover {
     color: $golddark;
   }
@@ -206,13 +268,40 @@ a.single-post-material {
   }
 }
 
+#single-post-bottom {
+  @include mq(small_laptop) {
+    width: 100%;
+    grid-area: single-post-bottom;
+    overflow: hidden;
+    //display: none;
+  }
+}
+
 #single-post-featured-speakers-wrapper {
   padding-top: 20px;
   margin-bottom: 50px;
+  @include mq(small_tablet) {
+    padding-top: 35px;
+    margin-bottom: 100px;
+  }
+  @include mq(small_laptop) {
+    margin-bottom: 85px;
+  }
 }
 
 #single-post-featured-speakers-inner {
   position: relative;
+  @include mq(small_tablet) {
+    padding-top: 13px;
+    width: calc(100% - 90px);
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    width: 100%;
+    padding-top: 17px;
+    @include flex(null, flex-end);
+    flex-direction: column;
+  }
 }
 
 #single-post-featured-speakers {
@@ -220,6 +309,24 @@ a.single-post-material {
   z-index: 1;
   width: calc(100% - 60px);
   @include margin_lr();
+  @include mq(small_tablet) {
+    width: calc(100% - 80px);
+  }
+  @include mq(small_laptop) {
+    width: 100%;
+  }
+  .slick-slide {
+    margin: 0 10px;
+    @include mq(small_laptop) {
+      margin: 0 15px;
+    }
+  }
+  .slick-list {
+    margin: 0 -10px;
+    @include mq(small_laptop) {
+      margin: 0 -15px;
+    }
+  }
 }
 
 .single-post-featured-speakers-slide {
@@ -243,14 +350,16 @@ a.single-post-material {
         align-items: center;
         transition: all 200ms ease-in-out;
         @include box(100%, 100%);
-        @include contentdisplay(flex, "View Bio");
+        @include contentdisplay(flex, "View Profile");
         @include abs(0, null, null, 0, 1);
         @include type(
           (
-            size: 15px,
-            family: $primaryfont,
+            size: 16px,
+            family: $secondaryfont,
             color: #fff,
-            weight: 800,
+            weight: 600,
+            transform: uppercase,
+            spacing: 0.4px,
           )
         );
       }
@@ -316,13 +425,23 @@ a.single-post-material {
 }
 
 #single-post-featured-speakers-arrow-wrapper {
-  width: 100%;
-  @include abs(135px, null, null, 0);
-  @include flex(space-between);
+  margin: auto 0;
+  @include box(100%, 100%);
+  @include abs(0px, null, null, 0);
+  @include flex(space-between, center);
+  @include mq(small_laptop) {
+    position: static;
+    width: 130px;
+    margin: 15px 0 0;
+  }
   .single-post-featured-speakers-arrows {
     transition: all 200ms ease-in-out;
+    margin-top: -100px;
     @include box(6px, 10px);
     @include tri(left, 6px, 7px, $blueone);
+    @include mq(small_laptop) {
+      margin-top: 0px;
+    }
     &:hover {
       @include tri(left, 6px, 7px, $golddark);
     }
@@ -334,6 +453,18 @@ a.single-post-material {
   }
   span#single-post-featured-speakers-arrow-title {
     display: none;
+    @include mq(small_laptop) {
+      display: block;
+      @include type(
+        (
+          size: 16px,
+          height: 19px,
+          family: $secondaryfont,
+          color: $bluefour,
+          weight: 600,
+        )
+      );
+    }
   }
 }
 

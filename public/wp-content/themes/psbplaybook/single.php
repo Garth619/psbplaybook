@@ -119,166 +119,6 @@ echo $pfx_date;?></span>
 
           </div><!-- single-post-content -->
 
-          <div id='single-post-featured-speakers-wrapper'>
-
-            <h3>Featured Speakers</h3>
-
-            <div id='single-post-featured-speakers-inner'>
-
-              <div id='single-post-featured-speakers'>
-
-                <div class='single-post-featured-speakers-slide'>
-
-                  <a href=''>
-
-                    <div class='single-post-featured-speakers-img'>
-
-                      <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
-
-                    </div><!-- single-post-featured-speakers-img -->
-
-                    <span class='single-post-featured-speakers-name'>adam Shea</span>
-                    <!-- single-post-featured-speakers-name -->
-
-                    <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
-                    <!-- single-post-featured-speakers-position -->
-
-                  </a>
-
-                </div><!-- single-post-featured-speakers-slide -->
-
-                <div class='single-post-featured-speakers-slide'>
-
-                  <a href=''>
-
-                    <div class='single-post-featured-speakers-img'>
-
-                      <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
-
-                    </div><!-- single-post-featured-speakers-img -->
-
-                    <span class='single-post-featured-speakers-name'>adam Shea</span>
-                    <!-- single-post-featured-speakers-name -->
-
-                    <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
-                    <!-- single-post-featured-speakers-position -->
-
-                  </a>
-
-                </div><!-- single-post-featured-speakers-slide -->
-
-                <div class='single-post-featured-speakers-slide'>
-
-                  <a href=''>
-
-                    <div class='single-post-featured-speakers-img'>
-
-                      <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
-
-                    </div><!-- single-post-featured-speakers-img -->
-
-                    <span class='single-post-featured-speakers-name'>adam Shea</span>
-                    <!-- single-post-featured-speakers-name -->
-
-                    <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
-                    <!-- single-post-featured-speakers-position -->
-
-                  </a>
-
-                </div><!-- single-post-featured-speakers-slide -->
-
-                <div class='single-post-featured-speakers-slide'>
-
-                  <a href=''>
-
-                    <div class='single-post-featured-speakers-img'>
-
-                      <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
-
-                    </div><!-- single-post-featured-speakers-img -->
-
-                    <span class='single-post-featured-speakers-name'>adam Shea</span>
-                    <!-- single-post-featured-speakers-name -->
-
-                    <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
-                    <!-- single-post-featured-speakers-position -->
-
-                  </a>
-
-                </div><!-- single-post-featured-speakers-slide -->
-
-                <div class='single-post-featured-speakers-slide'>
-
-                  <a href=''>
-
-                    <div class='single-post-featured-speakers-img'>
-
-                      <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
-
-                    </div><!-- single-post-featured-speakers-img -->
-
-                    <span class='single-post-featured-speakers-name'>adam Shea</span>
-                    <!-- single-post-featured-speakers-name -->
-
-                    <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
-                    <!-- single-post-featured-speakers-position -->
-
-                  </a>
-
-                </div><!-- single-post-featured-speakers-slide -->
-
-                <div class='single-post-featured-speakers-slide'>
-
-                  <a href=''>
-
-                    <div class='single-post-featured-speakers-img'>
-
-                      <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
-
-                    </div><!-- single-post-featured-speakers-img -->
-
-                    <span class='single-post-featured-speakers-name'>adam Shea</span>
-                    <!-- single-post-featured-speakers-name -->
-
-                    <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
-                    <!-- single-post-featured-speakers-position -->
-
-                  </a>
-
-                </div><!-- single-post-featured-speakers-slide -->
-
-              </div><!-- single-post-featured-speakers -->
-
-              <div id='single-post-featured-speakers-arrow-wrapper'>
-
-                <div id='single-post-featured-speakers-arrow-left' class='single-post-featured-speakers-arrows'>
-
-                </div><!-- single-post-featured-speakers-arrow-left -->
-
-                <span id='single-post-featured-speakers-arrow-title'>More Speakers</span>
-                <!-- single-post-featured-speakers-arrow-title -->
-
-                <div id='single-post-featured-speakers-arrow-right' class='single-post-featured-speakers-arrows'>
-
-                </div><!-- single-post-featured-speakers-arrow-right -->
-
-              </div><!-- single-post-featured-speakers-arrow-wrapper -->
-
-            </div><!-- single-post-featured-speakers-inner -->
-
-          </div><!-- single-post-featured-speakers-wrapper -->
-
-          <div id='general-form'>
-
-            <span id='general-form-title'>QUESTIONs? COMMENTs?</span><!-- general-form-title -->
-
-            <span id='general-form-description'>If you have questions or comments regarding this topic/episode, send us
-              a message below</span><!-- general-form-description -->
-
-            <?php gravity_form(2, false, false, false, '', true, 1236);?>
-
-          </div><!-- general-form -->
-
         </div><!-- single_post -->
 
         <?php endwhile; // end of loop ?>
@@ -288,6 +128,170 @@ echo $pfx_date;?></span>
       </div><!-- page-content-inner -->
 
     </div><!-- page-content -->
+
+    <div id='single-post-bottom' class='content'>
+
+      <div id='single-post-featured-speakers-wrapper'>
+
+        <h3>Featured Speakers</h3>
+
+        <div id='single-post-featured-speakers-inner'>
+
+          <div id='single-post-featured-speakers'>
+
+            <div class='single-post-featured-speakers-slide'>
+
+              <a href=''>
+
+                <div class='single-post-featured-speakers-img'>
+
+                  <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
+
+                </div><!-- single-post-featured-speakers-img -->
+
+                <span class='single-post-featured-speakers-name'>adam Shea</span>
+                <!-- single-post-featured-speakers-name -->
+
+                <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
+                <!-- single-post-featured-speakers-position -->
+
+              </a>
+
+            </div><!-- single-post-featured-speakers-slide -->
+
+            <div class='single-post-featured-speakers-slide'>
+
+              <a href=''>
+
+                <div class='single-post-featured-speakers-img'>
+
+                  <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
+
+                </div><!-- single-post-featured-speakers-img -->
+
+                <span class='single-post-featured-speakers-name'>adam Shea</span>
+                <!-- single-post-featured-speakers-name -->
+
+                <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
+                <!-- single-post-featured-speakers-position -->
+
+              </a>
+
+            </div><!-- single-post-featured-speakers-slide -->
+
+            <div class='single-post-featured-speakers-slide'>
+
+              <a href=''>
+
+                <div class='single-post-featured-speakers-img'>
+
+                  <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
+
+                </div><!-- single-post-featured-speakers-img -->
+
+                <span class='single-post-featured-speakers-name'>adam Shea</span>
+                <!-- single-post-featured-speakers-name -->
+
+                <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
+                <!-- single-post-featured-speakers-position -->
+
+              </a>
+
+            </div><!-- single-post-featured-speakers-slide -->
+
+            <div class='single-post-featured-speakers-slide'>
+
+              <a href=''>
+
+                <div class='single-post-featured-speakers-img'>
+
+                  <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
+
+                </div><!-- single-post-featured-speakers-img -->
+
+                <span class='single-post-featured-speakers-name'>adam Shea</span>
+                <!-- single-post-featured-speakers-name -->
+
+                <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
+                <!-- single-post-featured-speakers-position -->
+
+              </a>
+
+            </div><!-- single-post-featured-speakers-slide -->
+
+            <div class='single-post-featured-speakers-slide'>
+
+              <a href=''>
+
+                <div class='single-post-featured-speakers-img'>
+
+                  <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
+
+                </div><!-- single-post-featured-speakers-img -->
+
+                <span class='single-post-featured-speakers-name'>adam Shea</span>
+                <!-- single-post-featured-speakers-name -->
+
+                <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
+                <!-- single-post-featured-speakers-position -->
+
+              </a>
+
+            </div><!-- single-post-featured-speakers-slide -->
+
+            <div class='single-post-featured-speakers-slide'>
+
+              <a href=''>
+
+                <div class='single-post-featured-speakers-img'>
+
+                  <img src='<?php bloginfo('template_directory');?>/images/adam-shea.jpg' alt='' />
+
+                </div><!-- single-post-featured-speakers-img -->
+
+                <span class='single-post-featured-speakers-name'>adam Shea</span>
+                <!-- single-post-featured-speakers-name -->
+
+                <span class='single-post-featured-speakers-position'>PSB PARTNER</span>
+                <!-- single-post-featured-speakers-position -->
+
+              </a>
+
+            </div><!-- single-post-featured-speakers-slide -->
+
+          </div><!-- single-post-featured-speakers -->
+
+          <div id='single-post-featured-speakers-arrow-wrapper'>
+
+            <div id='single-post-featured-speakers-arrow-left' class='single-post-featured-speakers-arrows'>
+
+            </div><!-- single-post-featured-speakers-arrow-left -->
+
+            <span id='single-post-featured-speakers-arrow-title'>More Speakers</span>
+            <!-- single-post-featured-speakers-arrow-title -->
+
+            <div id='single-post-featured-speakers-arrow-right' class='single-post-featured-speakers-arrows'>
+
+            </div><!-- single-post-featured-speakers-arrow-right -->
+
+          </div><!-- single-post-featured-speakers-arrow-wrapper -->
+
+        </div><!-- single-post-featured-speakers-inner -->
+
+      </div><!-- single-post-featured-speakers-wrapper -->
+
+      <div id='general-form'>
+
+        <span id='general-form-title'>QUESTIONs? COMMENTs?</span><!-- general-form-title -->
+
+        <span id='general-form-description'>If you have questions or comments regarding this topic/episode, send us
+          a message below</span><!-- general-form-description -->
+
+        <?php gravity_form(2, false, false, false, '', true, 1236);?>
+
+      </div><!-- general-form -->
+
+    </div><!-- single-post-bottom -->
 
     <?php if (!get_field('disable_sidebar')) {
 

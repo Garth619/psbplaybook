@@ -242,12 +242,21 @@ jQuery(document).ready(function ($) {
         },
       },
       {
-        breakpoint: 1170,
+        breakpoint: 965,
         settings: {
           adaptiveHeight: false,
           fade: false,
           slidesToShow: 3,
           slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 1170,
+        settings: {
+          adaptiveHeight: false,
+          fade: false,
+          slidesToShow: 4,
+          slidesToScroll: 4,
         },
       },
       {

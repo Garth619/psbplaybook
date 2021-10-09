@@ -4,18 +4,18 @@
 	 width="67px" height="67px" viewBox="0 0 67 67" enable-background="new 0 0 67 67" xml:space="preserve">
 <g id="Group_205" transform="translate(-350.678 -1882.678)">
 	<g transform="matrix(1, 0, 0, 1, 350.68, 1882.68)">
-		<circle id="Ellipse_1_copy_2-2" opacity="0.302" fill="#FFFFFF" enable-background="new    " cx="33.5" cy="33.5" r="33.5"/>
+		<circle id="circle-1" opacity="0.302" fill="#FFFFFF" enable-background="new    " cx="33.5" cy="33.5" r="33.5"/>
 	</g>
 	<g transform="matrix(1, 0, 0, 1, 350.68, 1882.68)">
 		
-			<linearGradient id="Ellipse_1_copy-2_00000060727092104297783050000000917504682370995594_" gradientUnits="userSpaceOnUse" x1="-217.9386" y1="283.3788" x2="-217.9386" y2="282.3788" gradientTransform="matrix(47.208 0 0 -47.208 10321.9482 13387.6416)">
+			<linearGradient id="circle-2_00000060727092104297783050000000917504682370995594_" gradientUnits="userSpaceOnUse" x1="-217.9386" y1="283.3788" x2="-217.9386" y2="282.3788" gradientTransform="matrix(47.208 0 0 -47.208 10321.9482 13387.6416)">
 			<stop  offset="0" style="stop-color:#FFFFFF"/>
 			<stop  offset="0.35" style="stop-color:#FFFFFF"/>
 			<stop  offset="0.994" style="stop-color:#E7E7E7"/>
 			<stop  offset="1" style="stop-color:#E7E7E7"/>
 		</linearGradient>
 		
-			<circle id="Ellipse_1_copy-2" fill="url(#Ellipse_1_copy-2_00000060727092104297783050000000917504682370995594_)" cx="33.5" cy="33.5" r="23.6"/>
+			<circle id="circle-2" fill="url(#circle-2_00000060727092104297783050000000917504682370995594_)" cx="33.5" cy="33.5" r="23.6"/>
 	</g>
 	<path id="Polygon_1" fill="#BF7B30" d="M391.9,1915.9l-11.4,7v-14L391.9,1915.9z"/>
 </g>

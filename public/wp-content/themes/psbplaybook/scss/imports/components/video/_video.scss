@@ -33,9 +33,13 @@
     @include flex(center, center);
     .playbook-play-button {
       svg {
-        circle#Ellipse_1_copy_2-2 {
+        circle#circle-1 {
           opacity: 0.2;
           transition: opacity 200ms ease-in-out;
+          box-shadow: 0px 1px 20px #8b8c8f;
+        }
+        circle#circle-2 {
+          box-shadow: 0px 1px 20px #8b8c8f;
         }
       }
     }
@@ -57,8 +61,10 @@
       background: rgba(14, 19, 38, 0.85);
       .playbook-play-button {
         svg {
-          circle#Ellipse_1_copy_2-2 {
+          circle#circle-1 {
             opacity: 0.5;
+          }
+          circle#circle-2 {
           }
         }
       }
