@@ -673,23 +673,22 @@ h4 {
 }
 
 @media screen and (min-width: 1100px) {
-  .wp-block-image.alignleft img {
+  .wp-block-image .alignleft img {
     float: left;
     margin-right: 39px;
   }
 }
-.wp-block-image.aligncenter img {
+.wp-block-image .aligncenter img {
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 1100px) {
-  .wp-block-image.alignright img {
+  .wp-block-image .alignright img {
     float: right;
     margin-left: 39px;
   }
 }
 .wp-block-image img {
-  margin-top: 40px;
   margin-bottom: 30px;
   max-width: 100%;
   height: auto;
@@ -697,24 +696,6 @@ h4 {
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 768px) {
-  .wp-block-image img {
-    margin-top: 40px;
-    margin-bottom: 60px;
-  }
-}
-@media screen and (min-width: 1170px) {
-  .wp-block-image img {
-    margin-top: 50px;
-  }
-}
-@media screen and (min-width: 1380px) {
-  .wp-block-image img {
-    margin-top: 70px;
-    margin-bottom: 80px;
-  }
-}
-
 body {
   color: #0e1326;
 }
