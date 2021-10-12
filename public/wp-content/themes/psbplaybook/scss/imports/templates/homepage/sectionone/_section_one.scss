@@ -1,6 +1,6 @@
 #section-one {
   margin-top: 78px;
-  background: $blueone;
+  background: url(images/bg-pattern.jpg) top left repeat;
   padding: 40px 15px 50px;
   @include mq(small_laptop) {
     margin-top: 0px;
@@ -27,6 +27,7 @@
     flex-grow: 1;
   }
   .playbook-video {
+    height: 144px;
     @include mq(small_laptop) {
       @include box(100%, 732px);
     }
@@ -95,7 +96,7 @@
 }
 
 #sec-one-bottom {
-  background: $blueone;
+  //background: $blueone;
   margin-top: 34px;
   @include mq(small_tablet) {
     margin-top: 27px;
@@ -105,6 +106,7 @@
     flex-basis: 50%;
     order: 1;
     margin-top: 0;
+    background: url(images/bg-pattern.jpg) top left repeat;
   }
   @include mq(small_monitor) {
     flex-basis: 699px;

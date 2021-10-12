@@ -309,7 +309,7 @@ a.single-post-material {
     overflow: hidden;
   }
   @include mq(large_laptop) {
-    max-width: 1005px;
+    max-width: 1075px;
     @include margin_lr();
   }
 }

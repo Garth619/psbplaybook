@@ -10,6 +10,11 @@
 
       <div id='page-content-inner' class='content'>
 
+        <?php $fs_profile = get_field('fs_profile');?>
+        <?php if ($fs_profile) {?>
+        <img src="<?php echo $fs_profile['url']; ?>" alt="<?php echo $fs_profile['alt']; ?>" />
+        <?php }?>
+
         <?php the_content();?>
 
       </div><!-- page-content-inner -->

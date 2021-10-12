@@ -4,7 +4,8 @@
 
     <div class='playbook-video'>
 
-      <div class='playbook-wistia wistia_embed wistia_async_dsqtgjeu3h popover=true popoverContent=html'
+      <div
+        class='playbook-wistia wistia_embed wistia_async_<?php the_field('section_one_wistia_video_id');?> popover=true popoverContent=html'
         data-wistia='<?php the_field('section_one_wistia_video_id');?>'></div>
       <!-- playbook-wistia -->
 
@@ -20,17 +21,38 @@
 
       <picture>
 
-        <source media='(min-width: 1170px)' srcset='<?php bloginfo('template_directory');?>/images/hero-1920.jpg'>
+        <?php $section_one_background_image_desktop_webp = get_field('section_one_background_image_desktop_webp');?>
+        <?php if ($section_one_background_image_desktop_webp) {?>
 
-        <img class='playbook-video-image' src='<?php bloginfo('template_directory');?>/images/hero-video-img-mobile.jpg'
-          alt='' />
+        <source media='(min-width: 1170px)' srcset='<?php echo $section_one_background_image_desktop_webp['url']; ?>'
+          type='image/webp'>
+
+        <?php }?>
+
+        <?php $section_one_background_image_desktop = get_field('section_one_background_image_desktop');?>
+        <?php if ($section_one_background_image_desktop) {?>
+
+        <source media='(min-width: 1170px)' srcset='<?php echo $section_one_background_image_desktop['url']; ?>'>
+
+        <?php }?>
+
+        <?php $section_one_background_image_mobile_webp = get_field('section_one_background_image_mobile_webp');?>
+        <?php if ($section_one_background_image_mobile_webp) {?>
+
+        <source srcset='<?php echo $section_one_background_image_mobile_webp['url']; ?>' type='image/webp'>
+
+        <?php }?>
+
+        <?php $section_one_background_image_mobile = get_field('section_one_background_image_mobile');?>
+
+        <img class='playbook-video-image' src="<?php echo $section_one_background_image_mobile['url']; ?>"
+          alt="<?php echo $section_one_background_image_mobile['alt']; ?>" />
 
       </picture>
-      <!-- remove 'data-' and 'lazyload' if needs to load on page load -->
 
     </div><!-- playbook-video -->
 
-    <span id='learn-title'>Learn from the best as part of our<br> exclusive Plaintiff Lawyer network.</span>
+    <span id='learn-title'><?php the_field('section_one_selling_point_title');?></span>
     <!-- learn-title -->
 
   </div><!-- sec-one-top -->
@@ -41,10 +63,11 @@
 
       <div id='sec-one-sign-up'>
 
-        <span id='sec-one-sign-up-title'>JOIN THE PLAYBOOk</span><!-- sec-one-sign-up-title -->
+        <span id='sec-one-sign-up-title'><?php the_field('join_now_title', 'option');?></span>
+        <!-- sec-one-sign-up-title -->
 
-        <span id='sec-one-sign-up-subtitle'>Learn from the best as part of our exclusive Plaintiff Lawyer
-          network.</span><!-- sec-one-sign-up-subtitle -->
+        <span id='sec-one-sign-up-subtitle'><?php the_field('join_now_description', 'option');?></span>
+        <!-- sec-one-sign-up-subtitle -->
 
         <form id="signup-form">
 
@@ -65,23 +88,25 @@
 
         </form>
 
-        <span id='sec-one-sign-up-description'>Membership is <strong>free</strong> in order to access our digital
-          library and live
-          events.</span><!-- sec-one-sign-up-description -->
+        <span id='sec-one-sign-up-description'><?php the_field('join_now_description_two', 'option');?></span>
+        <!-- sec-one-sign-up-description -->
 
       </div><!-- sec-one-sign-up -->
 
       <div id='sec-one-recent-episodes'>
 
-        <span id='sec-one-recent-episodes-title'>RECENT EPISODEs</span><!-- sec-one-recent-episodes-title -->
+        <span id='sec-one-recent-episodes-title'><?php the_field('section_one_recent_episodes_title');?></span>
+        <!-- sec-one-recent-episodes-title -->
 
         <div id='sec-one-recent-episodes-wrapper'>
 
+          <?php $mymain_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => '4', 'order' => 'DSC'));while ($mymain_query->have_posts()): $mymain_query->the_post();?>
+
           <div class='sec-one-single-episode'>
 
-            <a href='<?php bloginfo('bloginfo');?>/href'>
+            <a href='<?php the_permalink();?>'>
 
-              <span>Episode 9 - Pierce v. Murrieta Valley Unified School District</span>
+              <span><?php the_title();?></span>
 
               <img src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
 
@@ -89,45 +114,12 @@
 
           </div><!-- sec-one-single-episode -->
 
-          <div class='sec-one-single-episode'>
-
-            <a href='<?php bloginfo('bloginfo');?>/href'>
-
-              <span>Episode 9 - Pierce v. Murrieta Valley Unified School District</span>
-
-              <img src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
-
-            </a>
-
-          </div><!-- sec-one-single-episode -->
+          <?php endwhile;?>
+          <?php wp_reset_postdata(); // reset the query ?>
 
           <div class='sec-one-single-episode'>
 
-            <a href='<?php bloginfo('bloginfo');?>/href'>
-
-              <span>Episode 9 - Pierce v. Murrieta Valley Unified School District</span>
-
-              <img src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
-
-            </a>
-
-          </div><!-- sec-one-single-episode -->
-
-          <div class='sec-one-single-episode'>
-
-            <a href='<?php bloginfo('bloginfo');?>/href'>
-
-              <span>Episode 9 - Pierce v. Murrieta Valley Unified School District</span>
-
-              <img src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
-
-            </a>
-
-          </div><!-- sec-one-single-episode -->
-
-          <div class='sec-one-single-episode'>
-
-            <a href='<?php bloginfo('bloginfo');?>/href'>
+            <a href='<?php the_field('section_one_view_all_episodes_link');?>'>
 
               <span>View All</span>
 

@@ -148,7 +148,8 @@ body.logged-in:not(.page-template-template-home) {
 }
 
 header {
-  background: $blueone;
+  //background: $blueone;
+  background: url(images/bg-pattern.jpg) top left repeat;
   width: 100%;
   @include flex(space-between);
   @include fixed(0, null, null, 0, 5);

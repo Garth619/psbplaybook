@@ -2,9 +2,9 @@
 
   <div id='sec-two-inner'>
 
-    <span class='sec-two-title sign-in'>WHY<br> JOIn?</span><!-- sec-two-title -->
+    <span class='sec-two-title sign-in'><?php the_field('section_two_title_sign_in');?></span><!-- sec-two-title -->
 
-    <span class='sec-two-title logged-in'>The<br> Play<br> book</span><!-- sec-two-title -->
+    <span class='sec-two-title logged-in'><?php the_field('section_two_title_logged_in');?></span><!-- sec-two-title -->
 
     <div id='sec-two-sp-wrapper'>
 
@@ -12,32 +12,20 @@
 
       <div id='sec-two-sp-slideshow'>
 
-        <div class='sec-two-sp-slide'>
-
-          <span class='sec-two-sp-title'>LEARN FROM THE BESt</span><!-- sec-two-sp-title -->
-
-          <span class='sec-two-description'>Panish Shea & Boyle LLP have helped clients secure more than $10 Billion in
-            compensation for their damages.</span><!-- sec-two-description -->
-
-        </div><!-- sec-two-sp-slide -->
+        <?php if (have_rows('section_two_sellling_points')): ?>
+        <?php while (have_rows('section_two_sellling_points')): the_row();?>
 
         <div class='sec-two-sp-slide'>
 
-          <span class='sec-two-sp-title'>Reputation to stand by</span><!-- sec-two-sp-title -->
+          <span class='sec-two-sp-title'><?php the_sub_field('title');?></span><!-- sec-two-sp-title -->
 
-          <span class='sec-two-description'>PSB has earned national recognition for their record-setting jury verdicts
-            and unwavering commitment to client recovery.</span><!-- sec-two-description -->
-
-        </div><!-- sec-two-sp-slide -->
-
-        <div class='sec-two-sp-slide'>
-
-          <span class='sec-two-sp-title'>Trial experience</span><!-- sec-two-sp-title -->
-
-          <span class='sec-two-description'>PSB has no fear of taking a case into court. We put our reputation as
-            trial-tested attorneys to work for the benefit of our clients.</span><!-- sec-two-description -->
+          <span class='sec-two-description'> <?php the_sub_field('description');?></span><!-- sec-two-description -->
 
         </div><!-- sec-two-sp-slide -->
+
+        <?php endwhile;?>
+
+        <?php endif;?>
 
       </div><!-- sec-two-sp-slideshow -->
 
