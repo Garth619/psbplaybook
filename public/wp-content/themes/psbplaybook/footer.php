@@ -109,9 +109,11 @@
 
 <div id='member-signup-overlay'>
 
-  <div id='member-signup-inner'>
+  <span id='member-signup-overlay-close'>Close</span><!-- member-signup-overlay-close -->
 
-    <span id='member-signup-overlay-close'>Close</span><!-- member-signup-overlay-close -->
+  <span id='member-signup-title'>JOIN THE PLAYBOOk</span><!-- member-signup-title -->
+
+  <div id='member-signup-inner'>
 
     <?php echo do_shortcode('[mepr-membership-registration-form id="352"]'); ?>
 

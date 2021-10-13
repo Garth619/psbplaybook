@@ -6,19 +6,121 @@
 
 #member-signup-overlay {
   background: url(images/bg-pattern.jpg) top left repeat;
-  opacity: 0;
-  visibility: hidden;
+  background-color: $blueone;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  //  opacity: 0;
+  //  visibility: hidden;
   @include box(100%, 100vh);
-  @include fixed(0, null, null, 0, 10);
+  @include fixed(76px, null, null, 0, 10);
   &.open {
     opacity: 1;
     visibility: visible;
   }
 }
 
+span#member-signup-title {
+  display: block;
+  @include type(
+    (
+      size: 45px,
+      height: 50px,
+      family: $secondaryfont,
+      color: $goldlight,
+      weight: 500,
+      align: center,
+      transform: uppercase,
+    )
+  );
+}
+
 span#member-signup-overlay-close {
   display: block;
   color: $goldlight;
+}
+
+#member-signup-inner {
+  padding: 0 40px;
+  margin-top: 31px;
+  .mepr_price {
+    display: none;
+  }
+
+  .mepr-signup-form {
+    .mp-form-row {
+      position: relative;
+      margin-bottom: 18px;
+      // membership plugin form is difficult to work with...
+      &.mepr_mepr_name,
+      &.mepr_mepr_i_will_not_record,
+      &.mepr_mepr_i_will_not_disseminate_any_information,
+      &.mepr_mepr_willful_violation,
+      &.mepr_mepr_registering_attorney_submits_themselves {
+        &::after {
+          display: none;
+        }
+      }
+      .mp-form-label {
+        display: none;
+      }
+      &::after {
+        font-family: $primaryfont !important;
+        @include abs(24px, 9px, null, null);
+        @include contentdisplay(block, "*");
+        @include type(
+          (
+            size: 16px,
+            height: 18px,
+            color: $goldlight,
+            weight: 600,
+          )
+        );
+      }
+      .mepr-checkboxes-field-row {
+        display: flex !important;
+        padding-top: 8px;
+        .mepr-form-checkboxes-label {
+          margin-left: 10px;
+          font-family: $primaryfont !important;
+          @include type(
+            (
+              size: 16px,
+              height: 22px,
+              color: #fff,
+              weight: 600,
+            )
+          );
+          span.my-required {
+            color: $goldlight;
+            display: inline;
+          }
+        }
+        input {
+          flex-shrink: 0;
+        }
+      }
+      input {
+        border: none;
+        border-radius: 6px;
+        padding: 22px 21px 22px 12px !important;
+        font-family: $primaryfont !important;
+        @include type(
+          (
+            size: 16px,
+            height: 18px,
+            color: $grey,
+            weight: 600,
+          )
+        );
+      }
+    }
+  }
+}
+
+label.mepr-form-radios-label,
+label.mepr-form-checkboxes-label {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 // account tabs

@@ -22,11 +22,15 @@ jQuery(document).ready(function ($) {
 
         if (isValidEmail) {
           console.log("send it");
-          $("#signup-form-submit").attr("disabled", true);
 
           $("#signup-form-submit").on("click", function (e) {
+            e.preventDefault();
+            $("#signup-form-submit").attr("disabled", true);
             const signupEmail = $("#signup-form-email").val();
             $(".mp-form-row mepr_email #user_email1").val("what");
+            console.log("send it");
+            // $("#member-signup-overlay").addClass("open"); // make all these one function
+            // $("html, body").css("overflow-y", "hidden");
           });
         } else {
           $("#signup-form-submit").attr("disabled", false);
@@ -34,6 +38,39 @@ jQuery(document).ready(function ($) {
       });
     }
   }
+
+  /* Sign Up Overlay
+--------------------------------------------------------------------------------------- */
+
+  $(".memberpress-signup").each(function () {
+    $(this).on("click", function (e) {
+      $("#member-signup-overlay").addClass("open");
+      $("html, body").css("overflow-y", "hidden");
+    });
+  });
+
+  $("#member-signup-overlay-close").on("click", function (e) {
+    $("#member-signup-overlay").removeClass("open");
+    $("html, body").css("overflow-y", "scroll");
+  });
+
+  $(
+    ".mepr-signup-form :input[type='text'], .mepr-signup-form :input[type='email'], .mepr-signup-form :input[type='tel'],.mepr-signup-form :input[type='password']"
+  ).each(function (index, elem) {
+    var eId = $(elem).attr("id");
+    var label = null;
+    if (
+      eId &&
+      (label = $(elem)
+        .parents("form")
+        .find("label[for=" + eId + "]")).length == 1
+    ) {
+      var newValue = $(label).text().replace(":*", "");
+      $(elem).attr("placeholder", newValue);
+      $(label).hide();
+    }
+  });
+
   /* Wistia - loads wistia on click to improve initial page speed fallsback if thumbnails need to be loaded on page load
      --------------------------------------------------------------------------------------------------------------------- */
 
@@ -73,21 +110,6 @@ jQuery(document).ready(function ($) {
   }
 
   $(".wistia_embed").on("click", checkWistia);
-
-  /* Sign Up Overlay
---------------------------------------------------------------------------------------- */
-
-  $(".memberpress-signup").each(function () {
-    $(this).on("click", function (e) {
-      $("#member-signup-overlay").addClass("open");
-      $("html, body").css("overflow-y", "hidden");
-    });
-  });
-
-  $("#member-signup-overlay-close").on("click", function (e) {
-    $("#member-signup-overlay").removeClass("open");
-    $("html, body").css("overflow-y", "scroll");
-  });
 
   /* Waypoints
      --------------------------------------------------------------------------------------- */
