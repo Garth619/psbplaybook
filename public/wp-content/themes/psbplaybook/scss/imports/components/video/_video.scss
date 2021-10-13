@@ -3,6 +3,11 @@
   cursor: pointer;
   overflow: hidden;
   width: 100%;
+  &.memberpress-signup {
+    .playbook-wistia {
+      pointer-events: none;
+    }
+  }
   &.playbook-html {
     .playbook-video-overlay {
       z-index: 1;
@@ -11,6 +16,7 @@
       z-index: 2;
     }
   }
+
   &.playbook-thumbnail {
     .playbook-video-overlay {
       z-index: 2;

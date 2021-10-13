@@ -27,17 +27,6 @@
   }
 }
 
-body.logged-in {
-  span.sec-two-title {
-    &.sign-in {
-      display: none;
-    }
-    &.logged-in {
-      display: block;
-    }
-  }
-}
-
 span.sec-two-title {
   display: block;
   @include type(
@@ -63,7 +52,6 @@ span.sec-two-title {
     }
   }
   &.logged-in {
-    display: none;
     @include mq(small_tablet) {
       margin-top: 31px;
     }

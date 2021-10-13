@@ -2,9 +2,17 @@
 
   <div id='sec-two-inner'>
 
+    <?php if (!current_user_can('mepr-active', 'rules:358')) {?>
+
     <span class='sec-two-title sign-in'><?php the_field('section_two_title_sign_in');?></span><!-- sec-two-title -->
 
+    <?php }?>
+
+    <?php if (current_user_can('mepr-active', 'rules:358')) {?>
+
     <span class='sec-two-title logged-in'><?php the_field('section_two_title_logged_in');?></span><!-- sec-two-title -->
+
+    <?php }?>
 
     <div id='sec-two-sp-wrapper'>
 

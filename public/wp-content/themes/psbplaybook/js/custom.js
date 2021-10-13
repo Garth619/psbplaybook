@@ -7,25 +7,32 @@ jQuery(document).ready(function ($) {
   $("body").addClass("ready");
 
   // log in for quicktesting
-  $("body").addClass("logged-in");
+  //$("body").addClass("logged-in");
 
   /* Sign Up Form - Step One Email
   --------------------------------------------------------------------------------------- */
 
   if ($("body").hasClass("page-template-template-home")) {
-    const emailField = document.getElementById("signup-form-email");
-    const okButton = document.getElementById("signup-form-submit");
+    if (!$("body").hasClass("logged-in")) {
+      const emailField = document.getElementById("signup-form-email");
+      const okButton = document.getElementById("signup-form-submit");
 
-    emailField.addEventListener("keyup", function (event) {
-      isValidEmail = emailField.checkValidity();
+      emailField.addEventListener("keyup", function (event) {
+        isValidEmail = emailField.checkValidity();
 
-      if (isValidEmail) {
-        console.log("send it");
-        $("#signup-form-submit").attr("disabled", true);
-      } else {
-        $("#signup-form-submit").attr("disabled", false);
-      }
-    });
+        if (isValidEmail) {
+          console.log("send it");
+          $("#signup-form-submit").attr("disabled", true);
+
+          $("#signup-form-submit").on("click", function (e) {
+            const signupEmail = $("#signup-form-email").val();
+            $(".mp-form-row mepr_email #user_email1").val("what");
+          });
+        } else {
+          $("#signup-form-submit").attr("disabled", false);
+        }
+      });
+    }
   }
   /* Wistia - loads wistia on click to improve initial page speed fallsback if thumbnails need to be loaded on page load
      --------------------------------------------------------------------------------------------------------------------- */
@@ -33,7 +40,6 @@ jQuery(document).ready(function ($) {
   function checkWistia() {
     const self = this;
     const wistiaID = $(this).attr("data-wistia");
-    console.log(wistiaID);
     if (typeof Wistia === "undefined") {
       loadWistia(self, wistiaID);
     } else {
@@ -63,11 +69,25 @@ jQuery(document).ready(function ($) {
   }
 
   if ($("div").hasClass("playbook-thumbnail")) {
-    //console.log("it does");
     loadWistia(this, "_all");
   }
 
   $(".wistia_embed").on("click", checkWistia);
+
+  /* Sign Up Overlay
+--------------------------------------------------------------------------------------- */
+
+  $(".memberpress-signup").each(function () {
+    $(this).on("click", function (e) {
+      $("#member-signup-overlay").addClass("open");
+      $("html, body").css("overflow-y", "hidden");
+    });
+  });
+
+  $("#member-signup-overlay-close").on("click", function (e) {
+    $("#member-signup-overlay").removeClass("open");
+    $("html, body").css("overflow-y", "scroll");
+  });
 
   /* Waypoints
      --------------------------------------------------------------------------------------- */
@@ -314,53 +334,58 @@ jQuery(document).ready(function ($) {
   /* Magic Line in Nav
 --------------------------------------------------------------------------------------- */
 
-  $(".current-menu-item, .current-menu-ancestor").addClass("magic-line-active");
+  if ($("body.logged-in").length > 0) {
+    $(".current-menu-item, .current-menu-ancestor").addClass(
+      "magic-line-active"
+    );
 
-  $(function () {
-    var $el,
-      leftPos,
-      newWidth,
-      $mainNav = $("nav").find("ul.menu");
+    $(function () {
+      var $el,
+        leftPos,
+        newWidth,
+        $mainNav = $("nav").find("ul.menu");
 
-    $mainNav.append("<li id='magic-line'></li>");
-    var $magicLine = $("#magic-line");
+      $mainNav.append("<li id='magic-line'></li>");
+      var $magicLine = $("#magic-line");
 
-    if ($("nav ul.menu > li").hasClass("magic-line-active")) {
-      $magicLine
-        .css({
-          left: $("nav").find("ul.menu > li.magic-line-active").position().left,
-          width: $("nav ul.menu > li.magic-line-active a").width(),
-        })
-        .data("origLeft", $magicLine.position().left);
-    } else {
-      $magicLine
-        .css({
-          left: -100,
-          width: $("nav ul.menu > li:first a").width(),
-        })
-        .data("origLeft", $magicLine.position().left);
-    }
-
-    $("nav")
-      .find("ul.menu > li:not(#magic-line)")
-      .hover(
-        function () {
-          $el = $(this);
-          leftPos = $el.position().left;
-          newWidth = $el.children().width();
-          $magicLine.stop().animate({
-            left: leftPos,
-            width: newWidth,
-          });
-        },
-        function () {
-          $magicLine.stop().animate({
-            left: $magicLine.data("origLeft"),
+      if ($("nav ul.menu > li").hasClass("magic-line-active")) {
+        $magicLine
+          .css({
+            left: $("nav").find("ul.menu > li.magic-line-active").position()
+              .left,
             width: $("nav ul.menu > li.magic-line-active a").width(),
-          });
-        }
-      );
-  });
+          })
+          .data("origLeft", $magicLine.position().left);
+      } else {
+        $magicLine
+          .css({
+            left: -100,
+            width: $("nav ul.menu > li:first a").width(),
+          })
+          .data("origLeft", $magicLine.position().left);
+      }
+
+      $("nav")
+        .find("ul.menu > li:not(#magic-line)")
+        .hover(
+          function () {
+            $el = $(this);
+            leftPos = $el.position().left;
+            newWidth = $el.children().width();
+            $magicLine.stop().animate({
+              left: leftPos,
+              width: newWidth,
+            });
+          },
+          function () {
+            $magicLine.stop().animate({
+              left: $magicLine.data("origLeft"),
+              width: $("nav ul.menu > li.magic-line-active a").width(),
+            });
+          }
+        );
+    });
+  }
 
   /* Resize Nav Functions
 --------------------------------------------------------------------------------------- */

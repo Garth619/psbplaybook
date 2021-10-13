@@ -1,5 +1,13 @@
 <?php
 
+$memberpress = current_user_can('mepr-active', 'rules:358');
+
+if ($memberpress) {
+    $userloggedin = 'memberpress-loggedin';
+} else {
+    $userloggedin = 'memberpress-signup';
+}
+
 $wistiaID = get_field('wistia_id');
 $custom_thumbnail = get_field('custom_thumbnail');
 
@@ -11,7 +19,7 @@ if ($custom_thumbnail) {
 
 ?>
 
-<div class='playbook-video playbook-<?php echo $wistiaView; ?>'>
+<div class='playbook-video playbook-<?php echo $wistiaView; ?> <?php echo $userloggedin; ?>'>
 
   <div data-wistia='<?php echo $wistiaID; ?>'
     class='playbook-wistia wistia_embed wistia_async_<?php echo $wistiaID; ?> popover=true popoverContent=<?php echo $wistiaView; ?>'>

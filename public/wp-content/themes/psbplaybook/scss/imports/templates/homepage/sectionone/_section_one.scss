@@ -113,15 +113,6 @@
   }
 }
 
-#sec-one-bottom-inner {
-}
-
-body.logged-in {
-  #sec-one-sign-up {
-    display: none;
-  }
-}
-
 #sec-one-sign-up {
   @include mq(small_laptop) {
     margin-top: 199px;
@@ -309,14 +300,7 @@ body.logged-in {
   }
 }
 
-body.logged-in {
-  #sec-one-recent-episodes {
-    display: block;
-  }
-}
-
 #sec-one-recent-episodes {
-  display: none;
   padding-top: 24px;
   max-width: 420px;
   @include margin_lr();

@@ -534,11 +534,6 @@ footer {
   display: block;
 }
 
-input,
-textarea {
-  -webkit-appearance: none;
-}
-
 .wistia_click_to_play > div > div {
   display: none !important;
 }
@@ -698,6 +693,7 @@ h4 {
   margin-left: auto;
   margin-right: auto;
 }
+
 .alignleft,
 img.alignleft {
   display: block;
@@ -878,11 +874,131 @@ body:not(.logged-in) #page-container {
   color: #62676d;
 }
 
+.memberpress-signup {
+  cursor: pointer;
+}
+
+#member-signup-overlay {
+  background: url(images/bg-pattern.jpg) top left repeat;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+#member-signup-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+span#member-signup-overlay-close {
+  display: block;
+  color: #f29b3b;
+}
+
+#mepr-account-nav span.mepr-active-nav-tab a {
+  color: #0237a4;
+}
+
+.mp_login_form {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  .mp_login_form {
+    max-width: 580px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .mp_login_form {
+    max-width: 580px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.mp_login_form .mp-spacer {
+  display: none;
+}
+.mp_login_form .mepr-login-actions {
+  text-align: center;
+  font-size: 15px;
+}
+@media screen and (min-width: 1170px) {
+  .mp_login_form .mepr-login-actions {
+    -moz-text-align-last: left;
+         text-align-last: left;
+  }
+}
+
+.submit {
+  background: linear-gradient(to bottom, #f49c3b 0%, #bf7b30 100%);
+  max-width: 228px;
+  border-radius: 60px;
+  margin-top: 13px;
+  position: relative;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  .submit {
+    margin-top: 25px;
+    max-width: 188px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .submit {
+    margin-top: 16px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.submit:hover::after {
+  opacity: 1;
+}
+.submit::after {
+  border-radius: 60px;
+  background: #bf7b30;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+}
+.submit input[type=submit] {
+  padding: 13px 25px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  font-size: 22px;
+  line-height: 25px;
+  font-family: "Khand", sans-serif;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  font-style: normal;
+  text-decoration: none;
+}
+
 .playbook-video {
   position: relative;
   cursor: pointer;
   overflow: hidden;
   width: 100%;
+}
+.playbook-video.memberpress-signup .playbook-wistia {
+  pointer-events: none;
 }
 .playbook-video.playbook-html .playbook-video-overlay {
   z-index: 1;
@@ -1364,7 +1480,9 @@ header {
   width: 115px;
   height: 78px;
 }
-#header-right #menu-wrapper::after {
+#header-right #menu-wrapper::after,
+#header-right #menu-wrapper a#sign-in {
+  transition: all 200ms ease-in-out;
   font-size: 15px;
   line-height: 18px;
   font-family: "Open Sans", sans-serif;
@@ -1373,8 +1491,10 @@ header {
   text-align: center;
   font-style: normal;
   text-decoration: none;
-  content: "Sign In";
-  display: block;
+}
+#header-right #menu-wrapper:hover::after,
+#header-right #menu-wrapper:hover a#sign-in {
+  color: #bf7b30;
 }
 
 @media screen and (min-width: 1170px) {
@@ -1386,7 +1506,6 @@ body.logged-in #header-right #menu-wrapper::after {
   content: "Menu";
   display: block;
 }
-
 #playbook-search-wrapper {
   display: none;
 }
@@ -1649,6 +1768,7 @@ nav ul.sub-menu {
   nav ul.sub-menu {
     opacity: 0;
     visibility: hidden;
+    transition: all 200ms ease-in-out;
     display: block;
     background: #f3f5f6;
     padding: 0px 20px 15px;
@@ -2272,10 +2392,6 @@ footer {
   }
 }
 
-body.logged-in #sec-one-sign-up {
-  display: none;
-}
-
 @media screen and (min-width: 1170px) {
   #sec-one-sign-up {
     margin-top: 199px;
@@ -2474,12 +2590,7 @@ body.logged-in #sec-one-sign-up {
   text-decoration: none;
 }
 
-body.logged-in #sec-one-recent-episodes {
-  display: block;
-}
-
 #sec-one-recent-episodes {
-  display: none;
   padding-top: 24px;
   max-width: 420px;
   margin-left: auto;
@@ -2610,13 +2721,6 @@ body.logged-in #sec-one-recent-episodes {
   }
 }
 
-body.logged-in span.sec-two-title.sign-in {
-  display: none;
-}
-body.logged-in span.sec-two-title.logged-in {
-  display: block;
-}
-
 span.sec-two-title {
   display: block;
   font-size: 45px;
@@ -2645,9 +2749,6 @@ span.sec-two-title br {
   span.sec-two-title br {
     display: inline-block;
   }
-}
-span.sec-two-title.logged-in {
-  display: none;
 }
 @media screen and (min-width: 768px) {
   span.sec-two-title.logged-in {
@@ -3079,7 +3180,7 @@ span#sec-three-prev-episodes-title {
 @media screen and (min-width: 768px) {
   .sec-three-prev-single .playbook-video {
     width: 241px;
-    height: 129px;
+    height: 128px;
   }
 }
 
@@ -3171,9 +3272,6 @@ span#sec-three-prev-episodes-title {
 }
 .sec-three-prev-single-video .playbook-video .playbook-wistia {
   z-index: 2;
-}
-.sec-three-prev-single-video .playbook-video .playbook-video-overlay {
-  z-index: 1;
 }
 #section-four {
   padding: 0 30px 50px;

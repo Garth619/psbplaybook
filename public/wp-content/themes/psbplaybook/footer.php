@@ -4,9 +4,11 @@
 
     <div id='footer-logo'>
 
-      <a href='<?php bloginfo('url');?>/'>
+      <a href='<?php bloginfo('url');?>'>
 
-        <img src='<?php bloginfo('template_directory');?>/images/psbplaybook-logo.svg' alt='' />
+        <?php $logo = get_field('logo', 'option');?>
+
+        <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
 
       </a>
 
@@ -16,17 +18,21 @@
 
       <div class='footer-info-row'>
 
-        <span class='footer-info-title'>Toll Free</span><!-- footer-info-title -->
+        <span class='footer-info-title'><?php the_field('toll_free_title', 'option');?></span><!-- footer-info-title -->
 
-        <a class='footer-info-content' href='tel:+18884986437'>(888) 498-6487</a><!-- footer-info-content -->
+        <a class='footer-info-content'
+          href='tel:+1<?php echo str_replace(['-', '(', ')', ' '], '', get_field('phone', 'option')); ?>'><?php the_field('phone', 'option');?></a>
+        <!-- footer-info-content -->
 
       </div><!-- footer-info-row -->
 
       <div class='footer-info-row'>
 
-        <span class='footer-info-title'>Main Website</span><!-- footer-info-title -->
+        <span class='footer-info-title'><?php the_field('main_website_title', 'option');?></span>
+        <!-- footer-info-title -->
 
-        <a class='footer-info-content' href='' target='_blank' rel='noopener'>psblaw.com</a><!-- footer-info-content -->
+        <a class='footer-info-content' href='<?php the_field('website_link', 'option');?>' target='_blank'
+          rel='noopener'><?php the_field('website_verbiage', 'option');?></a><!-- footer-info-content -->
 
       </div><!-- footer-info-row -->
 
@@ -34,29 +40,35 @@
 
     <div id='footer-social-icon'>
 
-      <a href='<?php bloginfo('bloginfo');?>' target='_blank' rel='noopener'>
+      <?php if (have_rows('social_media', 'option')): ?>
+      <?php while (have_rows('social_media', 'option')): the_row();?>
 
-        <?php echo file_get_contents(get_template_directory() . '/images/linkedin.svg'); ?>
+      <?php
+
+    if (get_sub_field('icon') == 'LinkedIn') {
+        $social_icon = 'linkedin';
+    }
+    if (get_sub_field('icon') == 'Instagram') {
+        $social_icon = 'insta';
+    }
+    if (get_sub_field('icon') == 'Twitter') {
+        $social_icon = 'twitter';
+    }
+    if (get_sub_field('icon') == 'Facebook') {
+        $social_icon = 'facebook';
+    }
+
+    ?>
+
+      <a href='	<?php the_sub_field('link');?>' target='_blank' rel='noopener'>
+
+        <?php echo file_get_contents(get_template_directory() . '/images/' . $social_icon . '.svg'); ?>
 
       </a>
 
-      <a href='<?php bloginfo('bloginfo');?>' target='_blank' rel='noopener'>
+      <?php endwhile;?>
 
-        <?php echo file_get_contents(get_template_directory() . '/images/insta.svg'); ?>
-
-      </a>
-
-      <a href='<?php bloginfo('bloginfo');?>' target='_blank' rel='noopener'>
-
-        <?php echo file_get_contents(get_template_directory() . '/images/twitter.svg'); ?>
-
-      </a>
-
-      <a href='<?php bloginfo('bloginfo');?>' target='_blank' rel='noopener'>
-
-        <?php echo file_get_contents(get_template_directory() . '/images/facebook.svg'); ?>
-
-      </a>
+      <?php endif;?>
 
     </div><!-- footer-social-icon -->
 
@@ -67,10 +79,18 @@
     <div id='copyright-inner'>
 
       <ul>
-        <li>Copyright &copy; <?php echo date('Y'); ?> Panish Shea & Boyle All rights reserved. </li>
-        <li><a href=''>DISCLAIMEr</a></li>
-        <li><a href=''>SITEMAP</a></li>
-        <li><a href=''>Google Maps</a></li>
+        <li>Copyright &copy; <?php echo date('Y'); ?> <?php the_field('law_firm_name_and_rights', 'options');?> </li>
+        <?php if (have_rows('copyright_links', 'options')): ?>
+        <?php while (have_rows('copyright_links', 'options')): the_row();?>
+
+        <li><a href='	<?php the_sub_field('link');?>'
+            <?php if (get_sub_field('open_tab_in_new_window')) {echo "target='_blank' rel='noopener'";}?>><?php the_sub_field('title');?></a>
+        </li>
+
+        <?php endwhile;?>
+
+        <?php endif;?>
+
       </ul>
 
       <a id='ilawyer' href='//ilawyermarketing.com' target='_blank' rel='noopener'>
@@ -84,6 +104,22 @@
   </div><!-- copyright -->
 
 </footer>
+
+<?php if (!current_user_can('mepr-active', 'rules:358')) {?>
+
+<div id='member-signup-overlay'>
+
+  <div id='member-signup-inner'>
+
+    <span id='member-signup-overlay-close'>Close</span><!-- member-signup-overlay-close -->
+
+    <?php echo do_shortcode('[mepr-membership-registration-form id="352"]'); ?>
+
+  </div><!-- member-signup-inner -->
+
+</div><!-- member-signup -->
+
+<?php }?>
 
 <?php wp_footer();?>
 

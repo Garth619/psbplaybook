@@ -96,7 +96,9 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
       <a id='logo' href='<?php bloginfo('url');?>'>
 
-        <img idclass='name' src='<?php bloginfo('template_directory');?>/images/psbplaybook-logo.svg' alt='' />
+        <?php $logo = get_field('logo', 'option');?>
+
+        <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
 
       </a><!-- logo -->
 
@@ -104,10 +106,14 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
     <div id='header-right'>
 
+      <?php if (current_user_can('mepr-active', 'rules:358')) {?>
+
       <nav>
         <span id='nav-close'>close</span><!-- nav-close -->
         <?php wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
       </nav>
+
+      <?php }?>
 
       <div id='playbook-search-wrapper'>
 
@@ -120,6 +126,12 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
       </div><!-- playbook-search-wrapper -->
 
       <div id='menu-wrapper'>
+
+        <?php if (!current_user_can('mepr-active', 'rules:358')) {?>
+
+        <a id='sign-in' href='<?php bloginfo('url');?>/login/'>Sign In</a>
+
+        <?php }?>
 
       </div><!-- menu-wrapper -->
 

@@ -61,6 +61,8 @@
 
     <div id='sec-one-bottom-inner'>
 
+      <?php if (!current_user_can('mepr-active', 'rules:358')) {?>
+
       <div id='sec-one-sign-up'>
 
         <span id='sec-one-sign-up-title'><?php the_field('join_now_title', 'option');?></span>
@@ -92,6 +94,10 @@
         <!-- sec-one-sign-up-description -->
 
       </div><!-- sec-one-sign-up -->
+
+      <?php }?>
+
+      <?php if (current_user_can('mepr-active', 'rules:358')) {?>
 
       <div id='sec-one-recent-episodes'>
 
@@ -132,6 +138,8 @@
         </div><!-- sec-one-recent-episodes-wrapper -->
 
       </div><!-- sec-one-recent-episodes -->
+
+      <?php }?>
 
     </div><!-- sec-one-bottom-inner -->
 

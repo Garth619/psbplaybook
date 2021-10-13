@@ -225,7 +225,7 @@ span {
   }
   .playbook-video {
     @include mq(small_tablet) {
-      @include box(241px, 129px);
+      @include box(241px, 128px);
     }
   }
 }
@@ -316,7 +316,7 @@ span {
       z-index: 2;
     }
     .playbook-video-overlay {
-      z-index: 1;
+      //z-index: 1;
       .playbook-play-button {
       }
     }

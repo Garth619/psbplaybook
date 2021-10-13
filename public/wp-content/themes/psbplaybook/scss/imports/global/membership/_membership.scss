@@ -1,0 +1,107 @@
+.memberpress-signup {
+  cursor: pointer;
+}
+
+// sign up form
+
+#member-signup-overlay {
+  background: url(images/bg-pattern.jpg) top left repeat;
+  opacity: 0;
+  visibility: hidden;
+  @include box(100%, 100vh);
+  @include fixed(0, null, null, 0, 10);
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+span#member-signup-overlay-close {
+  display: block;
+  color: $goldlight;
+}
+
+// account tabs
+
+#mepr-account-nav {
+  span.mepr-active-nav-tab {
+    a {
+      color: $bluefour;
+    }
+  }
+}
+
+// forms
+
+.mp_login_form {
+  max-width: 450px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    max-width: 580px;
+  }
+  @include mq(small_laptop) {
+    max-width: 580px;
+    @include margin_lr(0);
+  }
+  .mp-spacer {
+    display: none;
+  }
+  .mepr-login-actions {
+    text-align: center;
+    font-size: 15px;
+    @include mq(small_laptop) {
+      text-align-last: left;
+    }
+  }
+}
+
+.submit {
+  background: $goldgradient;
+  max-width: 228px;
+  border-radius: 60px;
+  margin-top: 13px;
+  position: relative;
+  cursor: pointer;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    margin-top: 25px;
+    max-width: 188px;
+  }
+  @include mq(small_laptop) {
+    margin-top: 16px;
+    @include margin_lr(0);
+  }
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+  &::after {
+    border-radius: 60px;
+    background: $golddark;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+    @include box(100%, 100%);
+    @include abs(0, null, null, 0);
+    @include contentdisplay();
+  }
+  input[type="submit"] {
+    padding: 13px 25px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    @include type(
+      (
+        size: 22px,
+        height: 25px,
+        family: $secondaryfont,
+        color: #fff,
+        weight: 500,
+        align: center,
+      )
+    );
+  }
+}

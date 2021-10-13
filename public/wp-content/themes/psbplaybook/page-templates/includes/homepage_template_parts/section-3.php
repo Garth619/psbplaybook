@@ -56,31 +56,22 @@ $featured_posts_url = "href='" . get_field('section_three_featured_posts_link') 
 
         <div class='sec-three-prev-single'>
 
-          <div class='sec-three-prev-single-video'>
+          <?php
 
-            <div class='playbook-video'>
+    $wistiaID = get_field('wistia_id');
+    $novideo = '';
 
-              <div data-wistia='<?php the_field('wistia_id');?>'
-                class='playbook-wistia wistia_embed wistia_async_<?php the_field('wistia_id');?> popover=true popoverContent=html'>
-              </div>
-              <!-- playbook-wistia -->
+    if (!$wistiaID) {
+        $novideo = ' no-video';
+    }
 
-              <div class='playbook-video-overlay'>
+    if ($wistiaID) {
+        echo "<div class='sec-three-prev-single-video'>";
+        get_template_part('page-templates/includes/video/template', 'video');
+        echo "</div><!-- sec-three-prev-single-video -->";
+    }
 
-                <div class='playbook-play-button'>
-
-                  <?php echo file_get_contents(get_template_directory() . '/images/playbutton.svg'); ?>
-
-                </div><!-- playbook-play-button -->
-
-              </div><!-- playbook-video-overlay -->
-
-              <img class='playbook-video-image' src='<?php bloginfo('template_directory');?>/images/sample-video-1.jpg'
-                alt='' />
-
-            </div><!-- playbook-video -->
-
-          </div><!-- sec-three-prev-single-video -->
+    ?>
 
           <div class='sec-three-prev-single-content'>
 

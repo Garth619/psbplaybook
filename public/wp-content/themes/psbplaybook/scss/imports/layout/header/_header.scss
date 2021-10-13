@@ -191,7 +191,9 @@ header {
     cursor: pointer;
     @include flex(center, center);
     @include box(115px, 78px);
-    &::after {
+    &::after,
+    a#sign-in {
+      transition: all 200ms ease-in-out;
       @include type(
         (
           size: 15px,
@@ -202,7 +204,14 @@ header {
           align: center,
         )
       );
-      @include contentdisplay(block, "Sign In");
+
+      //@include contentdisplay(block, "Sign In");
+    }
+    &:hover {
+      &::after,
+      a#sign-in {
+        color: $golddark;
+      }
     }
   }
 }
@@ -215,6 +224,9 @@ body.logged-in {
       }
       &::after {
         @include contentdisplay(block, "Menu");
+      }
+      a#sign-in {
+        //display: none;
       }
     }
   }

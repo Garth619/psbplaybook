@@ -52,6 +52,8 @@ echo $pfx_date;?></span>
 
           <div id='single-post-content'>
 
+            <?php if (current_user_can('mepr-active', 'rules:358')): ?>
+
             <?php if (have_rows('download_episode_materials')): ?>
 
             <div id='single-post-material'>
@@ -95,13 +97,29 @@ echo $pfx_date;?></span>
 
             <?php endif;?>
 
+            <?php endif;?>
+
             <?php if (get_field('summary')) {?>
 
             <div id='single-post-summary'>
 
               <h3><?php the_field('summary_header');?></h3>
 
+              <?php if (current_user_can('mepr-active', 'rules:358')): ?>
+
               <?php the_field('summary');?>
+
+              <?php else: ?>
+
+              <?php
+
+    $excerpt = wp_trim_words(get_field('summary'), $num_words = 65, $more = '... <br><br><a class="memberpress-signup">Sign Up to View More!</a>');
+
+    echo $excerpt;
+
+    ?>
+
+              <?php endif;?>
 
               <?php edit_post_link(__('Edit'), '', '');?>
 
@@ -120,6 +138,8 @@ echo $pfx_date;?></span>
       </div><!-- page-content-inner -->
 
     </div><!-- page-content -->
+
+    <?php if (current_user_can('mepr-active', 'rules:358')): ?>
 
     <div id='single-post-bottom' class='content'>
 
@@ -222,6 +242,8 @@ echo $pfx_date;?></span>
       <?php get_template_part('page-templates/includes/contactform/template', 'contact_form');?>
 
     </div><!-- single-post-bottom -->
+
+    <?php endif;?>
 
     <?php if (!get_field('disable_sidebar')) {
 

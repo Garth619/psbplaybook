@@ -140,21 +140,9 @@
     }
   }
   img {
-    //margin-top: 40px;
     margin-bottom: 30px;
     @include image();
     @include margin_lr();
-    @include mq(small_tablet) {
-      //margin-top: 40px;
-      //margin-bottom: 60px;
-    }
-    @include mq(small_laptop) {
-      //margin-top: 50px;
-    }
-    @include mq(large_laptop) {
-      //margin-top: 70px;
-      //margin-bottom: 80px;
-    }
   }
 }
 

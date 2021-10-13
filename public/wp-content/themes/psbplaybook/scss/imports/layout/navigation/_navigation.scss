@@ -241,6 +241,7 @@ nav {
       @include mq(small_laptop) {
         opacity: 0;
         visibility: hidden;
+        transition: all 200ms ease-in-out;
         display: block;
         background: $greylighttwo;
         padding: 0px 20px 15px;
