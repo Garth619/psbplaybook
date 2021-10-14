@@ -974,6 +974,37 @@ span#member-signup-overlay-close {
   text-decoration: none;
 }
 
+span.signup-header {
+  display: block;
+  flex-basis: 100%;
+  margin-bottom: 20px;
+  font-size: 24px;
+  letter-spacing: 0.9px;
+  line-height: 30px;
+  font-family: "Khand", sans-serif;
+  color: #f29b3b;
+  font-weight: 500;
+  text-align: center;
+  font-style: normal;
+  text-decoration: none;
+}
+@media screen and (min-width: 1170px) {
+  span.signup-header {
+    margin-bottom: 30px;
+  }
+}
+span.signup-header.signup-header-user-agreement {
+  padding-top: 29px;
+}
+@media screen and (min-width: 1170px) {
+  span.signup-header.signup-header-user-agreement {
+    padding-top: 39px;
+  }
+}
+span.signup-header.signup-header-sign-in-information {
+  padding-top: 15px;
+}
+
 #member-signup-inner {
   padding: 0 40px;
   margin-top: 31px;
@@ -1017,16 +1048,6 @@ span#member-signup-overlay-close {
 }
 #member-signup-inner .mepr-signup-form .mp-form-row.mepr_mepr_cell_phone input {
   padding: 22px 21px 22px 82px !important;
-}
-@media screen and (min-width: 768px) {
-  #member-signup-inner .mepr-signup-form .mp-form-row.mepr_mepr_name {
-    padding-top: 15px;
-  }
-}
-@media screen and (min-width: 1380px) {
-  #member-signup-inner .mepr-signup-form .mp-form-row.mepr_mepr_name {
-    padding-top: 25px;
-  }
 }
 @media screen and (min-width: 768px) {
   #member-signup-inner .mepr-signup-form .mp-form-row.mepr_mepr_registering_attorney_submits_themselves {
@@ -1112,7 +1133,7 @@ label.mepr-form-checkboxes-label {
   max-width: 100% !important;
 }
 
-span#join-up-required {
+span#sign-up-required {
   display: block;
   margin-top: 15px;
   font-size: 14px;
@@ -1124,69 +1145,77 @@ span#join-up-required {
   font-style: normal;
   text-decoration: none;
 }
-span#join-up-required span {
+span#sign-up-required span {
   color: #f29b3b;
 }
 
-.mp_login_form {
+body.page-login .mp_wrapper {
   max-width: 450px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 768px) {
-  .mp_login_form {
+  body.page-login .mp_wrapper {
     max-width: 580px;
   }
 }
 @media screen and (min-width: 1170px) {
-  .mp_login_form {
+  body.page-login .mp_wrapper {
     max-width: 580px;
     margin-left: 0;
     margin-right: 0;
   }
 }
+body.page-login .mp_wrapper h3 {
+  display: none;
+}
+body.page-login span.signup-header {
+  display: none !important;
+}
+
 .mp_login_form .mepr-login-actions {
   text-align: center;
   font-size: 15px;
 }
-@media screen and (min-width: 1170px) {
-  .mp_login_form .mepr-login-actions {
-    -moz-text-align-last: left;
-         text-align-last: left;
-  }
-}
 
 .submit,
-.mp-form-submit {
-  width: 100%;
+.mp-form-submit,
+.mepr-submit-wrapper {
   background: linear-gradient(to bottom, #f49c3b 0%, #bf7b30 100%);
-  max-width: 188px;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  min-width: 188px;
   border-radius: 60px;
   margin-top: 13px;
   position: relative;
+  text-align: center;
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 768px) {
   .submit,
-.mp-form-submit {
+.mp-form-submit,
+.mepr-submit-wrapper {
     margin-top: 25px;
-    max-width: 188px;
   }
 }
 @media screen and (min-width: 1170px) {
   .submit,
-.mp-form-submit {
+.mp-form-submit,
+.mepr-submit-wrapper {
     margin-top: 30px;
   }
 }
 .submit:hover::after,
-.mp-form-submit:hover::after {
+.mp-form-submit:hover::after,
+.mepr-submit-wrapper:hover::after {
   opacity: 1;
 }
 .submit::after,
-.mp-form-submit::after {
+.mp-form-submit::after,
+.mepr-submit-wrapper::after {
   border-radius: 60px;
   background: #bf7b30;
   opacity: 0;
@@ -1200,13 +1229,14 @@ span#join-up-required span {
   display: block;
 }
 .submit .mepr-form-has-errors,
-.mp-form-submit .mepr-form-has-errors {
+.mp-form-submit .mepr-form-has-errors,
+.mepr-submit-wrapper .mepr-form-has-errors {
   display: none !important;
 }
 .submit input[type=submit],
-.mp-form-submit input[type=submit] {
+.mp-form-submit input[type=submit],
+.mepr-submit-wrapper input[type=submit] {
   padding: 13px 25px;
-  width: 100%;
   position: relative;
   z-index: 1;
   border: none;
@@ -1224,6 +1254,15 @@ span#join-up-required span {
 
 #mepr-account-nav span.mepr-active-nav-tab a {
   color: #0237a4;
+}
+
+body.page-account span.signup-header {
+  display: none !important;
+}
+
+.mepr-account-change-password {
+  text-align: center;
+  display: block;
 }
 
 .playbook-video {
@@ -1938,6 +1977,11 @@ header {
   display: block;
 }
 
+@media screen and (min-width: 768px) {
+  #header-right {
+    display: flex;
+  }
+}
 @media screen and (min-width: 1170px) {
   #header-right {
     flex-grow: 1;
@@ -2269,6 +2313,36 @@ nav ul.sub-menu li a {
 }
 nav ul.sub-menu li a:hover {
   color: #bf7b30;
+}
+
+#nav-bg {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  #nav-bg {
+    display: block;
+    width: calc(100% - 400px);
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #nav-bg {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  #nav-bg.open {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 700ms;
+  }
 }
 
 #sidebar-wrapper {

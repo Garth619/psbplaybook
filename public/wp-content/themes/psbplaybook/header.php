@@ -108,6 +108,8 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
       <?php if (current_user_can('mepr-active', 'rules:358')) {?>
 
+      <div id='nav-bg'></div><!-- nav-bg -->
+
       <nav>
         <span id='nav-close'>close</span><!-- nav-close -->
         <?php wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>

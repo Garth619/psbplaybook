@@ -14,7 +14,7 @@ get_header();?>
 
       <?php the_content();?>
 
-      <span id='join-up-required'><span>*</span> Required</span><!-- join-up-required -->
+      <span id='sign-up-required'><span>*</span> Required</span><!-- sign-up-required -->
 
     </div><!-- member-signup-inner -->
 

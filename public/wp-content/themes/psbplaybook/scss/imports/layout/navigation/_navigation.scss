@@ -278,3 +278,27 @@ nav {
     }
   }
 }
+
+#nav-bg {
+  display: none;
+  @include mq(small_tablet) {
+    display: block;
+    width: calc(100% - 400px);
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms ease-in-out;
+    @include fixed(0, null, null, 0);
+  }
+  @include mq(small_laptop) {
+    display: none;
+  }
+  &.open {
+    @include mq(small_tablet) {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 700ms;
+    }
+  }
+}

@@ -6,7 +6,7 @@
 jQuery(document).ready(function ($) {
   $("body").addClass("ready");
 
-  /* Sign Up Form - Step One Email
+  /* Join Form - Step One Email
   --------------------------------------------------------------------------------------- */
 
   function joinValidation(parentDiv) {
@@ -37,6 +37,8 @@ jQuery(document).ready(function ($) {
     }
   }
 
+  // for times when there are multiple join forms on a page
+
   joinValidation("member-join-overlay");
   joinValidation("sec-one-bottom");
 
@@ -55,7 +57,7 @@ jQuery(document).ready(function ($) {
     $("html, body").css("overflow-y", "scroll");
   });
 
-  /* Sign Up placeholders
+  /* Sign Up placeholders and added headers
 --------------------------------------------------------------------------------------- */
 
   $(
@@ -74,6 +76,25 @@ jQuery(document).ready(function ($) {
       $(label).hide();
     }
   });
+
+  $("<span class='signup-header'>User information</span>").insertBefore(
+    ".mepr_mepr_first_name"
+  );
+
+  $(
+    "<span class='signup-header signup-header-user-agreement'>User Agreement</span>"
+  ).insertBefore(".mepr_mepr_name");
+
+  $(
+    "<span class='signup-header signup-header-sign-in-information'>Sign In Information</span>"
+  ).insertBefore(".mepr_username");
+
+  /* Account Page Button
+--------------------------------------------------------------------------------------- */
+
+  $("body.page-account input.mepr-submit").wrap(
+    "<div class='mepr-submit-wrapper'></div>"
+  );
 
   /* Wistia - loads wistia on click to improve initial page speed fallsback if thumbnails need to be loaded on page load
      --------------------------------------------------------------------------------------------------------------------- */
@@ -423,12 +444,12 @@ jQuery(document).ready(function ($) {
   //$('nav ul.menu > li.current-menu-ancestor > a').addClass('active');
 
   $("body.logged-in #menu-wrapper").on("click", function (e) {
-    $("nav").addClass("open");
+    $("nav, #nav-bg").addClass("open");
     $("html, body").css("overflow-y", "hidden");
   });
 
   $("#nav-close").on("click", function (e) {
-    $("nav").removeClass("open");
+    $("nav, #nav-bg").removeClass("open");
     $("html, body").css("overflow-y", "scroll");
   });
 

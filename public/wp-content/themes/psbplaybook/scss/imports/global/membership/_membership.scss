@@ -96,6 +96,35 @@ span#member-signup-overlay-close {
   );
 }
 
+span.signup-header {
+  display: block;
+  flex-basis: 100%;
+  margin-bottom: 20px;
+  @include type(
+    (
+      size: 24px,
+      height: 30px,
+      family: $secondaryfont,
+      color: $goldlight,
+      weight: 500,
+      align: center,
+      spacing: 0.9px,
+    )
+  );
+  @include mq(small_laptop) {
+    margin-bottom: 30px;
+  }
+  &.signup-header-user-agreement {
+    padding-top: 29px;
+    @include mq(small_laptop) {
+      padding-top: 39px;
+    }
+  }
+  &.signup-header-sign-in-information {
+    padding-top: 15px;
+  }
+}
+
 #member-signup-inner {
   padding: 0 40px;
   margin-top: 31px;
@@ -134,10 +163,10 @@ span#member-signup-overlay-close {
       }
       &.mepr_mepr_name {
         @include mq(small_tablet) {
-          padding-top: 15px;
+          //padding-top: 15px;
         }
         @include mq(large_laptop) {
-          padding-top: 25px;
+          //padding-top: 25px;
         }
       }
       &.mepr_mepr_registering_attorney_submits_themselves {
@@ -231,7 +260,7 @@ label.mepr-form-checkboxes-label {
   max-width: 100% !important;
 }
 
-span#join-up-required {
+span#sign-up-required {
   display: block;
   margin-top: 15px;
   @include type(
@@ -251,42 +280,53 @@ span#join-up-required {
 
 // login
 
-.mp_login_form {
-  max-width: 450px;
+body.page-login {
+  .mp_wrapper {
+    max-width: 450px;
+    @include margin_lr();
+    @include mq(small_tablet) {
+      max-width: 580px;
+    }
+    @include mq(small_laptop) {
+      max-width: 580px;
+      @include margin_lr(0);
+    }
+    h3 {
+      display: none;
+    }
+  }
+  span.signup-header {
+    display: none !important;
+  }
+}
 
-  @include margin_lr();
-  @include mq(small_tablet) {
-    max-width: 580px;
-  }
-  @include mq(small_laptop) {
-    max-width: 580px;
-    @include margin_lr(0);
-  }
+.mp_login_form {
   .mepr-login-actions {
     text-align: center;
     font-size: 15px;
-    @include mq(small_laptop) {
-      text-align-last: left;
-    }
   }
 }
+
+// submit buttons
+
 .submit,
-.mp-form-submit {
-  width: 100%;
+.mp-form-submit,
+.mepr-submit-wrapper {
   background: $goldgradient;
-  max-width: 188px;
+  max-width: max-content;
+  min-width: 188px;
   border-radius: 60px;
   margin-top: 13px;
   position: relative;
+  text-align: center;
   cursor: pointer;
+
   @include margin_lr();
   @include mq(small_tablet) {
     margin-top: 25px;
-    max-width: 188px;
   }
   @include mq(small_laptop) {
     margin-top: 30px;
-    //@include margin_lr(0);
   }
   &:hover {
     &::after {
@@ -307,12 +347,13 @@ span#join-up-required {
   }
   input[type="submit"] {
     padding: 13px 25px;
-    width: 100%;
+    // width: 100%;
     position: relative;
     z-index: 1;
     border: none;
     cursor: pointer;
     background: transparent;
+    //text-align: center;
     @include type(
       (
         size: 22px,
@@ -334,4 +375,15 @@ span#join-up-required {
       color: $bluefour;
     }
   }
+}
+
+body.page-account {
+  span.signup-header {
+    display: none !important;
+  }
+}
+
+.mepr-account-change-password {
+  text-align: center;
+  display: block;
 }

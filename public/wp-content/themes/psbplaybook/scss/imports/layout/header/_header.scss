@@ -182,6 +182,9 @@ header {
 }
 
 #header-right {
+  @include mq(small_tablet) {
+    @include flex();
+  }
   @include mq(small_laptop) {
     flex-grow: 1;
     @include flex(flex-end);
