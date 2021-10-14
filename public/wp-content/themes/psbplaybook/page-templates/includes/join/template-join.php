@@ -12,7 +12,7 @@
 
     <div class="signup-form-input-wrapper">
 
-      <input type="email" id="signup-form-email" name="signup-form-email" value="" placeholder="Your Firm E-mail"
+      <input type="email" class="signup-form-email" name="signup-form-email" value="" placeholder="Your Firm E-mail"
         required>
 
     </div><!-- signup-form-input-wrapper -->
@@ -22,7 +22,7 @@
 
     <div class='signup-form-submit-wrapper'>
 
-      <button id="signup-form-submit">Sign Up</button>
+      <button class="signup-form-submit">Sign Up</button>
 
     </div><!-- signup-form-submit-wrapper -->
 

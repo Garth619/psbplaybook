@@ -9,45 +9,41 @@ jQuery(document).ready(function ($) {
   /* Sign Up Form - Step One Email
   --------------------------------------------------------------------------------------- */
 
-  // if ($("body").hasClass("page-template-template-home")) {
-  //   if (!$("body").hasClass("logged-in")) {
-  //     const emailField = document.getElementById("signup-form-email");
-  //     const okButton = document.getElementById("signup-form-submit");
-
-  //     emailField.addEventListener("keyup", function (event) {
-  //       isValidEmail = emailField.checkValidity();
-
-  //       if (isValidEmail) {
-  //         //$("#signup-form-submit").attr("disabled", true);
-  //         const signupEmail = $("#signup-form-email").val();
-  //         console.log(signupEmail);
-  //       } else {
-  //         $("#signup-form-submit").attr("disabled", false);
-  //       }
-  //     });
-  //   }
-  // }
-
-  function joinValidation(email, submit) {
+  function joinValidation(parentDiv) {
     if (!$("body").hasClass("logged-in")) {
-      const emailField = document.getElementById(email);
-      const okButton = document.getElementById(submit);
+      if (document.getElementById(parentDiv) != null) {
+        const joinForm = document
+          .getElementById(parentDiv)
+          .getElementsByClassName("signup-form")[0];
 
-      emailField.addEventListener("keyup", function (event) {
-        isValidEmail = emailField.checkValidity();
+        const email = document
+          .getElementById(parentDiv)
+          .getElementsByClassName("signup-form-email")[0];
 
-        if (isValidEmail) {
-          //$("#signup-form-submit").attr("disabled", true);
-          const signupEmail = $(email).val();
-          console.log(signupEmail);
-        } else {
-          $(submit).attr("disabled", false);
-        }
-      });
+        const submit = document
+          .getElementById(parentDiv)
+          .getElementsByClassName("signup-form-submit")[0];
+
+        email.addEventListener("keyup", function (event) {
+          isValidEmail = email.checkValidity();
+
+          if (isValidEmail) {
+            submit.disabled = false;
+            const signupEmail = email.value;
+            //console.log(signupEmail);
+          } else {
+            submit.disabled = true;
+          }
+        });
+        submit.addEventListener("click", function (event) {
+          joinForm.submit();
+        });
+      }
     }
   }
 
-  joinValidation("signup-form-email", "signup-form-submit");
+  joinValidation("member-join-overlay");
+  joinValidation("sec-one-bottom");
 
   /* Join Overlay
 --------------------------------------------------------------------------------------- */
