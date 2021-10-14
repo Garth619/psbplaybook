@@ -113,14 +113,14 @@
   }
 }
 
-#sec-one-sign-up {
+.playbook-member-sign-up {
   @include mq(small_laptop) {
     margin-top: 199px;
   }
   span {
     display: block;
     text-align: center;
-    &#sec-one-sign-up-title {
+    &.playbook-member-sign-up-title {
       @include type(
         (
           size: 42px,
@@ -135,7 +135,7 @@
         @include quick_type(65px, 75px, null);
       }
     }
-    &#sec-one-sign-up-subtitle {
+    &.playbook-member-sign-up-subtitle {
       margin-top: 5px;
       max-width: 370px;
       @include margin_lr();
@@ -153,7 +153,7 @@
         @include quick_type(18px, 25px, null);
       }
     }
-    &#sec-one-sign-up-description {
+    &.playbook-member-sign-up-description {
       padding: 0 35px;
       margin-top: 24px;
       max-width: 385px;
@@ -179,7 +179,7 @@
       }
     }
   }
-  form#signup-form {
+  form.signup-form {
     margin-top: 25px;
     max-width: 491px;
     @include margin_lr();
@@ -229,7 +229,7 @@
         );
       }
     }
-    span#sec-one-sign-up-required {
+    span.playbook-member-sign-up-required {
       display: block;
       margin-top: 15px;
       @include type(
@@ -248,7 +248,7 @@
         color: $goldlight;
       }
     }
-    #signup-form-submit-wrapper {
+    .signup-form-submit-wrapper {
       background: $goldgradient;
       max-width: 228px;
       border-radius: 60px;

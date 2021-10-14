@@ -1,22 +1,64 @@
+// global
+
 .memberpress-signup {
   cursor: pointer;
+}
+
+.mepr-form input.invalid,
+.mepr-form select.invalid,
+.mepr-form textarea.invalid,
+.mepr-form label.mepr-checkbox-field.invalid,
+.mepr-form div.mepr-checkboxes-field.invalid,
+.mepr-form div.mepr-radios-field.invalid {
+  border: none !important;
+}
+
+.mepr-loading-gif {
+  display: none !important;
+}
+
+.mp-spacer,
+.mepr_spacer {
+  display: none !important;
+}
+
+body.memberpressproduct-template-template-joinnow {
+  header {
+    background: url(images/bg-pattern.jpg) top left repeat !important;
+    background-color: transparent !important;
+  }
 }
 
 // sign up form
 
 #member-signup-overlay {
+  padding-top: 75px;
+  padding-bottom: 45px;
   background: url(images/bg-pattern.jpg) top left repeat;
   background-color: $blueone;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  //  opacity: 0;
-  //  visibility: hidden;
-  @include box(100%, 100vh);
-  @include fixed(76px, null, null, 0, 10);
-  &.open {
-    opacity: 1;
-    visibility: visible;
+  @include mq(small_tablet) {
+    padding-top: 63px;
   }
+  @include mq(large_laptop) {
+    padding-bottom: 75px;
+  }
+}
+
+#member-signup-inner {
+  @include mq(small_tablet) {
+    max-width: 700px;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    max-width: 1050px;
+  }
+  @include mq(large_laptop) {
+    max-width: 1245px;
+  }
+}
+
+.iti {
+  width: 100%;
 }
 
 span#member-signup-title {
@@ -32,30 +74,88 @@ span#member-signup-title {
       transform: uppercase,
     )
   );
+  @include mq(small_tablet) {
+    @include quick_type(75px, 100px, null);
+  }
 }
 
 span#member-signup-overlay-close {
   display: block;
-  color: $goldlight;
+  margin-right: 37px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @include type(
+    (
+      size: 16px,
+      height: 18px,
+      color: $goldlight,
+      weight: 600,
+      align: right,
+      family: $primaryfont,
+    )
+  );
 }
 
 #member-signup-inner {
   padding: 0 40px;
   margin-top: 31px;
+  @include mq(large_laptop) {
+    margin-top: 46px;
+  }
   .mepr_price {
     display: none;
   }
-
   .mepr-signup-form {
+    @include mq(small_tablet) {
+      @include flex(space-between);
+      flex-wrap: wrap;
+    }
     .mp-form-row {
       position: relative;
       margin-bottom: 18px;
+      @include mq(small_tablet) {
+        flex-basis: calc(50% - 9px);
+      }
+      @include mq(small_laptop) {
+        flex-basis: calc(25% - 9px);
+      }
       // membership plugin form is difficult to work with...
+      &.mepr_mepr_firm_address,
+      &.mepr_mepr_cell_phone {
+        flex-basis: 100%;
+        @include mq(small_laptop) {
+          flex-basis: calc(50% - 7px);
+        }
+      }
+      &.mepr_mepr_cell_phone {
+        input {
+          padding: 22px 21px 22px 82px !important;
+        }
+      }
+      &.mepr_mepr_name {
+        @include mq(small_tablet) {
+          padding-top: 15px;
+        }
+        @include mq(large_laptop) {
+          padding-top: 25px;
+        }
+      }
+      &.mepr_mepr_registering_attorney_submits_themselves {
+        @include mq(small_tablet) {
+          padding-bottom: 15px;
+        }
+        @include mq(large_laptop) {
+          padding-bottom: 20px;
+        }
+      }
       &.mepr_mepr_name,
       &.mepr_mepr_i_will_not_record,
       &.mepr_mepr_i_will_not_disseminate_any_information,
       &.mepr_mepr_willful_violation,
       &.mepr_mepr_registering_attorney_submits_themselves {
+        @include mq(small_tablet) {
+          flex-basis: 100%;
+        }
         &::after {
           display: none;
         }
@@ -78,7 +178,8 @@ span#member-signup-overlay-close {
       }
       .mepr-checkboxes-field-row {
         display: flex !important;
-        padding-top: 8px;
+        //padding-top: 8px;
+
         .mepr-form-checkboxes-label {
           margin-left: 10px;
           font-family: $primaryfont !important;
@@ -90,6 +191,9 @@ span#member-signup-overlay-close {
               weight: 600,
             )
           );
+          @include mq(large_laptop) {
+            font-size: 17px;
+          }
           span.my-required {
             color: $goldlight;
             display: inline;
@@ -97,6 +201,10 @@ span#member-signup-overlay-close {
         }
         input {
           flex-shrink: 0;
+          border: none;
+          border-radius: 3px;
+          margin-top: 5px;
+          @include box(18px, 18px);
         }
       }
       input {
@@ -123,20 +231,29 @@ label.mepr-form-checkboxes-label {
   max-width: 100% !important;
 }
 
-// account tabs
-
-#mepr-account-nav {
-  span.mepr-active-nav-tab {
-    a {
-      color: $bluefour;
-    }
+span#join-up-required {
+  display: block;
+  margin-top: 15px;
+  @include type(
+    (
+      size: 14px,
+      height: 16px,
+      family: $primaryfont,
+      color: #fff,
+      weight: 600,
+      align: center,
+    )
+  );
+  span {
+    color: $goldlight;
   }
 }
 
-// forms
+// login
 
 .mp_login_form {
   max-width: 450px;
+
   @include margin_lr();
   @include mq(small_tablet) {
     max-width: 580px;
@@ -144,9 +261,6 @@ label.mepr-form-checkboxes-label {
   @include mq(small_laptop) {
     max-width: 580px;
     @include margin_lr(0);
-  }
-  .mp-spacer {
-    display: none;
   }
   .mepr-login-actions {
     text-align: center;
@@ -156,10 +270,11 @@ label.mepr-form-checkboxes-label {
     }
   }
 }
-
-.submit {
+.submit,
+.mp-form-submit {
+  width: 100%;
   background: $goldgradient;
-  max-width: 228px;
+  max-width: 188px;
   border-radius: 60px;
   margin-top: 13px;
   position: relative;
@@ -170,8 +285,8 @@ label.mepr-form-checkboxes-label {
     max-width: 188px;
   }
   @include mq(small_laptop) {
-    margin-top: 16px;
-    @include margin_lr(0);
+    margin-top: 30px;
+    //@include margin_lr(0);
   }
   &:hover {
     &::after {
@@ -186,6 +301,9 @@ label.mepr-form-checkboxes-label {
     @include box(100%, 100%);
     @include abs(0, null, null, 0);
     @include contentdisplay();
+  }
+  .mepr-form-has-errors {
+    display: none !important;
   }
   input[type="submit"] {
     padding: 13px 25px;
@@ -205,5 +323,15 @@ label.mepr-form-checkboxes-label {
         align: center,
       )
     );
+  }
+}
+
+// account tabs
+
+#mepr-account-nav {
+  span.mepr-active-nav-tab {
+    a {
+      color: $bluefour;
+    }
   }
 }

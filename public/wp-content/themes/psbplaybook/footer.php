@@ -107,19 +107,17 @@
 
 <?php if (!current_user_can('mepr-active', 'rules:358')) {?>
 
-<div id='member-signup-overlay'>
+<div id='member-join-overlay'>
 
-  <span id='member-signup-overlay-close'>Close</span><!-- member-signup-overlay-close -->
+  <div id='member-join-inner'>
 
-  <span id='member-signup-title'>JOIN THE PLAYBOOk</span><!-- member-signup-title -->
+    <span id='member-join-overlay-close'>Close</span><!-- member-join-overlay-close -->
 
-  <div id='member-signup-inner'>
+    <?php get_template_part('page-templates/includes/join/template', 'join');?>
 
-    <?php echo do_shortcode('[mepr-membership-registration-form id="352"]'); ?>
+  </div><!-- member-join-inner -->
 
-  </div><!-- member-signup-inner -->
-
-</div><!-- member-signup -->
+</div><!-- member-join -->
 
 <?php }?>
 

@@ -61,41 +61,7 @@
 
     <div id='sec-one-bottom-inner'>
 
-      <?php if (!current_user_can('mepr-active', 'rules:358')) {?>
-
-      <div id='sec-one-sign-up'>
-
-        <span id='sec-one-sign-up-title'><?php the_field('join_now_title', 'option');?></span>
-        <!-- sec-one-sign-up-title -->
-
-        <span id='sec-one-sign-up-subtitle'><?php the_field('join_now_description', 'option');?></span>
-        <!-- sec-one-sign-up-subtitle -->
-
-        <form id="signup-form">
-
-          <div class="signup-form-input-wrapper">
-
-            <input type="email" id="signup-form-email" name="signup-form-email" value="" placeholder="Your Firm E-mail"
-              required>
-
-          </div><!-- signup-form-input-wrapper -->
-
-          <span id='sec-one-sign-up-required'><span>*</span> Required</span><!-- sec-one-sign-up-required -->
-
-          <div id='signup-form-submit-wrapper'>
-
-            <button id="signup-form-submit">Sign Up</button>
-
-          </div><!-- signup-form-submit-wrapper -->
-
-        </form>
-
-        <span id='sec-one-sign-up-description'><?php the_field('join_now_description_two', 'option');?></span>
-        <!-- sec-one-sign-up-description -->
-
-      </div><!-- sec-one-sign-up -->
-
-      <?php }?>
+      <?php get_template_part('page-templates/includes/join/template', 'join');?>
 
       <?php if (current_user_can('mepr-active', 'rules:358')) {?>
 

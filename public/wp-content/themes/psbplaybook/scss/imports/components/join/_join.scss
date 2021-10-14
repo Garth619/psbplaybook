@@ -1,0 +1,224 @@
+.playbook-member-join {
+  @include mq(small_laptop) {
+    margin-top: 199px;
+  }
+  span {
+    display: block;
+    text-align: center;
+    &.playbook-member-join-title {
+      @include type(
+        (
+          size: 42px,
+          height: 48px,
+          family: $secondaryfont,
+          color: $goldlight,
+          weight: 500,
+          transform: uppercase,
+        )
+      );
+      @include mq(small_tablet) {
+        @include quick_type(65px, 75px, null);
+      }
+    }
+    &.playbook-member-join-subtitle {
+      margin-top: 5px;
+      max-width: 370px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 15px,
+          height: 23px,
+          family: $primaryfont,
+          color: $greylight,
+          weight: 600,
+        )
+      );
+      @include mq(small_tablet) {
+        max-width: 400px;
+        @include quick_type(18px, 25px, null);
+      }
+    }
+    &.playbook-member-join-description {
+      padding: 0 35px;
+      margin-top: 24px;
+      max-width: 385px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 15px,
+          height: 22px,
+          family: $primaryfont,
+          color: $greylighttwo,
+          weight: 600,
+        )
+      );
+      @include mq(small_tablet) {
+        max-width: 380px;
+      }
+      @include mq(small_laptop) {
+        margin-top: 36px;
+      }
+      strong {
+        font-weight: 600;
+        color: $goldlight;
+      }
+    }
+  }
+  form.signup-form {
+    margin-top: 25px;
+    max-width: 491px;
+    @include margin_lr();
+    ::-webkit-input-placeholder {
+      color: $grey;
+    }
+    ::-moz-placeholder {
+      color: $grey;
+    }
+    :-moz-placeholder {
+      color: $grey;
+    }
+    :-ms-input-placeholder {
+      color: $grey;
+    }
+    ::-moz-placeholder {
+      opacity: 1;
+    }
+    div.signup-form-input-wrapper {
+      position: relative;
+      &::after {
+        @include type(
+          (
+            size: 16px,
+            family: $primaryfont,
+            color: $goldlight,
+            weight: 600,
+          )
+        );
+        @include abs(24px, 24px, null, null);
+        @include contentdisplay(block, "*");
+      }
+      input {
+        border: none;
+        display: block;
+        width: 100%;
+        border-radius: 6px;
+        background: #fff;
+        padding: 19px 40px 19px 15px;
+        @include type(
+          (
+            size: 16px,
+            family: $primaryfont,
+            color: $grey,
+            weight: 600,
+          )
+        );
+      }
+    }
+    span.playbook-member-join-required {
+      display: block;
+      margin-top: 15px;
+      @include type(
+        (
+          size: 14px,
+          family: $primaryfont,
+          color: #fff,
+          weight: 600,
+        )
+      );
+      @include mq(small_laptop) {
+        text-align: right;
+      }
+      > span {
+        display: inline-block;
+        color: $goldlight;
+      }
+    }
+    .signup-form-submit-wrapper {
+      background: $goldgradient;
+      max-width: 228px;
+      border-radius: 60px;
+      margin-top: 13px;
+      position: relative;
+      cursor: pointer;
+      @include mq(small_tablet) {
+        margin-top: 25px;
+        max-width: 188px;
+      }
+      @include mq(small_laptop) {
+        margin-top: 16px;
+      }
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+      }
+      &::after {
+        border-radius: 60px;
+        background: $golddark;
+        opacity: 0;
+        transition: all 200ms ease-in-out;
+        @include box(100%, 100%);
+        @include abs(0, null, null, 0);
+        @include contentdisplay();
+      }
+      @include margin_lr();
+      button {
+        padding: 13px 25px;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        @include type(
+          (
+            size: 22px,
+            height: 25px,
+            family: $secondaryfont,
+            color: #fff,
+            weight: 500,
+            align: center,
+          )
+        );
+      }
+    }
+  }
+}
+
+// overlay in footer
+
+#member-join-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease-in-out;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  padding: 0 15px;
+  background: url(images/bg-pattern.jpg) top left repeat;
+  @include box(100%, 100vh);
+  @include fixed(0, null, null, 0, 10);
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .playbook-member-join {
+    margin-top: 40px;
+    @include mq(small_laptop) {
+      margin-top: 70px;
+    }
+  }
+}
+
+span#member-join-overlay-close {
+  display: block;
+  margin-top: 30px;
+  @include type(
+    (
+      size: 16px,
+      family: $primaryfont,
+      color: $goldlight,
+      weight: 800,
+      align: right,
+    )
+  );
+}

@@ -113,10 +113,12 @@ footer {
 
 #footer-social-icon {
   margin-top: 50px;
+  margin-bottom: 30px;
   @include flex(center);
   @include mq(small_tablet) {
     margin-top: 39px;
     margin-left: 15px;
+    margin-bottom: 0px;
     grid-area: footer-social-icon;
     justify-content: flex-start;
   }

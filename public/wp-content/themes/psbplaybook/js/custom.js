@@ -6,53 +6,66 @@
 jQuery(document).ready(function ($) {
   $("body").addClass("ready");
 
-  // log in for quicktesting
-  //$("body").addClass("logged-in");
-
   /* Sign Up Form - Step One Email
   --------------------------------------------------------------------------------------- */
 
-  if ($("body").hasClass("page-template-template-home")) {
+  // if ($("body").hasClass("page-template-template-home")) {
+  //   if (!$("body").hasClass("logged-in")) {
+  //     const emailField = document.getElementById("signup-form-email");
+  //     const okButton = document.getElementById("signup-form-submit");
+
+  //     emailField.addEventListener("keyup", function (event) {
+  //       isValidEmail = emailField.checkValidity();
+
+  //       if (isValidEmail) {
+  //         //$("#signup-form-submit").attr("disabled", true);
+  //         const signupEmail = $("#signup-form-email").val();
+  //         console.log(signupEmail);
+  //       } else {
+  //         $("#signup-form-submit").attr("disabled", false);
+  //       }
+  //     });
+  //   }
+  // }
+
+  function joinValidation(email, submit) {
     if (!$("body").hasClass("logged-in")) {
-      const emailField = document.getElementById("signup-form-email");
-      const okButton = document.getElementById("signup-form-submit");
+      const emailField = document.getElementById(email);
+      const okButton = document.getElementById(submit);
 
       emailField.addEventListener("keyup", function (event) {
         isValidEmail = emailField.checkValidity();
 
         if (isValidEmail) {
-          console.log("send it");
-
-          $("#signup-form-submit").on("click", function (e) {
-            e.preventDefault();
-            $("#signup-form-submit").attr("disabled", true);
-            const signupEmail = $("#signup-form-email").val();
-            $(".mp-form-row mepr_email #user_email1").val("what");
-            console.log("send it");
-            // $("#member-signup-overlay").addClass("open"); // make all these one function
-            // $("html, body").css("overflow-y", "hidden");
-          });
+          //$("#signup-form-submit").attr("disabled", true);
+          const signupEmail = $(email).val();
+          console.log(signupEmail);
         } else {
-          $("#signup-form-submit").attr("disabled", false);
+          $(submit).attr("disabled", false);
         }
       });
     }
   }
 
-  /* Sign Up Overlay
+  joinValidation("signup-form-email", "signup-form-submit");
+
+  /* Join Overlay
 --------------------------------------------------------------------------------------- */
 
   $(".memberpress-signup").each(function () {
     $(this).on("click", function (e) {
-      $("#member-signup-overlay").addClass("open");
+      $("#member-join-overlay").addClass("open");
       $("html, body").css("overflow-y", "hidden");
     });
   });
 
-  $("#member-signup-overlay-close").on("click", function (e) {
-    $("#member-signup-overlay").removeClass("open");
+  $("#member-join-overlay-close").on("click", function (e) {
+    $("#member-join-overlay").removeClass("open");
     $("html, body").css("overflow-y", "scroll");
   });
+
+  /* Sign Up placeholders
+--------------------------------------------------------------------------------------- */
 
   $(
     ".mepr-signup-form :input[type='text'], .mepr-signup-form :input[type='email'], .mepr-signup-form :input[type='tel'],.mepr-signup-form :input[type='password']"
