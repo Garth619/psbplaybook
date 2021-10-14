@@ -14,29 +14,24 @@ jQuery(document).ready(function ($) {
       if (document.getElementById(parentDiv) != null) {
         const joinForm = document
           .getElementById(parentDiv)
-          .getElementsByClassName("signup-form")[0];
+          .getElementsByClassName("join-form")[0];
 
         const email = document
           .getElementById(parentDiv)
-          .getElementsByClassName("signup-form-email")[0];
+          .getElementsByClassName("join-form-email")[0];
 
         const submit = document
           .getElementById(parentDiv)
-          .getElementsByClassName("signup-form-submit")[0];
+          .getElementsByClassName("join-form-submit")[0];
 
         email.addEventListener("keyup", function (event) {
           isValidEmail = email.checkValidity();
 
           if (isValidEmail) {
             submit.disabled = false;
-            const signupEmail = email.value;
-            //console.log(signupEmail);
           } else {
-            submit.disabled = true;
+            submit.disabled = false;
           }
-        });
-        submit.addEventListener("click", function (event) {
-          joinForm.submit();
         });
       }
     }
@@ -48,7 +43,7 @@ jQuery(document).ready(function ($) {
   /* Join Overlay
 --------------------------------------------------------------------------------------- */
 
-  $(".memberpress-signup").each(function () {
+  $(".memberpress-join").each(function () {
     $(this).on("click", function (e) {
       $("#member-join-overlay").addClass("open");
       $("html, body").css("overflow-y", "hidden");

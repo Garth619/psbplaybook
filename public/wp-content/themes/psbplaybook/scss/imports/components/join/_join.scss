@@ -64,7 +64,7 @@
       }
     }
   }
-  form.signup-form {
+  form.join-form {
     margin-top: 25px;
     max-width: 491px;
     @include margin_lr();
@@ -83,7 +83,7 @@
     ::-moz-placeholder {
       opacity: 1;
     }
-    div.signup-form-input-wrapper {
+    div.join-form-input-wrapper {
       position: relative;
       &::after {
         @include type(
@@ -133,7 +133,7 @@
         color: $goldlight;
       }
     }
-    .signup-form-submit-wrapper {
+    .join-form-submit-wrapper {
       background: $goldgradient;
       max-width: 228px;
       border-radius: 60px;
@@ -212,6 +212,7 @@
 span#member-join-overlay-close {
   display: block;
   margin-top: 30px;
+  cursor: pointer;
   @include type(
     (
       size: 16px,

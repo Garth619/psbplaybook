@@ -8,23 +8,23 @@
   <span class='playbook-member-join-subtitle'><?php the_field('join_now_description', 'option');?></span>
   <!-- playbook-member-join-subtitle -->
 
-  <form class="signup-form">
+  <form class="join-form" method="GET" action="<?php the_permalink(352);?>">
 
-    <div class="signup-form-input-wrapper">
+    <div class="join-form-input-wrapper">
 
-      <input type="email" class="signup-form-email" name="signup-form-email" value="" placeholder="Your Firm E-mail"
+      <input type="email" class="join-form-email" name="join-form-email" value="" placeholder="Your Firm E-mail"
         required>
 
-    </div><!-- signup-form-input-wrapper -->
+    </div><!-- join-form-input-wrapper -->
 
     <span class='playbook-member-join-required'><span>*</span> Required</span>
     <!-- playbook-member-join-required -->
 
-    <div class='signup-form-submit-wrapper'>
+    <div class='join-form-submit-wrapper'>
 
-      <button class="signup-form-submit">Sign Up</button>
+      <button class="join-form-submit">Sign Up</button>
 
-    </div><!-- signup-form-submit-wrapper -->
+    </div><!-- join-form-submit-wrapper -->
 
   </form>
 

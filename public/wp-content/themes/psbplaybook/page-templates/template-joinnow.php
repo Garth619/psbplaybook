@@ -22,4 +22,11 @@ get_header();?>
 
 </div><!-- internal-main -->
 
+<script type="text/javascript">
+const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('join-form-email');
+const inputEmail = document.getElementById("user_email1");
+inputEmail.value = myParam;
+</script>
+
 <?php get_footer();?>

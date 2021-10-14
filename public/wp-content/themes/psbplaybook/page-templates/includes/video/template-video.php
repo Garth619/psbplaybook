@@ -5,7 +5,7 @@ $memberpress = current_user_can('mepr-active', 'rules:358');
 if ($memberpress) {
     $userloggedin = 'memberpress-loggedin';
 } else {
-    $userloggedin = 'memberpress-signup';
+    $userloggedin = 'memberpress-join';
 }
 
 $wistiaID = get_field('wistia_id');

@@ -874,7 +874,7 @@ body:not(.logged-in) #page-container {
   color: #62676d;
 }
 
-.memberpress-signup {
+.memberpress-join {
   cursor: pointer;
 }
 
@@ -1232,7 +1232,7 @@ span#join-up-required span {
   overflow: hidden;
   width: 100%;
 }
-.playbook-video.memberpress-signup .playbook-wistia {
+.playbook-video.memberpress-join .playbook-wistia {
   pointer-events: none;
 }
 .playbook-video.playbook-html .playbook-video-overlay {
@@ -1382,31 +1382,31 @@ span#join-up-required span {
   font-weight: 600;
   color: #f29b3b;
 }
-.playbook-member-join form.signup-form {
+.playbook-member-join form.join-form {
   margin-top: 25px;
   max-width: 491px;
   margin-left: auto;
   margin-right: auto;
 }
-.playbook-member-join form.signup-form ::-webkit-input-placeholder {
+.playbook-member-join form.join-form ::-webkit-input-placeholder {
   color: #62676d;
 }
-.playbook-member-join form.signup-form ::-moz-placeholder {
+.playbook-member-join form.join-form ::-moz-placeholder {
   color: #62676d;
 }
-.playbook-member-join form.signup-form :-moz-placeholder {
+.playbook-member-join form.join-form :-moz-placeholder {
   color: #62676d;
 }
-.playbook-member-join form.signup-form :-ms-input-placeholder {
+.playbook-member-join form.join-form :-ms-input-placeholder {
   color: #62676d;
 }
-.playbook-member-join form.signup-form ::-moz-placeholder {
+.playbook-member-join form.join-form ::-moz-placeholder {
   opacity: 1;
 }
-.playbook-member-join form.signup-form div.signup-form-input-wrapper {
+.playbook-member-join form.join-form div.join-form-input-wrapper {
   position: relative;
 }
-.playbook-member-join form.signup-form div.signup-form-input-wrapper::after {
+.playbook-member-join form.join-form div.join-form-input-wrapper::after {
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   color: #f29b3b;
@@ -1419,7 +1419,7 @@ span#join-up-required span {
   content: "*";
   display: block;
 }
-.playbook-member-join form.signup-form div.signup-form-input-wrapper input {
+.playbook-member-join form.join-form div.join-form-input-wrapper input {
   border: none;
   display: block;
   width: 100%;
@@ -1433,7 +1433,7 @@ span#join-up-required span {
   font-style: normal;
   text-decoration: none;
 }
-.playbook-member-join form.signup-form span.playbook-member-join-required {
+.playbook-member-join form.join-form span.playbook-member-join-required {
   display: block;
   margin-top: 15px;
   font-size: 14px;
@@ -1444,15 +1444,15 @@ span#join-up-required span {
   text-decoration: none;
 }
 @media screen and (min-width: 1170px) {
-  .playbook-member-join form.signup-form span.playbook-member-join-required {
+  .playbook-member-join form.join-form span.playbook-member-join-required {
     text-align: right;
   }
 }
-.playbook-member-join form.signup-form span.playbook-member-join-required > span {
+.playbook-member-join form.join-form span.playbook-member-join-required > span {
   display: inline-block;
   color: #f29b3b;
 }
-.playbook-member-join form.signup-form .signup-form-submit-wrapper {
+.playbook-member-join form.join-form .join-form-submit-wrapper {
   background: linear-gradient(to bottom, #f49c3b 0%, #bf7b30 100%);
   max-width: 228px;
   border-radius: 60px;
@@ -1463,20 +1463,20 @@ span#join-up-required span {
   margin-right: auto;
 }
 @media screen and (min-width: 768px) {
-  .playbook-member-join form.signup-form .signup-form-submit-wrapper {
+  .playbook-member-join form.join-form .join-form-submit-wrapper {
     margin-top: 25px;
     max-width: 188px;
   }
 }
 @media screen and (min-width: 1170px) {
-  .playbook-member-join form.signup-form .signup-form-submit-wrapper {
+  .playbook-member-join form.join-form .join-form-submit-wrapper {
     margin-top: 16px;
   }
 }
-.playbook-member-join form.signup-form .signup-form-submit-wrapper:hover::after {
+.playbook-member-join form.join-form .join-form-submit-wrapper:hover::after {
   opacity: 1;
 }
-.playbook-member-join form.signup-form .signup-form-submit-wrapper::after {
+.playbook-member-join form.join-form .join-form-submit-wrapper::after {
   border-radius: 60px;
   background: #bf7b30;
   opacity: 0;
@@ -1489,7 +1489,7 @@ span#join-up-required span {
   content: "";
   display: block;
 }
-.playbook-member-join form.signup-form .signup-form-submit-wrapper button {
+.playbook-member-join form.join-form .join-form-submit-wrapper button {
   padding: 13px 25px;
   width: 100%;
   position: relative;
@@ -1538,6 +1538,7 @@ span#join-up-required span {
 span#member-join-overlay-close {
   display: block;
   margin-top: 30px;
+  cursor: pointer;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   color: #f29b3b;
