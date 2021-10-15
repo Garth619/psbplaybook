@@ -27,77 +27,77 @@ echo $pfx_date;?></span>
 
         <?php if (have_posts()): while (have_posts()): the_post();?>
 
-		        <div id='single-post' class='content'>
+        <div id='single-post' class='content'>
 
-		          <div class='post-meta-wrapper'>
+          <div class='post-meta-wrapper'>
 
-		            <?php
+            <?php
 
         $wistiaID = get_field('wistia_id');
 
         if ($wistiaID) {?>
 
-		            <div class='single-post-video'>
+            <div class='single-post-video'>
 
-		              <?php get_template_part('page-templates/includes/video/template', 'video');?>
+              <?php get_template_part('page-templates/includes/video/template', 'video');?>
 
-		            </div><!-- single-post-video -->
+            </div><!-- single-post-video -->
 
-		            <h2 class="post-header"><a href="<?php the_permalink();?>"><?php the_field('single_video_title');?></a>
-		            </h2>
+            <h2 class="post-header single-post-header"><?php the_field('single_video_title');?>
+            </h2>
 
-		            <?php }?>
+            <?php }?>
 
-		          </div><!-- post-meta-wrapper -->
+          </div><!-- post-meta-wrapper -->
 
-		          <div id='single-post-content'>
+          <div id='single-post-content'>
 
-		            <?php if (current_user_can('mepr-active', 'rules:358')): ?>
+            <?php if (current_user_can('mepr-active', 'rules:358')): ?>
 
-		            <?php if (have_rows('download_episode_materials')): ?>
+            <?php if (have_rows('download_episode_materials')): ?>
 
-		            <div id='single-post-material'>
+            <div id='single-post-material'>
 
-		              <h3><?php the_field('download_episode_material_header');?></h3>
+              <h3><?php the_field('download_episode_material_header');?></h3>
 
-		              <div id='single-post-material-list'>
+              <div id='single-post-material-list'>
 
-		                <?php while (have_rows('download_episode_materials')): the_row();?>
+                <?php while (have_rows('download_episode_materials')): the_row();?>
 
-			                <a class='single-post-material' href="<?php the_sub_field('file');?>" target="_blank">
+                <a class='single-post-material' href="<?php the_sub_field('file');?>" target="_blank">
 
-			                  <?php if (get_sub_field('icon_type') == 'pdf') {?>
+                  <?php if (get_sub_field('icon_type') == 'pdf') {?>
 
-			                  <img src='<?php bloginfo('template_directory');?>/images/pdf.svg' alt='' />
+                  <img src='<?php bloginfo('template_directory');?>/images/pdf.svg' alt='' />
 
-			                  <?php }?>
+                  <?php }?>
 
-			                  <?php if (get_sub_field('icon_type') == 'ppt') {?>
+                  <?php if (get_sub_field('icon_type') == 'ppt') {?>
 
-			                  <img src='<?php bloginfo('template_directory');?>/images/ppt.svg' alt='' />
+                  <img src='<?php bloginfo('template_directory');?>/images/ppt.svg' alt='' />
 
-			                  <?php }?>
+                  <?php }?>
 
-			                  <?php if (get_sub_field('icon_type') == 'doc') {?>
+                  <?php if (get_sub_field('icon_type') == 'doc') {?>
 
-			                  <img src='<?php bloginfo('template_directory');?>/images/doc.svg' alt='' />
+                  <img src='<?php bloginfo('template_directory');?>/images/doc.svg' alt='' />
 
-			                  <?php }?>
+                  <?php }?>
 
-			                  <span class='single-post-material-title'><?php the_sub_field('title');?></span>
-			                  <!-- single-post-material-title -->
+                  <span class='single-post-material-title'><?php the_sub_field('title');?></span>
+                  <!-- single-post-material-title -->
 
-			                </a><!-- single-post-material -->
+                </a><!-- single-post-material -->
 
-			                <?php endwhile;?>
+                <?php endwhile;?>
 
-		              </div><!-- single-post-material-list -->
+              </div><!-- single-post-material-list -->
 
-		            </div><!-- single-post-material -->
+            </div><!-- single-post-material -->
 
-		            <?php endif;?>
+            <?php endif;?>
 
-	            <?php endif;?>
+            <?php endif;?>
 
             <?php if (get_field('summary')) {?>
 
@@ -155,60 +155,60 @@ echo $pfx_date;?></span>
 
             <?php while (have_rows('featured_speakers')): the_row();?>
 
-	            <div class='single-post-featured-speakers-slide'>
+            <div class='single-post-featured-speakers-slide'>
 
-	              <?php if (get_sub_field('internal_or_external_link') == 'External') {?>
+              <?php if (get_sub_field('internal_or_external_link') == 'External') {?>
 
-	              <a href='<?php the_sub_field('external_link');?>' target='_blank' rel='noopener'>
+              <a href='<?php the_sub_field('external_link');?>' target='_blank' rel='noopener'>
 
-	                <div class='single-post-featured-speakers-img'>
+                <div class='single-post-featured-speakers-img'>
 
-	                  <?php $external_profile_picture = get_sub_field('external_profile_picture');?>
-	                  <?php if ($external_profile_picture) {?>
-	                  <img src="<?php echo $external_profile_picture['url']; ?>"
-	                    alt="<?php echo $external_profile_picture['alt']; ?>" />
-	                  <?php }?>
+                  <?php $external_profile_picture = get_sub_field('external_profile_picture');?>
+                  <?php if ($external_profile_picture) {?>
+                  <img src="<?php echo $external_profile_picture['url']; ?>"
+                    alt="<?php echo $external_profile_picture['alt']; ?>" />
+                  <?php }?>
 
-	                </div><!-- single-post-featured-speakers-img -->
+                </div><!-- single-post-featured-speakers-img -->
 
-	                <span class='single-post-featured-speakers-name'><?php the_sub_field('name');?></span>
-	                <!-- single-post-featured-speakers-name -->
+                <span class='single-post-featured-speakers-name'><?php the_sub_field('name');?></span>
+                <!-- single-post-featured-speakers-name -->
 
-	                <span class='single-post-featured-speakers-position'><?php the_sub_field('position');?></span>
-	                <!-- single-post-featured-speakers-position -->
+                <span class='single-post-featured-speakers-position'><?php the_sub_field('position');?></span>
+                <!-- single-post-featured-speakers-position -->
 
-	              </a>
+              </a>
 
-	              <?php }?>
+              <?php }?>
 
-	              <?php if (get_sub_field('internal_or_external_link') == 'Internal') {?>
+              <?php if (get_sub_field('internal_or_external_link') == 'Internal') {?>
 
-	              <?php $post_object = get_sub_field('internal_link');?>
-	              <?php if ($post_object): ?>
-	              <?php $post = $post_object;?>
-	              <?php setup_postdata($post);?>
+              <?php $post_object = get_sub_field('internal_link');?>
+              <?php if ($post_object): ?>
+              <?php $post = $post_object;?>
+              <?php setup_postdata($post);?>
 
-	              <a href='<?php the_permalink();?>'>
+              <a href='<?php the_permalink();?>'>
 
-	                <div class='single-post-featured-speakers-img'>
+                <div class='single-post-featured-speakers-img'>
 
-	                  <?php $fs_profile = get_field('fs_profile');?>
-	                  <?php if ($fs_profile) {?>
-	                  <img src="<?php echo $fs_profile['url']; ?>" alt="<?php echo $fs_profile['alt']; ?>" />
-	                  <?php }?>
+                  <?php $fs_profile = get_field('fs_profile');?>
+                  <?php if ($fs_profile) {?>
+                  <img src="<?php echo $fs_profile['url']; ?>" alt="<?php echo $fs_profile['alt']; ?>" />
+                  <?php }?>
 
-	                </div><!-- single-post-featured-speakers-img -->
+                </div><!-- single-post-featured-speakers-img -->
 
-	                <span class='single-post-featured-speakers-name'><?php the_title();?></span>
-	                <!-- single-post-featured-speakers-name -->
+                <span class='single-post-featured-speakers-name'><?php the_title();?></span>
+                <!-- single-post-featured-speakers-name -->
 
-	                <span class='single-post-featured-speakers-position'><?php the_field('fs_position');?></span>
-	                <!-- single-post-featured-speakers-position -->
+                <span class='single-post-featured-speakers-position'><?php the_field('fs_position');?></span>
+                <!-- single-post-featured-speakers-position -->
 
-	              </a>
+              </a>
 
-	              <?php wp_reset_postdata();?>
-	              <?php endif;?>
+              <?php wp_reset_postdata();?>
+              <?php endif;?>
 
               <?php }?>
 

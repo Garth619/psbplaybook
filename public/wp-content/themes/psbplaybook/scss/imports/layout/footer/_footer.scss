@@ -1,6 +1,6 @@
 footer {
   background: $blueone;
-  padding: 70px 30px 40px;
+  padding: 70px 23px 40px;
   @include mq(small_tablet) {
     padding: 60px 30px 40px;
   }
@@ -33,7 +33,7 @@ footer {
 #footer-logo {
   @include mq(small_tablet) {
     grid-area: footer-logo;
-    margin-top: 60px;
+    margin-top: 45px;
     margin-right: 84px;
   }
   @include mq(small_laptop) {
@@ -160,7 +160,7 @@ footer {
   text-align: center;
   @include margin_lr();
   @include mq(small_tablet) {
-    margin-top: 75px;
+    margin-top: 60px;
     max-width: 100%;
   }
   @include mq(small_laptop) {

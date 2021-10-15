@@ -133,7 +133,7 @@ span#sec-three-title {
 
 span.sec-three-subtitle {
   display: block;
-  padding: 40px 15px 15px;
+  padding: 36px 15px 15px;
   border-bottom: 2px solid $bluefour;
   @include type(
     (
@@ -142,7 +142,7 @@ span.sec-three-subtitle {
       family: $secondaryfont,
       color: $golddark,
       weight: 600,
-      align: center,
+      align: left,
       transform: uppercase,
     )
   );
@@ -183,8 +183,8 @@ span {
   &#sec-three-prev-episodes-title {
     padding-left: 75px;
     padding-right: 75px;
+    text-align: center;
     @include mq(small_tablet) {
-      text-align: center;
     }
     @include mq(small_laptop) {
       padding-left: 0px;
@@ -303,10 +303,7 @@ span {
     margin-right: 20px;
   }
   @include mq(small_laptop) {
-    margin-left: 40px;
-  }
-  @include mq(small_laptop) {
-    margin-left: 60px;
+    margin-left: 30px;
   }
   .playbook-video {
     max-width: 241px;

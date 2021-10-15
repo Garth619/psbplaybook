@@ -9,38 +9,42 @@ jQuery(document).ready(function ($) {
   /* Join Form - Step One Email
   --------------------------------------------------------------------------------------- */
 
-  function joinValidation(parentDiv) {
-    if (!$("body").hasClass("logged-in")) {
-      if (document.getElementById(parentDiv) != null) {
-        const joinForm = document
-          .getElementById(parentDiv)
-          .getElementsByClassName("join-form")[0];
+  // function joinValidation(parentDiv) {
+  //   if (!$("body").hasClass("logged-in")) {
+  //     if (document.getElementById(parentDiv) != null) {
+  //       const joinForm = document
+  //         .getElementById(parentDiv)
+  //         .getElementsByClassName("join-form")[0];
 
-        const email = document
-          .getElementById(parentDiv)
-          .getElementsByClassName("join-form-email")[0];
+  //       const email = document
+  //         .getElementById(parentDiv)
+  //         .getElementsByClassName("join-form-email")[0];
 
-        const submit = document
-          .getElementById(parentDiv)
-          .getElementsByClassName("join-form-submit")[0];
+  //       const submit = document
+  //         .getElementById(parentDiv)
+  //         .getElementsByClassName("join-form-submit")[0];
 
-        email.addEventListener("keyup", function (event) {
-          isValidEmail = email.checkValidity();
+  //       email.addEventListener("keyup", function (event) {
+  //         isValidEmail = email.checkValidity();
 
-          if (isValidEmail) {
-            submit.disabled = false;
-          } else {
-            submit.disabled = false;
-          }
-        });
-      }
-    }
-  }
+  //         if (isValidEmail) {
+  //           submit.disabled = false;
+  //           console.log("valid email");
+  //         } else {
+  //           submit.disabled = true;
+  //           console.log("not valid email");
+  //         }
+  //       });
+  //     }
+  //   }
+  // }
 
-  // for times when there are multiple join forms on a page
+  // // for times when there are multiple join forms on a page
 
-  joinValidation("member-join-overlay");
-  joinValidation("sec-one-bottom");
+  // joinValidation("member-join-overlay");
+  // joinValidation("sec-one-bottom");
+
+  // no longer needed im sending this input to another page now
 
   /* Join Overlay
 --------------------------------------------------------------------------------------- */

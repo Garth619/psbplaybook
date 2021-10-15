@@ -38,6 +38,7 @@ body.memberpressproduct-template-template-joinnow {
   background-color: $blueone;
   @include mq(small_tablet) {
     padding-top: 63px;
+    padding-bottom: 75px;
   }
   @include mq(large_laptop) {
     padding-bottom: 75px;
@@ -369,12 +370,38 @@ body.page-login {
 
 // account tabs
 
+#mepr-account-welcome-message {
+  text-align: center;
+  @include mq(small_laptop) {
+    text-align: left;
+  }
+}
+
+form.mepr-account-form {
+  @include mq(small_tablet) {
+    max-width: 700px;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    @include margin_lr(0);
+  }
+}
+
 #mepr-account-nav {
-  span.mepr-active-nav-tab {
-    a {
-      color: $bluefour;
+  text-align: center;
+  @include mq(small_laptop) {
+    text-align: left;
+  }
+  span.mepr-nav-item {
+    &:nth-of-type(-n + 3) {
+      display: none;
     }
   }
+  // span.mepr-active-nav-tab {
+  //   a {
+  //     color: $bluefour;
+  //   }
+  // }
 }
 
 body.page-account {
@@ -383,7 +410,22 @@ body.page-account {
   }
 }
 
-.mepr-account-change-password {
+.mepr-account-change-password,
+.mepr-newpassword-form {
   text-align: center;
   display: block;
+  @include mq(small_tablet) {
+    max-width: 700px;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    @include margin_lr(0);
+  }
 }
+
+// .mepr-newpassword-form {
+//   text-align: center !important;
+//   .mepr-new-password {
+//     text-align: left !important;
+//   }
+// }

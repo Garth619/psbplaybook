@@ -217,8 +217,12 @@ body.single {
     }
   }
   h2.post-header {
-    margin-top: 26px;
+    margin-top: 15px;
     text-align: center;
+    @include quick_type(18px, 25px, null);
+    @include mq(small_tablet) {
+      margin-top: 25px;
+    }
   }
   .playbook-video {
     max-width: 750px;
@@ -226,9 +230,9 @@ body.single {
     .playbook-video-overlay {
       .playbook-play-button {
         svg {
-          @include box(93px, 93px);
+          @include box(70px, 70px);
           @include mq(small_tablet) {
-            @include box(105px, 105px);
+            @include box(93px, 93px);
           }
         }
       }
@@ -237,7 +241,7 @@ body.single {
 }
 
 #single-post {
-  margin-top: -30px;
+  margin-top: -20px;
   @include mq(small_tablet) {
     margin-top: 7px;
   }
@@ -245,7 +249,8 @@ body.single {
 
 #single-post-content {
   padding-top: 45px;
-  @include mq(small_monitor) {
+  @include mq(small_laptop) {
+    padding-top: 55px;
   }
   @media screen and (min-width: 1600px) {
     padding-top: 83px;
@@ -291,6 +296,9 @@ a.single-post-material {
 
 #single-post-summary {
   margin-top: 45px;
+  @include mq(small_laptop) {
+    margin-top: 53px;
+  }
   @media screen and (min-width: 1600px) {
     margin-top: 0px;
     flex-grow: 1;
@@ -484,7 +492,7 @@ a.single-post-material {
     transition: all 200ms ease-in-out;
     margin-top: -100px;
     @include box(6px, 10px);
-    @include tri(left, 6px, 7px, $blueone);
+    @include tri(left, 6px, 7px, $bluethree);
     @include mq(small_laptop) {
       margin-top: 0px;
     }
@@ -504,7 +512,7 @@ a.single-post-material {
           size: 16px,
           height: 19px,
           family: $secondaryfont,
-          color: $bluefour,
+          color: $bluethree,
           weight: 600,
         )
       );

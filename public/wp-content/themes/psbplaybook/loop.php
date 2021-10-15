@@ -16,16 +16,18 @@
 
   <?php if (have_posts()): while (have_posts()): the_post();?>
 
-  <div class='blog-post<?php echo $novideo; ?>'>
-
-    <?php
+  <?php
 
         $wistiaID = get_field('wistia_id');
         $novideo = '';
 
         if (!$wistiaID) {
             $novideo = ' no-video';
-        }
+        }?>
+
+  <div class='blog-post<?php echo $novideo; ?>'>
+
+    <?php
 
         if ($wistiaID) {
             echo "<div class='blog-post-video'>";
