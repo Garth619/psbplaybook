@@ -340,10 +340,12 @@ a.single-post-material {
 
 #single-post-featured-speakers-inner {
   position: relative;
+  max-width: 500px;
+  @include margin_lr();
   @include mq(small_tablet) {
     padding-top: 13px;
+    max-width: 100%;
     width: calc(100% - 90px);
-    @include margin_lr();
   }
   @include mq(small_laptop) {
     width: 100%;
@@ -357,6 +359,7 @@ a.single-post-material {
   position: relative;
   z-index: 1;
   width: calc(100% - 60px);
+
   @include margin_lr();
   @include mq(small_tablet) {
     width: calc(100% - 80px);
@@ -491,6 +494,7 @@ a.single-post-material {
   .single-post-featured-speakers-arrows {
     transition: all 200ms ease-in-out;
     margin-top: -100px;
+    cursor: pointer;
     @include box(6px, 10px);
     @include tri(left, 6px, 7px, $bluethree);
     @include mq(small_laptop) {

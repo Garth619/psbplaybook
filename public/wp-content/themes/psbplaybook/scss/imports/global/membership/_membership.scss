@@ -229,16 +229,27 @@ span.signup-header {
             display: inline;
           }
         }
-        input {
+        input[type="checkbox"] {
           flex-shrink: 0;
-          border: none;
           border-radius: 3px;
           margin-top: 5px;
+          padding: 0 !important;
+          position: relative;
+          border: 1px solid #fff;
           @include box(18px, 18px);
+        }
+        input[type="checkbox"]:checked:before {
+          border: none;
+          background: $bluefour;
+          border-radius: 3px;
+          @include contentdisplay();
+          @include box(100%, 100%);
+          @include abs(0, null, null, 0);
         }
       }
       input {
         border: none;
+        background: #fff;
         border-radius: 6px;
         padding: 22px 21px 22px 12px !important;
         font-family: $primaryfont !important;
@@ -321,7 +332,6 @@ body.page-login {
   position: relative;
   text-align: center;
   cursor: pointer;
-
   @include margin_lr();
   @include mq(small_tablet) {
     margin-top: 25px;
