@@ -4994,4 +4994,65 @@ a.single-post-material span.single-post-material-title {
   color: #bf7b30;
 }
 
+@media screen and (min-width: 1199px) {
+  #sec-one-bottom-inner {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+    opacity: 0;
+    transition: opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear;
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  }
+
+  #sec-one-top .playbook-video img.playbook-video-image {
+    -webkit-transform: scale(1.14, 1.14);
+            transform: scale(1.14, 1.14);
+    transition: opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear;
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  }
+
+  #sec-one-top span#learn-title {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+    transition: opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear;
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  }
+
+  #section-one .playbook-play-button {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+    transition: opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear;
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  }
+
+  body.ready #sec-one-bottom-inner {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+    transition-delay: 300ms, 300ms;
+  }
+  body.ready #sec-one-top .playbook-video img.playbook-video-image {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    transition-delay: 0ms, 0ms;
+  }
+  body.ready #section-one .playbook-play-button {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+    transition-delay: 300ms, 300ms;
+  }
+  body.ready #sec-one-top span#learn-title {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+    transition-delay: 500ms, 500ms;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

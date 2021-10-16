@@ -1,2 +1,66 @@
 @media screen and (min-width: 1199px) {
+  // vars and mixins
+
+  $transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98),
+    opacity 500ms linear;
+  $transition_two: transform 1550ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+
+  @mixin img_scale($scale) {
+    transform: scale($scale, $scale);
+    transition: $transition;
+  }
+
+  @mixin transform_opacity($transform: 0px) {
+    transform: translateY($transform);
+    opacity: 0;
+    transition: $transition;
+  }
+
+  @mixin fire_transform_opacity($delay) {
+    transform: translateY(0px);
+    opacity: 1;
+    transition-delay: $delay, $delay;
+  }
+
+  @mixin line_animation($direction) {
+    transform: scale(0, 1);
+    transform-origin: top $direction;
+    transition: $transition_two;
+  }
+
+  @mixin fire_return_scale($scale, $delay: 0ms) {
+    transform: scale($scale, $scale);
+    transition-delay: $delay, $delay;
+  }
+  #sec-one-bottom-inner {
+    @include transform_opacity(-20px);
+  }
+  #sec-one-top .playbook-video img.playbook-video-image {
+    @include img_scale(1.14);
+  }
+  #sec-one-top span#learn-title {
+    @include transform_opacity(20px);
+  }
+  #section-one {
+    .playbook-play-button {
+      @include transform_opacity(20px);
+    }
+  }
+
+  body.ready {
+    #sec-one-bottom-inner {
+      @include fire_transform_opacity(300ms);
+    }
+    #sec-one-top .playbook-video img.playbook-video-image {
+      @include fire_return_scale(1);
+    }
+    #section-one {
+      .playbook-play-button {
+        @include fire_transform_opacity(300ms);
+      }
+    }
+    #sec-one-top span#learn-title {
+      @include fire_transform_opacity(500ms);
+    }
+  }
 }

@@ -4,7 +4,7 @@
 
     <div id='footer-logo'>
 
-      <a href='<?php bloginfo('url');?>'>
+      <a href='<?php bloginfo('url');?>/?home'>
 
         <?php $logo = get_field('logo', 'option');?>
 

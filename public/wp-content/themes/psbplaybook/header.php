@@ -94,7 +94,7 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
     <div id='header-left'>
 
-      <a id='logo' href='<?php bloginfo('url');?>'>
+      <a id='logo' href='<?php bloginfo('url');?>/?home'>
 
         <?php $logo = get_field('logo', 'option');?>
 
