@@ -885,15 +885,6 @@ body:not(.logged-in) #page-container {
   cursor: pointer;
 }
 
-.mepr-form input.invalid,
-.mepr-form select.invalid,
-.mepr-form textarea.invalid,
-.mepr-form label.mepr-checkbox-field.invalid,
-.mepr-form div.mepr-checkboxes-field.invalid,
-.mepr-form div.mepr-radios-field.invalid {
-  border: none !important;
-}
-
 .mepr-loading-gif {
   display: none !important;
 }
@@ -1149,6 +1140,18 @@ span.signup-header.signup-header-sign-in-information {
   font-style: normal;
   text-decoration: none;
 }
+#member-signup-inner .mepr-signup-form .mp-form-row input::-webkit-input-placeholder {
+  color: #62676d;
+}
+#member-signup-inner .mepr-signup-form .mp-form-row input::-moz-placeholder {
+  color: #62676d;
+}
+#member-signup-inner .mepr-signup-form .mp-form-row input:-ms-input-placeholder {
+  color: #62676d;
+}
+#member-signup-inner .mepr-signup-form .mp-form-row input::placeholder {
+  color: #62676d;
+}
 
 label.mepr-form-radios-label,
 label.mepr-form-checkboxes-label {
@@ -1199,6 +1202,28 @@ body.page-login span.signup-header {
 .mp_login_form .mepr-login-actions {
   text-align: center;
   font-size: 15px;
+}
+.mp_login_form input[type=checkbox] {
+  flex-shrink: 0;
+  border-radius: 3px;
+  margin-top: 5px;
+  padding: 0 !important;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 18px;
+  height: 18px;
+}
+.mp_login_form input[type=checkbox]:checked:before {
+  border: none;
+  background: #0237a4;
+  border-radius: 3px;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .submit,
@@ -1333,6 +1358,48 @@ body.page-account span.signup-header {
     margin-left: 0;
     margin-right: 0;
   }
+}
+
+.mepr_error {
+  padding: 20px !important;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.mepr-form input.invalid,
+.mepr-form select.invalid,
+.mepr-form textarea.invalid,
+.mepr-form label.mepr-checkbox-field.invalid,
+.mepr-form div.mepr-checkboxes-field.invalid,
+.mepr-form div.mepr-radios-field.invalid {
+  border: none !important;
+  color: #fff !important;
+}
+.mepr-form input.invalid::-webkit-input-placeholder, .mepr-form select.invalid::-webkit-input-placeholder, .mepr-form textarea.invalid::-webkit-input-placeholder, .mepr-form label.mepr-checkbox-field.invalid::-webkit-input-placeholder, .mepr-form div.mepr-checkboxes-field.invalid::-webkit-input-placeholder, .mepr-form div.mepr-radios-field.invalid::-webkit-input-placeholder {
+  color: #fff !important;
+}
+.mepr-form input.invalid::-moz-placeholder, .mepr-form select.invalid::-moz-placeholder, .mepr-form textarea.invalid::-moz-placeholder, .mepr-form label.mepr-checkbox-field.invalid::-moz-placeholder, .mepr-form div.mepr-checkboxes-field.invalid::-moz-placeholder, .mepr-form div.mepr-radios-field.invalid::-moz-placeholder {
+  color: #fff !important;
+}
+.mepr-form input.invalid:-ms-input-placeholder, .mepr-form select.invalid:-ms-input-placeholder, .mepr-form textarea.invalid:-ms-input-placeholder, .mepr-form label.mepr-checkbox-field.invalid:-ms-input-placeholder, .mepr-form div.mepr-checkboxes-field.invalid:-ms-input-placeholder, .mepr-form div.mepr-radios-field.invalid:-ms-input-placeholder {
+  color: #fff !important;
+}
+.mepr-form input.invalid::placeholder,
+.mepr-form select.invalid::placeholder,
+.mepr-form textarea.invalid::placeholder,
+.mepr-form label.mepr-checkbox-field.invalid::placeholder,
+.mepr-form div.mepr-checkboxes-field.invalid::placeholder,
+.mepr-form div.mepr-radios-field.invalid::placeholder {
+  color: #fff !important;
+}
+
+.mepr-checkboxes-field.invalid {
+  border-radius: 6px;
+  padding: 7px 10px 10px 9px !important;
 }
 
 .playbook-video {
